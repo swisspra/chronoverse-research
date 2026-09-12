@@ -1,0 +1,27 @@
+{
+  "same_first32_canonical_documents": true,
+  "model_warmed": true,
+  "shared_machine": true,
+  "rows": [
+    {
+      "batch_size": 32,
+      "documents": 32,
+      "seconds": 1.602701416995842
+    },
+    {
+      "batch_size": 8,
+      "documents": 32,
+      "seconds": 1.3945825420014444
+    },
+    {
+      "batch_size": 4,
+      "documents": 32,
+      "seconds": 1.2781905419979012
+    },
+    {
+      "batch_size": 1,
+      "documents": 32,
+      "seconds": 1.6273408330016537
+    }
+  ]
+}

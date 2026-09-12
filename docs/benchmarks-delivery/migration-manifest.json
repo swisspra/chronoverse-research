@@ -1,0 +1,28 @@
+{
+  "migration": "recipient delivery schema and display naming only; no new inference run",
+  "historical_git_tag": "round-3-as-published",
+  "historical_git_commit": "1154cf7",
+  "files": {
+    "results": {
+      "old_path": "docs/benchmarks-observer/results.json",
+      "new_path": "docs/benchmarks-delivery/results.json",
+      "old_sha256": "f2797bd08159c1f96f307d935901d0eff588f8d9e962be31173bf091ee0fa11a",
+      "new_sha256": "e0a399a5a8736428b79ee542fa7af5c27497d3b3cbb47bd5ede06c695a55fc9b"
+    },
+    "fixture": {
+      "old_path": "docs/benchmarks-observer/fixture.json",
+      "new_path": "docs/benchmarks-delivery/fixture.json",
+      "old_sha256": "20ce2a70ee5208549e93d27d29b04d0c5dd4b3b6021bbc01dae7a9bd40f03cd7",
+      "new_sha256": "6e7777224c18312f94a70368805dc4478a72362dc04bd8e4cf563288c5f0120b"
+    }
+  },
+  "renames": {
+    "observer_id": "recipient_id",
+    "observer_at": "received_by",
+    "observer_view": "delivery_view",
+    "Observer projection": "Delivery projection",
+    "strategy observer": "strategy delivery",
+    "observer-{red,blue,green}": "recipient-{red,blue,green}"
+  },
+  "preserved": "Ranking input text, assertion/event/receipt/query IDs, gold, all numeric results, timings, candidate projections, model metadata and historical source_sha256 remain unchanged. New fixture hash identifies renamed schema only; historical execution used old fixture hash. Active code has not been represented as the historical executed code."
+}

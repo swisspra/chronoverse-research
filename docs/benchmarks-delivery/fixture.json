@@ -1,0 +1,1844 @@
+{
+  "assertions": [
+    {
+      "id": "oa7k",
+      "subject": "Aster ferry",
+      "predicate": "departure gate",
+      "object": "north",
+      "world": "main",
+      "plane": "report",
+      "perspective": "harbor-wire",
+      "valid_from": "2026-04-01T00:00:00.000000Z",
+      "valid_to": null,
+      "recorded_at": "2026-04-01T00:00:00.000000Z",
+      "summary": "Synthetic claim for an observer-specific retrieval diagnostic.",
+      "evidence": [
+        {
+          "title": "Synthetic passage",
+          "text": "SYNTHETIC OBSERVER FIXTURE: Aster ferry departure gate north.",
+          "recorded_at": "2026-04-01T00:00:00.000000Z",
+          "synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "pb3m",
+      "subject": "Brindle clinic",
+      "predicate": "open status",
+      "object": "open",
+      "world": "main",
+      "plane": "report",
+      "perspective": "civic-feed",
+      "valid_from": "2026-04-01T00:00:00.000000Z",
+      "valid_to": null,
+      "recorded_at": "2026-04-01T00:00:00.000000Z",
+      "summary": "Synthetic claim for an observer-specific retrieval diagnostic.",
+      "evidence": [
+        {
+          "title": "Synthetic passage",
+          "text": "SYNTHETIC OBSERVER FIXTURE: Brindle clinic open status open.",
+          "recorded_at": "2026-04-01T00:00:00.000000Z",
+          "synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "cx9r",
+      "subject": "Cobalt storm",
+      "predicate": "injured count",
+      "object": "12",
+      "world": "main",
+      "plane": "report",
+      "perspective": "newsdesk",
+      "valid_from": "2026-04-01T00:00:00.000000Z",
+      "valid_to": null,
+      "recorded_at": "2026-04-04T08:00:00.000000Z",
+      "summary": "Synthetic claim for an observer-specific retrieval diagnostic.",
+      "evidence": [
+        {
+          "title": "Synthetic passage",
+          "text": "SYNTHETIC OBSERVER FIXTURE: Cobalt storm injured count 12.",
+          "recorded_at": "2026-04-04T08:00:00.000000Z",
+          "synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "dq2v",
+      "subject": "Cobalt storm",
+      "predicate": "injured count",
+      "object": "2",
+      "world": "main",
+      "plane": "report",
+      "perspective": "newsdesk",
+      "valid_from": "2026-04-01T00:00:00.000000Z",
+      "valid_to": null,
+      "recorded_at": "2026-04-08T08:00:00.000000Z",
+      "summary": "Synthetic claim for an observer-specific retrieval diagnostic.",
+      "evidence": [
+        {
+          "title": "Synthetic passage",
+          "text": "SYNTHETIC OBSERVER FIXTURE: Cobalt storm injured count 2.",
+          "recorded_at": "2026-04-08T08:00:00.000000Z",
+          "synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "er5n",
+      "subject": "Dunewick bridge",
+      "predicate": "collapse status",
+      "object": "collapsed",
+      "world": "main",
+      "plane": "report",
+      "perspective": "wire-b",
+      "valid_from": "2026-04-01T00:00:00.000000Z",
+      "valid_to": null,
+      "recorded_at": "2026-04-05T08:00:00.000000Z",
+      "summary": "Synthetic claim for an observer-specific retrieval diagnostic.",
+      "evidence": [
+        {
+          "title": "Synthetic passage",
+          "text": "SYNTHETIC OBSERVER FIXTURE: Dunewick bridge collapse status collapsed.",
+          "recorded_at": "2026-04-05T08:00:00.000000Z",
+          "synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "fu8p",
+      "subject": "Ember archive",
+      "predicate": "permit status",
+      "object": "approved",
+      "world": "main",
+      "plane": "report",
+      "perspective": "registry",
+      "valid_from": "2026-04-01T00:00:00.000000Z",
+      "valid_to": null,
+      "recorded_at": "2026-04-01T00:00:00.000000Z",
+      "summary": "Synthetic claim for an observer-specific retrieval diagnostic.",
+      "evidence": [
+        {
+          "title": "Synthetic passage",
+          "text": "SYNTHETIC OBSERVER FIXTURE: Ember archive permit status approved.",
+          "recorded_at": "2026-04-01T00:00:00.000000Z",
+          "synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "gw4t",
+      "subject": "Fern harbor",
+      "predicate": "opening date",
+      "object": "April 18",
+      "world": "main",
+      "plane": "report",
+      "perspective": "municipal",
+      "valid_from": "2026-04-01T00:00:00.000000Z",
+      "valid_to": null,
+      "recorded_at": "2026-04-01T00:00:00.000000Z",
+      "summary": "Synthetic claim for an observer-specific retrieval diagnostic.",
+      "evidence": [
+        {
+          "title": "Synthetic passage",
+          "text": "SYNTHETIC OBSERVER FIXTURE: Fern harbor opening date April 18.",
+          "recorded_at": "2026-04-01T00:00:00.000000Z",
+          "synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "hx6c",
+      "subject": "Fern harbor",
+      "predicate": "opening date",
+      "object": "April 19",
+      "world": "main",
+      "plane": "report",
+      "perspective": "local-press",
+      "valid_from": "2026-04-01T00:00:00.000000Z",
+      "valid_to": null,
+      "recorded_at": "2026-04-01T00:00:00.000000Z",
+      "summary": "Synthetic claim for an observer-specific retrieval diagnostic.",
+      "evidence": [
+        {
+          "title": "Synthetic passage",
+          "text": "SYNTHETIC OBSERVER FIXTURE: Fern harbor opening date April 19.",
+          "recorded_at": "2026-04-01T00:00:00.000000Z",
+          "synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "jy1s",
+      "subject": "Glimmer rail",
+      "predicate": "service status",
+      "object": "running",
+      "world": "main",
+      "plane": "report",
+      "perspective": "transit-wire",
+      "valid_from": "2026-04-01T00:00:00.000000Z",
+      "valid_to": "2026-04-12T00:00:00.000000Z",
+      "recorded_at": "2026-04-01T00:00:00.000000Z",
+      "summary": "Synthetic claim for an observer-specific retrieval diagnostic.",
+      "evidence": [
+        {
+          "title": "Synthetic passage",
+          "text": "SYNTHETIC OBSERVER FIXTURE: Glimmer rail service status running.",
+          "recorded_at": "2026-04-01T00:00:00.000000Z",
+          "synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "kz0d",
+      "subject": "Hazel launch",
+      "predicate": "mission status",
+      "object": "successful",
+      "world": "main",
+      "plane": "report",
+      "perspective": "mission-wire",
+      "valid_from": "2026-04-01T00:00:00.000000Z",
+      "valid_to": null,
+      "recorded_at": "2026-05-02T00:00:00.000000Z",
+      "summary": "Synthetic claim for an observer-specific retrieval diagnostic.",
+      "evidence": [
+        {
+          "title": "Synthetic passage",
+          "text": "SYNTHETIC OBSERVER FIXTURE: Hazel launch mission status successful.",
+          "recorded_at": "2026-05-02T00:00:00.000000Z",
+          "synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "lm2q",
+      "subject": "Iris council",
+      "predicate": "chair",
+      "object": "Lena",
+      "world": "main",
+      "plane": "fact",
+      "perspective": "registry",
+      "valid_from": "2026-04-01T00:00:00.000000Z",
+      "valid_to": null,
+      "recorded_at": "2026-04-01T00:00:00.000000Z",
+      "summary": "Synthetic claim for an observer-specific retrieval diagnostic.",
+      "evidence": [
+        {
+          "title": "Synthetic passage",
+          "text": "SYNTHETIC OBSERVER FIXTURE: Iris council chair Lena.",
+          "recorded_at": "2026-04-01T00:00:00.000000Z",
+          "synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "mn7b",
+      "subject": "Iris council",
+      "predicate": "chair",
+      "object": "Omar",
+      "world": "main",
+      "plane": "belief",
+      "perspective": "rumor-desk",
+      "valid_from": "2026-04-01T00:00:00.000000Z",
+      "valid_to": null,
+      "recorded_at": "2026-04-01T00:00:00.000000Z",
+      "summary": "Synthetic claim for an observer-specific retrieval diagnostic.",
+      "evidence": [
+        {
+          "title": "Synthetic passage",
+          "text": "SYNTHETIC OBSERVER FIXTURE: Iris council chair Omar.",
+          "recorded_at": "2026-04-01T00:00:00.000000Z",
+          "synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "np5x",
+      "subject": "Iris council",
+      "predicate": "chair",
+      "object": "Pia",
+      "world": "scenario-amber",
+      "plane": "fact",
+      "perspective": "registry",
+      "valid_from": "2026-04-01T00:00:00.000000Z",
+      "valid_to": null,
+      "recorded_at": "2026-04-01T00:00:00.000000Z",
+      "summary": "Synthetic claim for an observer-specific retrieval diagnostic.",
+      "evidence": [
+        {
+          "title": "Synthetic passage",
+          "text": "SYNTHETIC OBSERVER FIXTURE: Iris council chair Pia.",
+          "recorded_at": "2026-04-01T00:00:00.000000Z",
+          "synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "qr8j",
+      "subject": "Iris council annex",
+      "predicate": "chair",
+      "object": "Rui",
+      "world": "main",
+      "plane": "fact",
+      "perspective": "registry",
+      "valid_from": "2026-04-01T00:00:00.000000Z",
+      "valid_to": null,
+      "recorded_at": "2026-04-01T00:00:00.000000Z",
+      "summary": "Synthetic claim for an observer-specific retrieval diagnostic.",
+      "evidence": [
+        {
+          "title": "Synthetic passage",
+          "text": "SYNTHETIC OBSERVER FIXTURE: Iris council annex chair Rui.",
+          "recorded_at": "2026-04-01T00:00:00.000000Z",
+          "synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "st3f",
+      "subject": "Bulletin 17",
+      "predicate": "contains update",
+      "object": "see passage",
+      "world": "main",
+      "plane": "report",
+      "perspective": "desk-17",
+      "valid_from": "2026-04-01T00:00:00.000000Z",
+      "valid_to": null,
+      "recorded_at": "2026-04-01T00:00:00.000000Z",
+      "summary": "Synthetic claim for an observer-specific retrieval diagnostic.",
+      "evidence": [
+        {
+          "title": "Synthetic passage",
+          "text": "SYNTHETIC OBSERVER FIXTURE: Juniper reservoir alert level is amber.",
+          "recorded_at": "2026-04-01T00:00:00.000000Z",
+          "synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "tu6h",
+      "subject": "Digest 24",
+      "predicate": "contains update",
+      "object": "see passage",
+      "world": "main",
+      "plane": "report",
+      "perspective": "desk-24",
+      "valid_from": "2026-04-01T00:00:00.000000Z",
+      "valid_to": null,
+      "recorded_at": "2026-04-01T00:00:00.000000Z",
+      "summary": "Synthetic claim for an observer-specific retrieval diagnostic.",
+      "evidence": [
+        {
+          "title": "Synthetic passage",
+          "text": "SYNTHETIC OBSERVER FIXTURE: Kestrel ridge wind speed is 40 knots.",
+          "recorded_at": "2026-04-01T00:00:00.000000Z",
+          "synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "vw9a",
+      "subject": "Larch terminal",
+      "predicate": "operator",
+      "object": "Ava",
+      "world": "main",
+      "plane": "fact",
+      "perspective": "registry",
+      "valid_from": "2026-04-01T00:00:00.000000Z",
+      "valid_to": null,
+      "recorded_at": "2026-04-01T00:00:00.000000Z",
+      "summary": "Synthetic claim for an observer-specific retrieval diagnostic.",
+      "evidence": [
+        {
+          "title": "Synthetic passage",
+          "text": "SYNTHETIC OBSERVER FIXTURE: Larch terminal operator Ava.",
+          "recorded_at": "2026-04-01T00:00:00.000000Z",
+          "synthetic": true
+        }
+      ]
+    },
+    {
+      "id": "wx2e",
+      "subject": "Larch terminal",
+      "predicate": "operator",
+      "object": "Bo",
+      "world": "main",
+      "plane": "fact",
+      "perspective": "registry",
+      "valid_from": "2026-04-10T00:00:00.000000Z",
+      "valid_to": null,
+      "recorded_at": "2026-04-11T00:00:00.000000Z",
+      "summary": "Synthetic claim for an observer-specific retrieval diagnostic.",
+      "evidence": [
+        {
+          "title": "Synthetic passage",
+          "text": "SYNTHETIC OBSERVER FIXTURE: Larch terminal operator Bo.",
+          "recorded_at": "2026-04-11T00:00:00.000000Z",
+          "synthetic": true
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "ev-cobalt-correct",
+      "assertion_id": "cx9r",
+      "type": "correct",
+      "effective_at": "2026-04-01T00:00:00.000000Z",
+      "recorded_at": "2026-04-08T08:00:00.000000Z",
+      "reason": "Synthetic lifecycle transition.",
+      "source": "Synthetic audit desk",
+      "replacement_id": "dq2v"
+    },
+    {
+      "id": "ev-dune-retract",
+      "assertion_id": "er5n",
+      "type": "retract",
+      "effective_at": "2026-04-01T00:00:00.000000Z",
+      "recorded_at": "2026-04-07T08:00:00.000000Z",
+      "reason": "Synthetic lifecycle transition.",
+      "source": "Synthetic audit desk",
+      "replacement_id": null
+    },
+    {
+      "id": "ev-larch-supersede",
+      "assertion_id": "vw9a",
+      "type": "supersede",
+      "effective_at": "2026-04-10T00:00:00.000000Z",
+      "recorded_at": "2026-04-12T00:00:00.000000Z",
+      "reason": "Synthetic lifecycle transition.",
+      "source": "Synthetic audit desk",
+      "replacement_id": "wx2e"
+    }
+  ],
+  "receipts": [
+    {
+      "id": "r-red-oa7k-a",
+      "recipient_id": "recipient-red",
+      "item_type": "assertion",
+      "item_id": "oa7k",
+      "received_at": "2026-04-02T09:00:00.000000Z",
+      "recorded_at": "2026-04-02T09:00:00.000000Z"
+    },
+    {
+      "id": "r-red-oa7k-e",
+      "recipient_id": "recipient-red",
+      "item_type": "evidence",
+      "item_id": "oa7k-e1",
+      "received_at": "2026-04-02T09:00:00.000000Z",
+      "recorded_at": "2026-04-02T09:00:00.000000Z"
+    },
+    {
+      "id": "r-lue-oa7k-a",
+      "recipient_id": "recipient-blue",
+      "item_type": "assertion",
+      "item_id": "oa7k",
+      "received_at": "2026-04-05T09:00:00.000000Z",
+      "recorded_at": "2026-04-05T09:00:00.000000Z"
+    },
+    {
+      "id": "r-lue-oa7k-e",
+      "recipient_id": "recipient-blue",
+      "item_type": "evidence",
+      "item_id": "oa7k-e1",
+      "received_at": "2026-04-05T09:00:00.000000Z",
+      "recorded_at": "2026-04-05T09:00:00.000000Z"
+    },
+    {
+      "id": "r-red-pb3m-a",
+      "recipient_id": "recipient-red",
+      "item_type": "assertion",
+      "item_id": "pb3m",
+      "received_at": "2026-04-03T10:00:00.000000Z",
+      "recorded_at": "2026-04-03T10:00:00.000000Z"
+    },
+    {
+      "id": "r-red-pb3m-e",
+      "recipient_id": "recipient-red",
+      "item_type": "evidence",
+      "item_id": "pb3m-e1",
+      "received_at": "2026-04-06T10:00:00.000000Z",
+      "recorded_at": "2026-04-06T10:00:00.000000Z"
+    },
+    {
+      "id": "r-red-cx9r",
+      "recipient_id": "recipient-red",
+      "item_type": "assertion",
+      "item_id": "cx9r",
+      "received_at": "2026-04-04T09:00:00.000000Z",
+      "recorded_at": "2026-04-04T09:00:00.000000Z"
+    },
+    {
+      "id": "r-red-cx9r-e1",
+      "recipient_id": "recipient-red",
+      "item_type": "evidence",
+      "item_id": "cx9r-e1",
+      "received_at": "2026-04-04T09:00:00.000000Z",
+      "recorded_at": "2026-04-04T09:00:00.000000Z"
+    },
+    {
+      "id": "r-red-ev-cobalt-correct",
+      "recipient_id": "recipient-red",
+      "item_type": "event",
+      "item_id": "ev-cobalt-correct",
+      "received_at": "2026-04-09T09:00:00.000000Z",
+      "recorded_at": "2026-04-09T09:00:00.000000Z"
+    },
+    {
+      "id": "r-red-dq2v",
+      "recipient_id": "recipient-red",
+      "item_type": "assertion",
+      "item_id": "dq2v",
+      "received_at": "2026-04-10T09:00:00.000000Z",
+      "recorded_at": "2026-04-10T09:00:00.000000Z"
+    },
+    {
+      "id": "r-red-dq2v-e1",
+      "recipient_id": "recipient-red",
+      "item_type": "evidence",
+      "item_id": "dq2v-e1",
+      "received_at": "2026-04-11T09:00:00.000000Z",
+      "recorded_at": "2026-04-11T09:00:00.000000Z"
+    },
+    {
+      "id": "r-blue-cx9r",
+      "recipient_id": "recipient-blue",
+      "item_type": "assertion",
+      "item_id": "cx9r",
+      "received_at": "2026-04-04T09:00:00.000000Z",
+      "recorded_at": "2026-04-04T09:00:00.000000Z"
+    },
+    {
+      "id": "r-blue-cx9r-e1",
+      "recipient_id": "recipient-blue",
+      "item_type": "evidence",
+      "item_id": "cx9r-e1",
+      "received_at": "2026-04-04T09:00:00.000000Z",
+      "recorded_at": "2026-04-04T09:00:00.000000Z"
+    },
+    {
+      "id": "r-blue-dq2v",
+      "recipient_id": "recipient-blue",
+      "item_type": "assertion",
+      "item_id": "dq2v",
+      "received_at": "2026-04-08T09:00:00.000000Z",
+      "recorded_at": "2026-04-08T09:00:00.000000Z"
+    },
+    {
+      "id": "r-blue-dq2v-e1",
+      "recipient_id": "recipient-blue",
+      "item_type": "evidence",
+      "item_id": "dq2v-e1",
+      "received_at": "2026-04-08T09:00:00.000000Z",
+      "recorded_at": "2026-04-08T09:00:00.000000Z"
+    },
+    {
+      "id": "r-blue-ev-cobalt-correct",
+      "recipient_id": "recipient-blue",
+      "item_type": "event",
+      "item_id": "ev-cobalt-correct",
+      "received_at": "2026-04-12T09:00:00.000000Z",
+      "recorded_at": "2026-04-12T09:00:00.000000Z"
+    },
+    {
+      "id": "r-red-er5n-a",
+      "recipient_id": "recipient-red",
+      "item_type": "assertion",
+      "item_id": "er5n",
+      "received_at": "2026-04-05T09:00:00.000000Z",
+      "recorded_at": "2026-04-05T09:00:00.000000Z"
+    },
+    {
+      "id": "r-red-er5n-e",
+      "recipient_id": "recipient-red",
+      "item_type": "evidence",
+      "item_id": "er5n-e1",
+      "received_at": "2026-04-05T09:00:00.000000Z",
+      "recorded_at": "2026-04-05T09:00:00.000000Z"
+    },
+    {
+      "id": "r-red-dune-ev",
+      "recipient_id": "recipient-red",
+      "item_type": "event",
+      "item_id": "ev-dune-retract",
+      "received_at": "2026-04-07T09:00:00.000000Z",
+      "recorded_at": "2026-04-07T09:00:00.000000Z"
+    },
+    {
+      "id": "r-lue-er5n-a",
+      "recipient_id": "recipient-blue",
+      "item_type": "assertion",
+      "item_id": "er5n",
+      "received_at": "2026-04-05T09:00:00.000000Z",
+      "recorded_at": "2026-04-05T09:00:00.000000Z"
+    },
+    {
+      "id": "r-lue-er5n-e",
+      "recipient_id": "recipient-blue",
+      "item_type": "evidence",
+      "item_id": "er5n-e1",
+      "received_at": "2026-04-05T09:00:00.000000Z",
+      "recorded_at": "2026-04-05T09:00:00.000000Z"
+    },
+    {
+      "id": "r-lue-dune-ev",
+      "recipient_id": "recipient-blue",
+      "item_type": "event",
+      "item_id": "ev-dune-retract",
+      "received_at": "2026-04-10T09:00:00.000000Z",
+      "recorded_at": "2026-04-10T09:00:00.000000Z"
+    },
+    {
+      "id": "r-red-fu8p-a",
+      "recipient_id": "recipient-red",
+      "item_type": "assertion",
+      "item_id": "fu8p",
+      "received_at": "2026-04-10T12:00:00.000000Z",
+      "recorded_at": "2026-04-15T12:00:00.000000Z"
+    },
+    {
+      "id": "r-red-fu8p-e",
+      "recipient_id": "recipient-red",
+      "item_type": "evidence",
+      "item_id": "fu8p-e1",
+      "received_at": "2026-04-10T12:00:00.000000Z",
+      "recorded_at": "2026-04-15T12:00:00.000000Z"
+    },
+    {
+      "id": "r-red-gw4t-a",
+      "recipient_id": "recipient-red",
+      "item_type": "assertion",
+      "item_id": "gw4t",
+      "received_at": "2026-04-06T12:00:00.000000Z",
+      "recorded_at": "2026-04-06T12:00:00.000000Z"
+    },
+    {
+      "id": "r-red-gw4t-e",
+      "recipient_id": "recipient-red",
+      "item_type": "evidence",
+      "item_id": "gw4t-e1",
+      "received_at": "2026-04-06T12:00:00.000000Z",
+      "recorded_at": "2026-04-06T12:00:00.000000Z"
+    },
+    {
+      "id": "r-red-hx6c-a",
+      "recipient_id": "recipient-red",
+      "item_type": "assertion",
+      "item_id": "hx6c",
+      "received_at": "2026-04-06T12:00:00.000000Z",
+      "recorded_at": "2026-04-06T12:00:00.000000Z"
+    },
+    {
+      "id": "r-red-hx6c-e",
+      "recipient_id": "recipient-red",
+      "item_type": "evidence",
+      "item_id": "hx6c-e1",
+      "received_at": "2026-04-06T12:00:00.000000Z",
+      "recorded_at": "2026-04-06T12:00:00.000000Z"
+    },
+    {
+      "id": "r-red-jy1s-a",
+      "recipient_id": "recipient-red",
+      "item_type": "assertion",
+      "item_id": "jy1s",
+      "received_at": "2026-04-02T00:00:00.000000Z",
+      "recorded_at": "2026-04-02T00:00:00.000000Z"
+    },
+    {
+      "id": "r-red-jy1s-e",
+      "recipient_id": "recipient-red",
+      "item_type": "evidence",
+      "item_id": "jy1s-e1",
+      "received_at": "2026-04-02T00:00:00.000000Z",
+      "recorded_at": "2026-04-02T00:00:00.000000Z"
+    },
+    {
+      "id": "r-red-kz0d-a",
+      "recipient_id": "recipient-red",
+      "item_type": "assertion",
+      "item_id": "kz0d",
+      "received_at": "2026-05-03T00:00:00.000000Z",
+      "recorded_at": "2026-05-03T00:00:00.000000Z"
+    },
+    {
+      "id": "r-red-kz0d-e",
+      "recipient_id": "recipient-red",
+      "item_type": "evidence",
+      "item_id": "kz0d-e1",
+      "received_at": "2026-05-03T00:00:00.000000Z",
+      "recorded_at": "2026-05-03T00:00:00.000000Z"
+    },
+    {
+      "id": "r-red-lm2q-a",
+      "recipient_id": "recipient-red",
+      "item_type": "assertion",
+      "item_id": "lm2q",
+      "received_at": "2026-04-02T00:00:00.000000Z",
+      "recorded_at": "2026-04-02T00:00:00.000000Z"
+    },
+    {
+      "id": "r-red-lm2q-e",
+      "recipient_id": "recipient-red",
+      "item_type": "evidence",
+      "item_id": "lm2q-e1",
+      "received_at": "2026-04-02T00:00:00.000000Z",
+      "recorded_at": "2026-04-02T00:00:00.000000Z"
+    },
+    {
+      "id": "r-red-mn7b-a",
+      "recipient_id": "recipient-red",
+      "item_type": "assertion",
+      "item_id": "mn7b",
+      "received_at": "2026-04-02T00:00:00.000000Z",
+      "recorded_at": "2026-04-02T00:00:00.000000Z"
+    },
+    {
+      "id": "r-red-mn7b-e",
+      "recipient_id": "recipient-red",
+      "item_type": "evidence",
+      "item_id": "mn7b-e1",
+      "received_at": "2026-04-02T00:00:00.000000Z",
+      "recorded_at": "2026-04-02T00:00:00.000000Z"
+    },
+    {
+      "id": "r-red-np5x-a",
+      "recipient_id": "recipient-red",
+      "item_type": "assertion",
+      "item_id": "np5x",
+      "received_at": "2026-04-02T00:00:00.000000Z",
+      "recorded_at": "2026-04-02T00:00:00.000000Z"
+    },
+    {
+      "id": "r-red-np5x-e",
+      "recipient_id": "recipient-red",
+      "item_type": "evidence",
+      "item_id": "np5x-e1",
+      "received_at": "2026-04-02T00:00:00.000000Z",
+      "recorded_at": "2026-04-02T00:00:00.000000Z"
+    },
+    {
+      "id": "r-red-qr8j-a",
+      "recipient_id": "recipient-red",
+      "item_type": "assertion",
+      "item_id": "qr8j",
+      "received_at": "2026-04-02T00:00:00.000000Z",
+      "recorded_at": "2026-04-02T00:00:00.000000Z"
+    },
+    {
+      "id": "r-red-qr8j-e",
+      "recipient_id": "recipient-red",
+      "item_type": "evidence",
+      "item_id": "qr8j-e1",
+      "received_at": "2026-04-02T00:00:00.000000Z",
+      "recorded_at": "2026-04-02T00:00:00.000000Z"
+    },
+    {
+      "id": "r-red-st3f-a",
+      "recipient_id": "recipient-red",
+      "item_type": "assertion",
+      "item_id": "st3f",
+      "received_at": "2026-04-13T08:00:00.000000Z",
+      "recorded_at": "2026-04-13T08:00:00.000000Z"
+    },
+    {
+      "id": "r-red-st3f-e",
+      "recipient_id": "recipient-red",
+      "item_type": "evidence",
+      "item_id": "st3f-e1",
+      "received_at": "2026-04-16T08:00:00.000000Z",
+      "recorded_at": "2026-04-16T08:00:00.000000Z"
+    },
+    {
+      "id": "r-blue-tu6h-e",
+      "recipient_id": "recipient-blue",
+      "item_type": "evidence",
+      "item_id": "tu6h-e1",
+      "received_at": "2026-04-14T08:00:00.000000Z",
+      "recorded_at": "2026-04-14T08:00:00.000000Z"
+    },
+    {
+      "id": "r-red-vw9a",
+      "recipient_id": "recipient-red",
+      "item_type": "assertion",
+      "item_id": "vw9a",
+      "received_at": "2026-04-02T00:00:00.000000Z",
+      "recorded_at": "2026-04-02T00:00:00.000000Z"
+    },
+    {
+      "id": "r-red-vw9a-e1",
+      "recipient_id": "recipient-red",
+      "item_type": "evidence",
+      "item_id": "vw9a-e1",
+      "received_at": "2026-04-02T00:00:00.000000Z",
+      "recorded_at": "2026-04-02T00:00:00.000000Z"
+    },
+    {
+      "id": "r-red-wx2e",
+      "recipient_id": "recipient-red",
+      "item_type": "assertion",
+      "item_id": "wx2e",
+      "received_at": "2026-04-11T00:00:00.000000Z",
+      "recorded_at": "2026-04-11T00:00:00.000000Z"
+    },
+    {
+      "id": "r-red-wx2e-e1",
+      "recipient_id": "recipient-red",
+      "item_type": "evidence",
+      "item_id": "wx2e-e1",
+      "received_at": "2026-04-11T00:00:00.000000Z",
+      "recorded_at": "2026-04-11T00:00:00.000000Z"
+    },
+    {
+      "id": "r-red-ev-larch-supersede",
+      "recipient_id": "recipient-red",
+      "item_type": "event",
+      "item_id": "ev-larch-supersede",
+      "received_at": "2026-04-15T00:00:00.000000Z",
+      "recorded_at": "2026-04-15T00:00:00.000000Z"
+    }
+  ],
+  "queries": [
+    {
+      "id": "oq01",
+      "family": "same_event_different_arrival",
+      "recipient_id": "recipient-red",
+      "query": "Aster ferry departure gate",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-02T08:59:59.999999Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [],
+      "gold_evidence_ids": [],
+      "gold_event_ids": [],
+      "rationale": "Visibility begins at that observer's receipt boundary; an unopened observer stays empty."
+    },
+    {
+      "id": "oq02",
+      "family": "same_event_different_arrival",
+      "recipient_id": "recipient-red",
+      "query": "Aster ferry departure gate",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-02T09:00:00.000000Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "oa7k"
+      ],
+      "gold_evidence_ids": [
+        "oa7k-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "Visibility begins at that observer's receipt boundary; an unopened observer stays empty."
+    },
+    {
+      "id": "oq03",
+      "family": "same_event_different_arrival",
+      "recipient_id": "recipient-blue",
+      "query": "Aster ferry departure gate",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-04T12:00:00.000000Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [],
+      "gold_evidence_ids": [],
+      "gold_event_ids": [],
+      "rationale": "Visibility begins at that observer's receipt boundary; an unopened observer stays empty."
+    },
+    {
+      "id": "oq04",
+      "family": "same_event_different_arrival",
+      "recipient_id": "recipient-blue",
+      "query": "Aster ferry departure gate",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-05T09:00:00.000000Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "oa7k"
+      ],
+      "gold_evidence_ids": [
+        "oa7k-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "Visibility begins at that observer's receipt boundary; an unopened observer stays empty."
+    },
+    {
+      "id": "oq05",
+      "family": "same_event_different_arrival",
+      "recipient_id": "recipient-green",
+      "query": "Aster ferry departure gate",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-30T23:59:59.999999Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [],
+      "gold_evidence_ids": [],
+      "gold_event_ids": [],
+      "rationale": "Visibility begins at that observer's receipt boundary; an unopened observer stays empty."
+    },
+    {
+      "id": "oq06",
+      "family": "separate_passage_delivery",
+      "recipient_id": "recipient-red",
+      "query": "Brindle clinic open status",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-03T10:00:00.000000Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "pb3m"
+      ],
+      "gold_evidence_ids": [],
+      "gold_event_ids": [],
+      "rationale": "Assertion receipt exposes claim fields; only evidence receipt exposes the answer passage."
+    },
+    {
+      "id": "oq07",
+      "family": "separate_passage_delivery",
+      "recipient_id": "recipient-red",
+      "query": "Brindle clinic open status",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-06T09:59:59.999999Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "pb3m"
+      ],
+      "gold_evidence_ids": [],
+      "gold_event_ids": [],
+      "rationale": "Assertion receipt exposes claim fields; only evidence receipt exposes the answer passage."
+    },
+    {
+      "id": "oq08",
+      "family": "separate_passage_delivery",
+      "recipient_id": "recipient-red",
+      "query": "Brindle clinic open status",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-06T10:00:00.000000Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "pb3m"
+      ],
+      "gold_evidence_ids": [
+        "pb3m-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "Assertion receipt exposes claim fields; only evidence receipt exposes the answer passage."
+    },
+    {
+      "id": "oq09",
+      "family": "separate_passage_delivery",
+      "recipient_id": "recipient-blue",
+      "query": "Brindle clinic open status",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-30T23:59:59.999999Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [],
+      "gold_evidence_ids": [],
+      "gold_event_ids": [],
+      "rationale": "Global recording does not substitute for an observer receipt."
+    },
+    {
+      "id": "oq10",
+      "family": "delayed_correction",
+      "recipient_id": "recipient-red",
+      "query": "Cobalt storm injured count",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-08T23:00:00.000000Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "cx9r"
+      ],
+      "gold_evidence_ids": [
+        "cx9r-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "A received correction retires the old claim even when its replacement passage has not arrived; receipt is awareness, not endorsement."
+    },
+    {
+      "id": "oq11",
+      "family": "delayed_correction",
+      "recipient_id": "recipient-red",
+      "query": "Cobalt storm injured count",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-09T09:00:00.000000Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [],
+      "gold_evidence_ids": [],
+      "gold_event_ids": [
+        "ev-cobalt-correct"
+      ],
+      "rationale": "A received correction retires the old claim even when its replacement passage has not arrived; receipt is awareness, not endorsement."
+    },
+    {
+      "id": "oq12",
+      "family": "delayed_correction",
+      "recipient_id": "recipient-red",
+      "query": "Cobalt storm injured count",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-10T09:00:00.000000Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "dq2v"
+      ],
+      "gold_evidence_ids": [],
+      "gold_event_ids": [
+        "ev-cobalt-correct"
+      ],
+      "rationale": "A received correction retires the old claim even when its replacement passage has not arrived; receipt is awareness, not endorsement."
+    },
+    {
+      "id": "oq13",
+      "family": "delayed_correction",
+      "recipient_id": "recipient-red",
+      "query": "Cobalt storm injured count",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-11T09:00:00.000000Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "dq2v"
+      ],
+      "gold_evidence_ids": [
+        "dq2v-e1"
+      ],
+      "gold_event_ids": [
+        "ev-cobalt-correct"
+      ],
+      "rationale": "A received correction retires the old claim even when its replacement passage has not arrived; receipt is awareness, not endorsement."
+    },
+    {
+      "id": "oq14",
+      "family": "delayed_correction",
+      "recipient_id": "recipient-blue",
+      "query": "Cobalt storm injured count",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-09T00:00:00.000000Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "cx9r",
+        "dq2v"
+      ],
+      "gold_evidence_ids": [
+        "cx9r-e1",
+        "dq2v-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "A received correction retires the old claim even when its replacement passage has not arrived; receipt is awareness, not endorsement."
+    },
+    {
+      "id": "oq15",
+      "family": "delayed_correction",
+      "recipient_id": "recipient-blue",
+      "query": "Cobalt storm injured count",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-12T09:00:00.000000Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "dq2v"
+      ],
+      "gold_evidence_ids": [
+        "dq2v-e1"
+      ],
+      "gold_event_ids": [
+        "ev-cobalt-correct"
+      ],
+      "rationale": "A received correction retires the old claim even when its replacement passage has not arrived; receipt is awareness, not endorsement."
+    },
+    {
+      "id": "oq16",
+      "family": "delayed_retraction",
+      "recipient_id": "recipient-red",
+      "query": "Dunewick bridge collapse status",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-07T08:59:59.999999Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "er5n"
+      ],
+      "gold_evidence_ids": [
+        "er5n-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "Retraction affects only observers that received its lifecycle event."
+    },
+    {
+      "id": "oq17",
+      "family": "delayed_retraction",
+      "recipient_id": "recipient-red",
+      "query": "Dunewick bridge collapse status",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-07T09:00:00.000000Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [],
+      "gold_evidence_ids": [],
+      "gold_event_ids": [
+        "ev-dune-retract"
+      ],
+      "rationale": "Retraction affects only observers that received its lifecycle event."
+    },
+    {
+      "id": "oq18",
+      "family": "delayed_retraction",
+      "recipient_id": "recipient-blue",
+      "query": "Dunewick bridge collapse status",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-09T12:00:00.000000Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "er5n"
+      ],
+      "gold_evidence_ids": [
+        "er5n-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "Retraction affects only observers that received its lifecycle event."
+    },
+    {
+      "id": "oq19",
+      "family": "delayed_retraction",
+      "recipient_id": "recipient-blue",
+      "query": "Dunewick bridge collapse status",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-10T09:00:00.000000Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [],
+      "gold_evidence_ids": [],
+      "gold_event_ids": [
+        "ev-dune-retract"
+      ],
+      "rationale": "Retraction affects only observers that received its lifecycle event."
+    },
+    {
+      "id": "oq20",
+      "family": "late_receipt_log",
+      "recipient_id": "recipient-red",
+      "query": "Ember archive permit status",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-15T11:59:59.999999Z",
+        "received_by": "2026-04-20T00:00:00.000000Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [],
+      "gold_evidence_ids": [],
+      "gold_event_ids": [],
+      "rationale": "Both receipt.recorded_at <= known_at and receipt.received_at <= observer_at are required, even when the receipt was logged after delivery."
+    },
+    {
+      "id": "oq21",
+      "family": "late_receipt_log",
+      "recipient_id": "recipient-red",
+      "query": "Ember archive permit status",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-15T12:00:00.000000Z",
+        "received_by": "2026-04-10T11:59:59.999999Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [],
+      "gold_evidence_ids": [],
+      "gold_event_ids": [],
+      "rationale": "Both receipt.recorded_at <= known_at and receipt.received_at <= observer_at are required, even when the receipt was logged after delivery."
+    },
+    {
+      "id": "oq22",
+      "family": "late_receipt_log",
+      "recipient_id": "recipient-red",
+      "query": "Ember archive permit status",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-15T12:00:00.000000Z",
+        "received_by": "2026-04-10T12:00:00.000000Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "fu8p"
+      ],
+      "gold_evidence_ids": [
+        "fu8p-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "Both receipt.recorded_at <= known_at and receipt.received_at <= observer_at are required, even when the receipt was logged after delivery."
+    },
+    {
+      "id": "oq23",
+      "family": "late_receipt_log",
+      "recipient_id": "recipient-red",
+      "query": "Ember archive permit status",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-14T00:00:00.000000Z",
+        "received_by": "2026-04-30T23:59:59.999999Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [],
+      "gold_evidence_ids": [],
+      "gold_event_ids": [],
+      "rationale": "Both receipt.recorded_at <= known_at and receipt.received_at <= observer_at are required, even when the receipt was logged after delivery."
+    },
+    {
+      "id": "oq24",
+      "family": "source_vs_observer",
+      "recipient_id": "recipient-red",
+      "query": "Fern harbor opening date",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-30T23:59:59.999999Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "gw4t",
+        "hx6c"
+      ],
+      "gold_evidence_ids": [
+        "gw4t-e1",
+        "hx6c-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "Perspective identifies the source; observer identity remains a separate receipt filter. Conflicting received reports remain visible."
+    },
+    {
+      "id": "oq25",
+      "family": "source_vs_observer",
+      "recipient_id": "recipient-red",
+      "query": "Fern harbor opening date",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-30T23:59:59.999999Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "municipal"
+      },
+      "gold_assertion_ids": [
+        "gw4t"
+      ],
+      "gold_evidence_ids": [
+        "gw4t-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "Perspective identifies the source; observer identity remains a separate receipt filter. Conflicting received reports remain visible."
+    },
+    {
+      "id": "oq26",
+      "family": "source_vs_observer",
+      "recipient_id": "recipient-red",
+      "query": "Fern harbor opening date",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-30T23:59:59.999999Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "local-press"
+      },
+      "gold_assertion_ids": [
+        "hx6c"
+      ],
+      "gold_evidence_ids": [
+        "hx6c-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "Perspective identifies the source; observer identity remains a separate receipt filter. Conflicting received reports remain visible."
+    },
+    {
+      "id": "oq27",
+      "family": "source_vs_observer",
+      "recipient_id": "municipal",
+      "query": "Fern harbor opening date",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-30T23:59:59.999999Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "municipal"
+      },
+      "gold_assertion_ids": [],
+      "gold_evidence_ids": [],
+      "gold_event_ids": [],
+      "rationale": "A source name is not an observer receipt identity."
+    },
+    {
+      "id": "oq28",
+      "family": "historical_valid_time",
+      "recipient_id": "recipient-red",
+      "query": "Glimmer rail service status",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-30T23:59:59.999999Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "jy1s"
+      ],
+      "gold_evidence_ids": [
+        "jy1s-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "Valid time is half-open and independent of observer receipt time."
+    },
+    {
+      "id": "oq29",
+      "family": "historical_valid_time",
+      "recipient_id": "recipient-red",
+      "query": "Glimmer rail service status",
+      "scope": {
+        "valid_at": "2026-04-11T23:59:59.999999Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-30T23:59:59.999999Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "jy1s"
+      ],
+      "gold_evidence_ids": [
+        "jy1s-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "Valid time is half-open and independent of observer receipt time."
+    },
+    {
+      "id": "oq30",
+      "family": "historical_valid_time",
+      "recipient_id": "recipient-red",
+      "query": "Glimmer rail service status",
+      "scope": {
+        "valid_at": "2026-04-12T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-30T23:59:59.999999Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [],
+      "gold_evidence_ids": [],
+      "gold_event_ids": [],
+      "rationale": "Valid time is half-open and independent of observer receipt time."
+    },
+    {
+      "id": "oq31",
+      "family": "historical_valid_time",
+      "recipient_id": "recipient-red",
+      "query": "Glimmer rail service status",
+      "scope": {
+        "valid_at": "2026-03-31T23:59:59.999999Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-30T23:59:59.999999Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [],
+      "gold_evidence_ids": [],
+      "gold_event_ids": [],
+      "rationale": "Valid time is half-open and independent of observer receipt time."
+    },
+    {
+      "id": "oq32",
+      "family": "globally_future_unrecorded",
+      "recipient_id": "recipient-red",
+      "query": "Hazel launch mission status",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-05-10T00:00:00.000000Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [],
+      "gold_evidence_ids": [],
+      "gold_event_ids": [],
+      "rationale": "Future global recording and observer receipt cannot leak into an earlier known snapshot."
+    },
+    {
+      "id": "oq33",
+      "family": "globally_future_unrecorded",
+      "recipient_id": "recipient-red",
+      "query": "Hazel launch mission status",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-05-02T00:00:00.000000Z",
+        "received_by": "2026-05-02T23:00:00.000000Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [],
+      "gold_evidence_ids": [],
+      "gold_event_ids": [],
+      "rationale": "Future global recording and observer receipt cannot leak into an earlier known snapshot."
+    },
+    {
+      "id": "oq34",
+      "family": "globally_future_unrecorded",
+      "recipient_id": "recipient-red",
+      "query": "Hazel launch mission status",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-05-03T00:00:00.000000Z",
+        "received_by": "2026-05-03T00:00:00.000000Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "kz0d"
+      ],
+      "gold_evidence_ids": [
+        "kz0d-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "Future global recording and observer receipt cannot leak into an earlier known snapshot."
+    },
+    {
+      "id": "oq35",
+      "family": "ordinary_scope_filter",
+      "recipient_id": "recipient-red",
+      "query": "Iris council chair",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-30T23:59:59.999999Z",
+        "world": "main",
+        "plane": "fact",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "lm2q"
+      ],
+      "gold_evidence_ids": [
+        "lm2q-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "Observer receipts compose with ordinary world, plane, perspective, and lexical scope filters."
+    },
+    {
+      "id": "oq36",
+      "family": "ordinary_scope_filter",
+      "recipient_id": "recipient-red",
+      "query": "Iris council chair",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-30T23:59:59.999999Z",
+        "world": "main",
+        "plane": "belief",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "mn7b"
+      ],
+      "gold_evidence_ids": [
+        "mn7b-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "Observer receipts compose with ordinary world, plane, perspective, and lexical scope filters."
+    },
+    {
+      "id": "oq37",
+      "family": "ordinary_scope_filter",
+      "recipient_id": "recipient-red",
+      "query": "Iris council chair",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-30T23:59:59.999999Z",
+        "world": "scenario-amber",
+        "plane": "fact",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "np5x"
+      ],
+      "gold_evidence_ids": [
+        "np5x-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "Observer receipts compose with ordinary world, plane, perspective, and lexical scope filters."
+    },
+    {
+      "id": "oq38",
+      "family": "ordinary_scope_filter",
+      "recipient_id": "recipient-red",
+      "query": "Iris council chair",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-30T23:59:59.999999Z",
+        "world": "main",
+        "plane": "fact",
+        "perspective": "registry"
+      },
+      "gold_assertion_ids": [
+        "lm2q"
+      ],
+      "gold_evidence_ids": [
+        "lm2q-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "Observer receipts compose with ordinary world, plane, perspective, and lexical scope filters."
+    },
+    {
+      "id": "oq39",
+      "family": "answer_only_in_delayed_passage",
+      "recipient_id": "recipient-red",
+      "query": "Juniper reservoir amber alert",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-15T23:59:59.999999Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [],
+      "gold_evidence_ids": [],
+      "gold_event_ids": [],
+      "rationale": "Received generic claim metadata contains none of the answer terms, so the answer remains empty before passage delivery."
+    },
+    {
+      "id": "oq40",
+      "family": "answer_only_in_delayed_passage",
+      "recipient_id": "recipient-red",
+      "query": "Juniper reservoir amber alert",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-16T08:00:00.000000Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "st3f"
+      ],
+      "gold_evidence_ids": [
+        "st3f-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "The delayed passage supplies the only answer-bearing text."
+    },
+    {
+      "id": "oq41",
+      "family": "evidence_without_assertion",
+      "recipient_id": "recipient-blue",
+      "query": "Kestrel ridge wind 40 knots",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-30T23:59:59.999999Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [],
+      "gold_evidence_ids": [
+        "tu6h-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "Evidence receipt exposes the passage, but no assertion receipt exposes the parent claim fields."
+    },
+    {
+      "id": "oq42",
+      "family": "historical_event_receipt",
+      "recipient_id": "recipient-red",
+      "query": "Larch terminal operator",
+      "scope": {
+        "valid_at": "2026-04-09T23:59:59.999999Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-30T23:59:59.999999Z",
+        "world": "main",
+        "plane": "fact",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "vw9a"
+      ],
+      "gold_evidence_ids": [
+        "vw9a-e1"
+      ],
+      "gold_event_ids": [
+        "ev-larch-supersede"
+      ],
+      "rationale": "After event receipt, the old assertion remains valid immediately before the event effective boundary."
+    },
+    {
+      "id": "oq43",
+      "family": "historical_event_receipt",
+      "recipient_id": "recipient-red",
+      "query": "Larch terminal operator",
+      "scope": {
+        "valid_at": "2026-04-10T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-14T23:59:59.999999Z",
+        "world": "main",
+        "plane": "fact",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "vw9a",
+        "wx2e"
+      ],
+      "gold_evidence_ids": [
+        "vw9a-e1",
+        "wx2e-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "Before event receipt, both received assertions remain available at the later valid time."
+    },
+    {
+      "id": "oq44",
+      "family": "historical_event_receipt",
+      "recipient_id": "recipient-red",
+      "query": "Larch terminal operator",
+      "scope": {
+        "valid_at": "2026-04-10T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-15T00:00:00.000000Z",
+        "world": "main",
+        "plane": "fact",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "wx2e"
+      ],
+      "gold_evidence_ids": [
+        "wx2e-e1"
+      ],
+      "gold_event_ids": [
+        "ev-larch-supersede"
+      ],
+      "rationale": "At event receipt, supersession applies from its earlier effective time."
+    },
+    {
+      "id": "oq45",
+      "family": "historical_event_receipt",
+      "recipient_id": "recipient-red",
+      "query": "Larch terminal operator",
+      "scope": {
+        "valid_at": "2026-04-09T00:00:00.000000Z",
+        "known_at": "2026-04-11T23:59:59.999999Z",
+        "received_by": "2026-04-30T23:59:59.999999Z",
+        "world": "main",
+        "plane": "fact",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "vw9a"
+      ],
+      "gold_evidence_ids": [
+        "vw9a-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "An event not yet globally recorded cannot affect an earlier known snapshot, even after later observer time."
+    },
+    {
+      "id": "oq46",
+      "family": "same_event_different_arrival",
+      "recipient_id": "recipient-red",
+      "query": "Aster ferry departure gate",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-02T08:59:59.999999Z",
+        "received_by": "2026-04-30T23:59:59.999999Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [],
+      "gold_evidence_ids": [],
+      "gold_event_ids": [],
+      "rationale": "An observer receipt cannot appear before its own audit recording cutoff."
+    },
+    {
+      "id": "oq47",
+      "family": "separate_passage_delivery",
+      "recipient_id": "recipient-red",
+      "query": "Brindle clinic open status",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-05T00:00:00.000000Z",
+        "received_by": "2026-04-30T23:59:59.999999Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "pb3m"
+      ],
+      "gold_evidence_ids": [],
+      "gold_event_ids": [],
+      "rationale": "The assertion is recorded and received while its evidence remains unavailable."
+    },
+    {
+      "id": "oq48",
+      "family": "delayed_correction",
+      "recipient_id": "recipient-blue",
+      "query": "Cobalt storm injured count",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-11T00:00:00.000000Z",
+        "received_by": "2026-04-30T23:59:59.999999Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "cx9r",
+        "dq2v"
+      ],
+      "gold_evidence_ids": [
+        "cx9r-e1",
+        "dq2v-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "Both conflicting reports remain until this observer receives the correction event."
+    },
+    {
+      "id": "oq49",
+      "family": "historical_valid_time",
+      "recipient_id": "recipient-red",
+      "query": "Glimmer rail service status",
+      "scope": {
+        "valid_at": "2026-04-06T00:00:00.000000Z",
+        "known_at": "2026-04-02T00:00:00.000000Z",
+        "received_by": "2026-04-02T00:00:00.000000Z",
+        "world": "main",
+        "plane": "report",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [
+        "jy1s"
+      ],
+      "gold_evidence_ids": [
+        "jy1s-e1"
+      ],
+      "gold_event_ids": [],
+      "rationale": "Historical valid time composes with exact receipt and recording boundaries."
+    },
+    {
+      "id": "oq50",
+      "family": "ordinary_scope_filter",
+      "recipient_id": "recipient-red",
+      "query": "Iris council chair",
+      "scope": {
+        "valid_at": "2026-04-01T00:00:00.000000Z",
+        "known_at": "2026-04-30T23:59:59.999999Z",
+        "received_by": "2026-04-30T23:59:59.999999Z",
+        "world": "scenario-amber",
+        "plane": "belief",
+        "perspective": "all"
+      },
+      "gold_assertion_ids": [],
+      "gold_evidence_ids": [],
+      "gold_event_ids": [],
+      "rationale": "Known subject-overlap distractors still fail when world and plane filters do not jointly match."
+    }
+  ]
+}

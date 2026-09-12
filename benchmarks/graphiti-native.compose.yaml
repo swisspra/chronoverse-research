@@ -1,0 +1,34 @@
+name: chronoverse-graphiti-native
+
+services:
+  neo4j:
+    # Same Neo4j version used by Graphiti v0.30.2's root Compose file, pinned
+    # to the Docker Hub multi-architecture manifest inspected on 2026-09-13.
+    image: neo4j:5.26.2@sha256:099b9f74968c123209972835417985ed2a1cc19c0422c0753a313e26a736c365
+    ports:
+      - "127.0.0.1:17474:7474"
+      - "127.0.0.1:17687:7687"
+    environment:
+      NEO4J_AUTH: "neo4j/${GRAPHITI_NEO4J_PASSWORD:?set GRAPHITI_NEO4J_PASSWORD}"
+      GRAPHITI_NEO4J_PASSWORD: "${GRAPHITI_NEO4J_PASSWORD:?set GRAPHITI_NEO4J_PASSWORD}"
+      NEO4J_server_memory_heap_initial__size: 512m
+      NEO4J_server_memory_heap_max__size: 1G
+      NEO4J_server_memory_pagecache_size: 512m
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          cypher-shell -a bolt://localhost:7687 -u neo4j
+          -p "$$GRAPHITI_NEO4J_PASSWORD" 'RETURN 1' >/dev/null 2>&1
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 30s
+    volumes:
+      - graphiti_native_neo4j_data:/data
+      - graphiti_native_neo4j_logs:/logs
+    restart: "no"
+
+volumes:
+  graphiti_native_neo4j_data:
+  graphiti_native_neo4j_logs:

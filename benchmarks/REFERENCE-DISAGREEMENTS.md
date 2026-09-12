@@ -1,0 +1,14 @@
+# Specification-only reference authoring and disagreements
+
+The initial reference and 12 gold cases were written by a fresh API conversation that received only `SPEC-TRI-TEMPORAL.md` and the exact brief recorded in `reference-v3-authorship.json`. It received no application code, existing fixture or retrieval result. The request used alias `gpt-5.6-terra`, but inspection of the saved response identifies `gemini-3-flash-preview`. The underlying provider weights are not independently attested; this is not attributed to a GPT model. This is separate initial authorship, followed by disclosed in-repository review, not an external audit certificate.
+
+| ID | Finding before scaled TEST scoring | Classification and resolution |
+| --- | --- | --- |
+| R1 | The initial author's own negative-timezone-offset case raised a TypeError. The parser appended `Z` to an already offset timestamp and returned malformed input on failure. | Reference defect. Sent error and specification-only feedback to the same author; final standard-library parsing fix was reviewed and applied by the coordinator. |
+| R2 | Initial status construction produced `correctd` and `retractd`. | Reference defect. Author revised to the specification's explicit status mapping. No application code was supplied. |
+| R3 | Initial reference read only top-level evidence; the revision invented `evidence_passages` instead of the specified nested `evidence`. | Reference input-schema defect. Coordinator corrected that field name; the reference retains top-level evidence support for its own independently authored test cases. |
+| R4 | Initial reference omitted duplicate/reference/timing validation. | Reference defect. Author added checks in a recorded revision. |
+| R5 | Author's revision appended a duplicate timezone suffix and formatted only milliseconds. | Reference defect. Coordinator applied UTC normalization and six-digit microsecond formatting using the standard library. The local edit is recorded in authorship metadata; it is not represented as wholly unreviewed external code. |
+| R6 | Original generator-family proportions list nine parent mechanisms while acceptance asks for at least twelve families and disjoint families across splits. | Protocol ambiguity. Predeclared 36 scenario variants per split, disjoint entities/variant names, with the nine shared parent mechanisms explicitly disclosed. This does not prove generalization to unseen mechanisms. |
+
+The 12 separate-author gold cases pass after these recorded fixes. Scaled template gold is still authored by this repository; separate reference validation of those labels is a check, not independent creation of all 500 questions. Any later projection or gold disagreements must be appended here before changing either implementation. No failed cases may be silently removed.

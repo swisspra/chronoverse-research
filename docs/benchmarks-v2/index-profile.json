@@ -1,0 +1,492 @@
+{
+  "queries": 5,
+  "wall_seconds_under_profiler": 8.350336541996512,
+  "note": "First five test queries selected without labels. Warm persisted documents/model; fresh query embeddings; cProfile adds overhead, so use attribution rather than capacity estimates. Nested cumulative times overlap.",
+  "rows": [
+    {
+      "file": "backend/chronoverse/semantic.py",
+      "line": 60,
+      "function": "score_texts",
+      "calls": 5,
+      "self_seconds": 0.000329794,
+      "cumulative_seconds": 3.7056190840000003
+    },
+    {
+      "file": "backend/chronoverse/store.py",
+      "line": 26,
+      "function": "_tokens",
+      "calls": 25920,
+      "self_seconds": 0.026977967000000002,
+      "cumulative_seconds": 2.7235399670000002
+    },
+    {
+      "file": "<redacted-local-path>",
+      "line": 209,
+      "function": "findall",
+      "calls": 25920,
+      "self_seconds": 0.022852227000000003,
+      "cumulative_seconds": 2.540264414
+    },
+    {
+      "file": "backend/chronoverse/semantic.py",
+      "line": 31,
+      "function": "_embed",
+      "calls": 5,
+      "self_seconds": 0.022141339000000003,
+      "cumulative_seconds": 2.5278492900000002
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'findall' of 're.Pattern' objects>",
+      "calls": 25920,
+      "self_seconds": 2.4575762770000003,
+      "cumulative_seconds": 2.4575762770000003
+    },
+    {
+      "file": "backend/chronoverse/store.py",
+      "line": 220,
+      "function": "_eligible",
+      "calls": 5,
+      "self_seconds": 0.09837156400000001,
+      "cumulative_seconds": 2.2144375430000003
+    },
+    {
+      "file": "backend/chronoverse/vector_index.py",
+      "line": 33,
+      "function": "score",
+      "calls": 5,
+      "self_seconds": 0.22443326100000002,
+      "cumulative_seconds": 1.176690333
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'execute' of 'sqlite3.Connection' objects>",
+      "calls": 26025,
+      "self_seconds": 0.7659898850000001,
+      "cumulative_seconds": 0.7659898850000001
+    },
+    {
+      "file": "<redacted-local-path>",
+      "line": 299,
+      "function": "loads",
+      "calls": 25915,
+      "self_seconds": 0.039922248,
+      "cumulative_seconds": 0.613234373
+    },
+    {
+      "file": "backend/chronoverse/store.py",
+      "line": 106,
+      "function": "_project",
+      "calls": 25915,
+      "self_seconds": 0.115960083,
+      "cumulative_seconds": 0.562463052
+    },
+    {
+      "file": "<redacted-local-path>",
+      "line": 333,
+      "function": "decode",
+      "calls": 25915,
+      "self_seconds": 0.139747788,
+      "cumulative_seconds": 0.5516132610000001
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'fetchall' of 'sqlite3.Cursor' objects>",
+      "calls": 26025,
+      "self_seconds": 0.48368948100000003,
+      "cumulative_seconds": 0.48368948100000003
+    },
+    {
+      "file": "backend/chronoverse/models.py",
+      "line": 13,
+      "function": "timestamp",
+      "calls": 51865,
+      "self_seconds": 0.11705386200000001,
+      "cumulative_seconds": 0.438016218
+    },
+    {
+      "file": "backend/chronoverse/store.py",
+      "line": 102,
+      "function": "_events",
+      "calls": 25915,
+      "self_seconds": 0.06898461900000001,
+      "cumulative_seconds": 0.415321942
+    },
+    {
+      "file": "<redacted-local-path>",
+      "line": 344,
+      "function": "raw_decode",
+      "calls": 25915,
+      "self_seconds": 0.33875974400000003,
+      "cumulative_seconds": 0.33875974400000003
+    },
+    {
+      "file": "backend/chronoverse/store.py",
+      "line": 47,
+      "function": "_entity_keys",
+      "calls": 48685,
+      "self_seconds": 0.29577865200000003,
+      "cumulative_seconds": 0.331159698
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'isoformat' of 'datetime.datetime' objects>",
+      "calls": 51865,
+      "self_seconds": 0.211422247,
+      "cumulative_seconds": 0.211422247
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.next>",
+      "calls": 15,
+      "self_seconds": 5.5416000000000006e-05,
+      "cumulative_seconds": 0.20539158500000002
+    },
+    {
+      "file": ".bench-venv/lib/python3.12/site-packages/fastembed/text/text_embedding.py",
+      "line": 165,
+      "function": "embed",
+      "calls": 10,
+      "self_seconds": 6.0960000000000006e-05,
+      "cumulative_seconds": 0.205350168
+    },
+    {
+      "file": ".bench-venv/lib/python3.12/site-packages/fastembed/text/onnx_embedding.py",
+      "line": 262,
+      "function": "embed",
+      "calls": 10,
+      "self_seconds": 5.1253000000000005e-05,
+      "cumulative_seconds": 0.20532375200000003
+    },
+    {
+      "file": ".bench-venv/lib/python3.12/site-packages/fastembed/text/onnx_text_model.py",
+      "line": 103,
+      "function": "_embed_documents",
+      "calls": 10,
+      "self_seconds": 0.00029304,
+      "cumulative_seconds": 0.20532070800000002
+    },
+    {
+      "file": ".bench-venv/lib/python3.12/site-packages/fastembed/text/onnx_text_model.py",
+      "line": 76,
+      "function": "onnx_embed",
+      "calls": 5,
+      "self_seconds": 0.000190334,
+      "cumulative_seconds": 0.20102587500000002
+    },
+    {
+      "file": ".bench-venv/lib/python3.12/site-packages/onnxruntime/capi/onnxruntime_inference_collection.py",
+      "line": 372,
+      "function": "run",
+      "calls": 5,
+      "self_seconds": 0.20073299600000002,
+      "cumulative_seconds": 0.200808582
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method _hashlib.openssl_sha256>",
+      "calls": 51930,
+      "self_seconds": 0.19348447000000002,
+      "cumulative_seconds": 0.19348447000000002
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'casefold' of 'str' objects>",
+      "calls": 123290,
+      "self_seconds": 0.19167863200000002,
+      "cumulative_seconds": 0.19167863200000002
+    },
+    {
+      "file": "backend/chronoverse/store.py",
+      "line": 43,
+      "function": "_text",
+      "calls": 25915,
+      "self_seconds": 0.054477495,
+      "cumulative_seconds": 0.084011784
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'all' of 'numpy.ndarray' objects>",
+      "calls": 25920,
+      "self_seconds": 0.020301199000000002,
+      "cumulative_seconds": 0.07308687
+    },
+    {
+      "file": ".bench-venv/lib/python3.12/site-packages/numpy/_core/shape_base.py",
+      "line": 378,
+      "function": "stack",
+      "calls": 105,
+      "self_seconds": 0.06657723800000001,
+      "cumulative_seconds": 0.07126162500000001
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.round>",
+      "calls": 68310,
+      "self_seconds": 0.064860228,
+      "cumulative_seconds": 0.064860228
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'hexdigest' of '_hashlib.HASH' objects>",
+      "calls": 51930,
+      "self_seconds": 0.06384279100000001,
+      "cumulative_seconds": 0.06384279100000001
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'replace' of 'str' objects>",
+      "calls": 103730,
+      "self_seconds": 0.06342141700000001,
+      "cumulative_seconds": 0.06342141700000001
+    },
+    {
+      "file": "<redacted-local-path>",
+      "line": 280,
+      "function": "_compile",
+      "calls": 25920,
+      "self_seconds": 0.033680398,
+      "cumulative_seconds": 0.059835910000000006
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'sort' of 'list' objects>",
+      "calls": 5,
+      "self_seconds": 0.026395192,
+      "cumulative_seconds": 0.056078332
+    },
+    {
+      "file": ".bench-venv/lib/python3.12/site-packages/numpy/_core/_methods.py",
+      "line": 64,
+      "function": "_all",
+      "calls": 25920,
+      "self_seconds": 0.012362454,
+      "cumulative_seconds": 0.052785671000000006
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'reduce' of 'numpy.ufunc' objects>",
+      "calls": 26040,
+      "self_seconds": 0.052226172,
+      "cumulative_seconds": 0.052226172
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'match' of 're.Pattern' objects>",
+      "calls": 51830,
+      "self_seconds": 0.04653518,
+      "cumulative_seconds": 0.04653518
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method numpy.frombuffer>",
+      "calls": 25915,
+      "self_seconds": 0.045456782,
+      "cumulative_seconds": 0.045456782
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'join' of 'str' objects>",
+      "calls": 26125,
+      "self_seconds": 0.036517028,
+      "cumulative_seconds": 0.040909118
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'encode' of 'str' objects>",
+      "calls": 26077,
+      "self_seconds": 0.035433781000000004,
+      "cumulative_seconds": 0.035433781000000004
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.sorted>",
+      "calls": 48685,
+      "self_seconds": 0.031945844,
+      "cumulative_seconds": 0.031945844
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.len>",
+      "calls": 126915,
+      "self_seconds": 0.029698631000000003,
+      "cumulative_seconds": 0.029698631000000003
+    },
+    {
+      "file": "backend/chronoverse/store.py",
+      "line": 267,
+      "function": "<lambda>",
+      "calls": 22770,
+      "self_seconds": 0.02968314,
+      "cumulative_seconds": 0.02968314
+    },
+    {
+      "file": ".bench-venv/lib/python3.12/site-packages/numpy/linalg/_linalg.py",
+      "line": 2598,
+      "function": "norm",
+      "calls": 115,
+      "self_seconds": 0.014909744,
+      "cumulative_seconds": 0.026688413
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'append' of 'list' objects>",
+      "calls": 71535,
+      "self_seconds": 0.024976110000000003,
+      "cumulative_seconds": 0.024976110000000003
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'astimezone' of 'datetime.datetime' objects>",
+      "calls": 51865,
+      "self_seconds": 0.023910152,
+      "cumulative_seconds": 0.023910152
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method fromisoformat>",
+      "calls": 51865,
+      "self_seconds": 0.022208540000000002,
+      "cumulative_seconds": 0.022208540000000002
+    },
+    {
+      "file": "<redacted-local-path>",
+      "line": 202,
+      "function": "__get__",
+      "calls": 25920,
+      "self_seconds": 0.01421179,
+      "cumulative_seconds": 0.021183242
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'end' of 're.Match' objects>",
+      "calls": 51830,
+      "self_seconds": 0.019292596000000002,
+      "cumulative_seconds": 0.019292596000000002
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.isinstance>",
+      "calls": 78125,
+      "self_seconds": 0.017936843,
+      "cumulative_seconds": 0.017936843
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'extend' of 'list' objects>",
+      "calls": 105,
+      "self_seconds": 0.005945195,
+      "cumulative_seconds": 0.017451873
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'update' of 'set' objects>",
+      "calls": 22770,
+      "self_seconds": 0.016706046000000002,
+      "cumulative_seconds": 0.016706046000000002
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'startswith' of 'str' objects>",
+      "calls": 25915,
+      "self_seconds": 0.015331041,
+      "cumulative_seconds": 0.015331041
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<method 'capitalize' of 'str' objects>",
+      "calls": 25915,
+      "self_seconds": 0.014072557000000001,
+      "cumulative_seconds": 0.014072557000000001
+    },
+    {
+      "file": "backend/chronoverse/vector_index.py",
+      "line": 79,
+      "function": "<genexpr>",
+      "calls": 26020,
+      "self_seconds": 0.011506678000000001,
+      "cumulative_seconds": 0.011506678000000001
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method builtins.max>",
+      "calls": 22770,
+      "self_seconds": 0.010042515,
+      "cumulative_seconds": 0.010042515
+    },
+    {
+      "file": "<redacted-local-path>",
+      "line": 1291,
+      "function": "value",
+      "calls": 25920,
+      "self_seconds": 0.006971452,
+      "cumulative_seconds": 0.006971452
+    },
+    {
+      "file": "~",
+      "line": 0,
+      "function": "<built-in method numpy.asanyarray>",
+      "calls": 25920,
+      "self_seconds": 0.004482351,
+      "cumulative_seconds": 0.004482351
+    },
+    {
+      "file": "backend/chronoverse/vector_index.py",
+      "line": 47,
+      "function": "<genexpr>",
+      "calls": 26020,
+      "self_seconds": 0.00439209,
+      "cumulative_seconds": 0.00439209
+    },
+    {
+      "file": ".bench-venv/lib/python3.12/site-packages/fastembed/text/pooled_normalized_embedding.py",
+      "line": 141,
+      "function": "_post_process_onnx_output",
+      "calls": 5,
+      "self_seconds": 4.9417000000000005e-05,
+      "cumulative_seconds": 0.003995542
+    },
+    {
+      "file": ".bench-venv/lib/python3.12/site-packages/fastembed/text/pooled_embedding.py",
+      "line": 98,
+      "function": "mean_pooling",
+      "calls": 5,
+      "self_seconds": 2.0042000000000002e-05,
+      "cumulative_seconds": 0.003667584
+    }
+  ],
+  "production_source_sha256": {
+    "store.py": "d9895964ef6f436e7d7d5c6f6b9bb6166fa6d8f01f02d15d6947ab211050197d",
+    "semantic.py": "58ff66f2e7f10a554eaeab69b938fe6ae5f2803214cebe189158574c1bb19a10",
+    "vector_index.py": "557027676dd906899c034622ea1f8cdc1175743a6112da2b491363a506c2ac6d"
+  }
+}

@@ -1,0 +1,453 @@
+{
+  "status": "completed",
+  "system": "native open-source Graphiti; not hosted Zep",
+  "graphiti_version": "0.30.2",
+  "graphiti_commit": "eaa4128681bc53487138a4bbc22d58336ebe70d2",
+  "smoke": {
+    "synthetic": true,
+    "episodes": 2,
+    "query": "What tea does the user prefer now?",
+    "answer_generation": false,
+    "phase_seconds": {
+      "build_indices": 0.24645441700704396,
+      "ingest_two_episodes": 52.8893097909895,
+      "native_search": 0.35553149999759626
+    },
+    "ingestion_result_counts": [
+      {
+        "nodes": 2,
+        "edges": 1
+      },
+      {
+        "nodes": 3,
+        "edges": 2
+      }
+    ],
+    "search_edges": [
+      {
+        "uuid": "6ac62953-3fe6-4e43-be33-eebfbab4153a",
+        "fact": "user now prefers oolong tea instead of sencha",
+        "source_node_uuid": "66b37e28-dc0e-43d3-9c73-abbbdf70747d",
+        "target_node_uuid": "3f7d519d-3c7f-42df-b31b-d7c5f20f0575",
+        "created_at": "2026-09-12T17:52:56.219831+00:00",
+        "expired_at": null,
+        "valid_at": "2026-09-12T11:00:00+00:00",
+        "invalid_at": null,
+        "reference_time": "2026-09-12T11:00:00+00:00",
+        "episodes": [
+          "ca86bc89-33a3-4833-8378-6a2b0c705c34"
+        ]
+      },
+      {
+        "uuid": "1f6c3fbd-edba-4155-9e8e-80387e0a5690",
+        "fact": "user's preferred tea is sencha",
+        "source_node_uuid": "66b37e28-dc0e-43d3-9c73-abbbdf70747d",
+        "target_node_uuid": "410ef42d-295e-406d-ad16-002cb366066a",
+        "created_at": "2026-09-12T17:52:21.318432+00:00",
+        "expired_at": "2026-09-12T17:53:04.202654+00:00",
+        "valid_at": "2026-09-12T10:00:00+00:00",
+        "invalid_at": "2026-09-12T11:00:00+00:00",
+        "reference_time": "2026-09-12T10:00:00+00:00",
+        "episodes": [
+          "f1af1ec7-0a74-4ccd-92a2-d408265b3c57"
+        ]
+      }
+    ]
+  },
+  "requests": {
+    "limits": {
+      "max_chat_requests": 24,
+      "max_embedding_requests": 64,
+      "max_input_token_upper_bound": 500000,
+      "max_output_token_ceiling": 98304
+    },
+    "reserved": {
+      "chat_requests": 7,
+      "embedding_requests": 14,
+      "input_token_upper_bound": 65664,
+      "output_token_ceiling": 53248
+    },
+    "actual_reported": {
+      "input_tokens": 10785,
+      "output_tokens": 5495
+    },
+    "uncertain_requests": 0,
+    "events": [
+      {
+        "ordinal": 1,
+        "operation": "chat",
+        "expected_model": "vertex_ai/gemini-3.8-flash",
+        "status": "completed",
+        "input_token_upper_bound": 10313,
+        "output_token_ceiling": 4096,
+        "response_model": "vertex_ai/gemini-3.8-flash",
+        "usage": {
+          "input_tokens": 2213,
+          "output_tokens": 319,
+          "total_tokens": 2532
+        },
+        "automatic_retry": false
+      },
+      {
+        "ordinal": 2,
+        "operation": "embedding",
+        "expected_model": "text-embedding-3-large",
+        "status": "completed",
+        "input_token_upper_bound": 1084,
+        "output_token_ceiling": 0,
+        "response_model": "text-embedding-3-large",
+        "usage": {
+          "input_tokens": 3,
+          "output_tokens": 0,
+          "total_tokens": 3
+        },
+        "automatic_retry": false
+      },
+      {
+        "ordinal": 3,
+        "operation": "chat",
+        "expected_model": "vertex_ai/gemini-3.8-flash",
+        "status": "completed",
+        "input_token_upper_bound": 8573,
+        "output_token_ceiling": 16384,
+        "response_model": "vertex_ai/gemini-3.8-flash",
+        "usage": {
+          "input_tokens": 1933,
+          "output_tokens": 265,
+          "total_tokens": 2198
+        },
+        "automatic_retry": false
+      },
+      {
+        "ordinal": 4,
+        "operation": "embedding",
+        "expected_model": "text-embedding-3-large",
+        "status": "completed",
+        "input_token_upper_bound": 1101,
+        "output_token_ceiling": 0,
+        "response_model": "text-embedding-3-large",
+        "usage": {
+          "input_tokens": 7,
+          "output_tokens": 0,
+          "total_tokens": 7
+        },
+        "automatic_retry": false
+      },
+      {
+        "ordinal": 5,
+        "operation": "embedding",
+        "expected_model": "text-embedding-3-large",
+        "status": "completed",
+        "input_token_upper_bound": 1101,
+        "output_token_ceiling": 0,
+        "response_model": "text-embedding-3-large",
+        "usage": {
+          "input_tokens": 7,
+          "output_tokens": 0,
+          "total_tokens": 7
+        },
+        "automatic_retry": false
+      },
+      {
+        "ordinal": 6,
+        "operation": "embedding",
+        "expected_model": "text-embedding-3-large",
+        "status": "completed",
+        "input_token_upper_bound": 1101,
+        "output_token_ceiling": 0,
+        "response_model": "text-embedding-3-large",
+        "usage": {
+          "input_tokens": 7,
+          "output_tokens": 0,
+          "total_tokens": 7
+        },
+        "automatic_retry": false
+      },
+      {
+        "ordinal": 7,
+        "operation": "embedding",
+        "expected_model": "text-embedding-3-large",
+        "status": "completed",
+        "input_token_upper_bound": 1101,
+        "output_token_ceiling": 0,
+        "response_model": "text-embedding-3-large",
+        "usage": {
+          "input_tokens": 7,
+          "output_tokens": 0,
+          "total_tokens": 7
+        },
+        "automatic_retry": false
+      },
+      {
+        "ordinal": 8,
+        "operation": "embedding",
+        "expected_model": "text-embedding-3-large",
+        "status": "completed",
+        "input_token_upper_bound": 1084,
+        "output_token_ceiling": 0,
+        "response_model": "text-embedding-3-large",
+        "usage": {
+          "input_tokens": 3,
+          "output_tokens": 0,
+          "total_tokens": 3
+        },
+        "automatic_retry": false
+      },
+      {
+        "ordinal": 9,
+        "operation": "chat",
+        "expected_model": "vertex_ai/gemini-3.8-flash",
+        "status": "completed",
+        "input_token_upper_bound": 10426,
+        "output_token_ceiling": 4096,
+        "response_model": "vertex_ai/gemini-3.8-flash",
+        "usage": {
+          "input_tokens": 2261,
+          "output_tokens": 252,
+          "total_tokens": 2513
+        },
+        "automatic_retry": false
+      },
+      {
+        "ordinal": 10,
+        "operation": "embedding",
+        "expected_model": "text-embedding-3-large",
+        "status": "completed",
+        "input_token_upper_bound": 1097,
+        "output_token_ceiling": 0,
+        "response_model": "text-embedding-3-large",
+        "usage": {
+          "input_tokens": 6,
+          "output_tokens": 0,
+          "total_tokens": 6
+        },
+        "automatic_retry": false
+      },
+      {
+        "ordinal": 11,
+        "operation": "chat",
+        "expected_model": "vertex_ai/gemini-3.8-flash",
+        "status": "completed",
+        "input_token_upper_bound": 5027,
+        "output_token_ceiling": 4096,
+        "response_model": "vertex_ai/gemini-3.8-flash",
+        "usage": {
+          "input_tokens": 999,
+          "output_tokens": 120,
+          "total_tokens": 1119
+        },
+        "automatic_retry": false
+      },
+      {
+        "ordinal": 12,
+        "operation": "chat",
+        "expected_model": "vertex_ai/gemini-3.8-flash",
+        "status": "completed",
+        "input_token_upper_bound": 8746,
+        "output_token_ceiling": 16384,
+        "response_model": "vertex_ai/gemini-3.8-flash",
+        "usage": {
+          "input_tokens": 1997,
+          "output_tokens": 4115,
+          "total_tokens": 6112
+        },
+        "automatic_retry": false
+      },
+      {
+        "ordinal": 13,
+        "operation": "embedding",
+        "expected_model": "text-embedding-3-large",
+        "status": "completed",
+        "input_token_upper_bound": 1116,
+        "output_token_ceiling": 0,
+        "response_model": "text-embedding-3-large",
+        "usage": {
+          "input_tokens": 11,
+          "output_tokens": 0,
+          "total_tokens": 11
+        },
+        "automatic_retry": false
+      },
+      {
+        "ordinal": 14,
+        "operation": "embedding",
+        "expected_model": "text-embedding-3-large",
+        "status": "completed",
+        "input_token_upper_bound": 1116,
+        "output_token_ceiling": 0,
+        "response_model": "text-embedding-3-large",
+        "usage": {
+          "input_tokens": 11,
+          "output_tokens": 0,
+          "total_tokens": 11
+        },
+        "automatic_retry": false
+      },
+      {
+        "ordinal": 15,
+        "operation": "embedding",
+        "expected_model": "text-embedding-3-large",
+        "status": "completed",
+        "input_token_upper_bound": 1116,
+        "output_token_ceiling": 0,
+        "response_model": "text-embedding-3-large",
+        "usage": {
+          "input_tokens": 11,
+          "output_tokens": 0,
+          "total_tokens": 11
+        },
+        "automatic_retry": false
+      },
+      {
+        "ordinal": 16,
+        "operation": "chat",
+        "expected_model": "vertex_ai/gemini-3.8-flash",
+        "status": "completed",
+        "input_token_upper_bound": 4301,
+        "output_token_ceiling": 4096,
+        "response_model": "vertex_ai/gemini-3.8-flash",
+        "usage": {
+          "input_tokens": 747,
+          "output_tokens": 180,
+          "total_tokens": 927
+        },
+        "automatic_retry": false
+      },
+      {
+        "ordinal": 17,
+        "operation": "chat",
+        "expected_model": "vertex_ai/gemini-3.8-flash",
+        "status": "completed",
+        "input_token_upper_bound": 2842,
+        "output_token_ceiling": 4096,
+        "response_model": "vertex_ai/gemini-3.8-flash",
+        "usage": {
+          "input_tokens": 530,
+          "output_tokens": 244,
+          "total_tokens": 774
+        },
+        "automatic_retry": false
+      },
+      {
+        "ordinal": 18,
+        "operation": "embedding",
+        "expected_model": "text-embedding-3-large",
+        "status": "completed",
+        "input_token_upper_bound": 1116,
+        "output_token_ceiling": 0,
+        "response_model": "text-embedding-3-large",
+        "usage": {
+          "input_tokens": 11,
+          "output_tokens": 0,
+          "total_tokens": 11
+        },
+        "automatic_retry": false
+      },
+      {
+        "ordinal": 19,
+        "operation": "embedding",
+        "expected_model": "text-embedding-3-large",
+        "status": "completed",
+        "input_token_upper_bound": 1101,
+        "output_token_ceiling": 0,
+        "response_model": "text-embedding-3-large",
+        "usage": {
+          "input_tokens": 7,
+          "output_tokens": 0,
+          "total_tokens": 7
+        },
+        "automatic_retry": false
+      },
+      {
+        "ordinal": 20,
+        "operation": "embedding",
+        "expected_model": "text-embedding-3-large",
+        "status": "completed",
+        "input_token_upper_bound": 1097,
+        "output_token_ceiling": 0,
+        "response_model": "text-embedding-3-large",
+        "usage": {
+          "input_tokens": 6,
+          "output_tokens": 0,
+          "total_tokens": 6
+        },
+        "automatic_retry": false
+      },
+      {
+        "ordinal": 21,
+        "operation": "embedding",
+        "expected_model": "text-embedding-3-large",
+        "status": "completed",
+        "input_token_upper_bound": 1105,
+        "output_token_ceiling": 0,
+        "response_model": "text-embedding-3-large",
+        "usage": {
+          "input_tokens": 8,
+          "output_tokens": 0,
+          "total_tokens": 8
+        },
+        "automatic_retry": false
+      }
+    ],
+    "content_or_credentials_recorded": false
+  },
+  "cost": {
+    "rates_usd_per_million_tokens": {
+      "chat_input": null,
+      "chat_output": null,
+      "embedding_input": null
+    },
+    "conservative_reserved_ceiling_usd": null,
+    "pricing_known": false,
+    "actual_estimated_usd": null,
+    "actual_usage_complete": true,
+    "method": "reserved input uses the higher chat/embedding input rate"
+  },
+  "retry_policy": {
+    "openai_sdk_max_retries": 0,
+    "graphiti_generic_client_retries": 0,
+    "uncertain_failure_action": "abort; never automatically replay"
+  },
+  "failure": null,
+  "close_failure_type": null,
+  "provenance": {
+    "git_commit": "3d5a74cee10df59b9677a0194c42854aba443a05",
+    "git_dirty": false,
+    "git_dirty_paths": [],
+    "git_describe": "round-3-as-published-25-g3d5a74c",
+    "python": "3.12.13",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "started_at": "2026-09-12T17:52:10.543434+00:00",
+    "load_average": [
+      4.94775390625,
+      3.97802734375,
+      3.73486328125
+    ],
+    "requirements_sha256": "ab68c71f60010c16ff1fc08a5b4c2cf49630473c028090cd95c9cc6b20cbe411",
+    "requirements_path": "benchmarks/requirements-graphiti-native.txt",
+    "package_freeze": "annotated-types==0.8.0\nanyio==4.15.1\nbackoff==2.2.1\ncertifi==2026.7.22\ncharset-normalizer==3.5.1\ndistro==1.9.0\ngraphiti-core==0.30.2\nh11==0.16.0\nhttpcore==1.0.9\nhttpx==0.28.1\nidna==3.19\njiter==0.17.0\nneo4j==6.3.0\nnumpy==2.5.3\nopenai==2.32.0\nposthog==7.53.0\npydantic==2.13.5\npydantic_core==2.46.5\npython-dotenv==1.2.3\npytz==2026.3.post1\nrequests==2.34.2\nsniffio==1.3.1\ntenacity==9.1.4\ntqdm==4.70.1\ntyping-inspection==0.4.4\ntyping_extensions==4.16.0\nurllib3==2.7.0\n",
+    "package_freeze_sha256": "00ab86862df2c20b92365bf39b9c3f262b45807d92b36ec0420deac556a0c26f",
+    "package_freeze_format": "importlib.metadata installed Name==Version snapshot; editable project code is covered by source_sha256",
+    "source_sha256": {
+      "benchmarks/graphiti_native_smoke.py": "0b2533152e816ff4bdffe9a627f9ae416a65a0c26d3999a0af8b2df4689d8ad1",
+      "benchmarks/graphiti_native_preflight.py": "e44988e3c3f4dd4ebfb13500683aeee7e25a9522b849a4fc017f0f13fd5be2f9",
+      "benchmarks/provenance.py": "de3bdcd069817dc6b5983a956d1b5e4dc945e372194c19d67fad68772f4d9b67",
+      "benchmarks/requirements-graphiti-native.txt": "ab68c71f60010c16ff1fc08a5b4c2cf49630473c028090cd95c9cc6b20cbe411"
+    },
+    "predictions_sha256": "c0b762d5bd3939951ef79c99e0c076ac4a2c382a3fab799709ea20e6156d4699",
+    "predictions_commit": "33a06b6792a6ec9c731d806f110e9ee4e4dbc6fa",
+    "predictions_committed_exactly": true,
+    "git_describe_at_write": "round-3-as-published-25-g3d5a74c",
+    "checked_at": "2026-09-12T17:53:05.931122+00:00",
+    "load_average_at_write": [
+      5.80712890625,
+      4.43505859375,
+      3.92236328125
+    ],
+    "allow_dirty": false,
+    "generated_outputs": [
+      "docs/benchmarks-next/graphiti-native-smoke.json"
+    ],
+    "generated_outputs_dirty_exemption": false
+  }
+}

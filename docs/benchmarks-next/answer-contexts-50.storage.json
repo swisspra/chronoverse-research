@@ -1,0 +1,9 @@
+{
+  "format": "lossless gzip, mtime0",
+  "sha256": "e807eacb8b49a965f1c53257a7903d9006f122b1cc7facc935e5798988e872ce",
+  "bytes": 114645615,
+  "compressed_file": "answer-contexts-50.jsonl.gz",
+  "compressed_sha256": "7e182e2d3543b6dbe2286cab85a4144925af6fb37f675f36840093a2c92f0ffa",
+  "compressed_bytes": 11780394,
+  "revision": "Frozen173c657 metadata-only rebuild; exact original ranks; prior artifacts under archive."
+}

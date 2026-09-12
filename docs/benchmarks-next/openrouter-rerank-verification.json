@@ -1,0 +1,11 @@
+{
+  "status": "verified",
+  "queries": 300,
+  "candidate_score_checks": 15000,
+  "methods": 3,
+  "cost_usd": "0.300",
+  "result_sha256": "f14084cb3983758b81fcfb2df5b58a7733ff36cd20a40135a089e530ca2a8a2b",
+  "frozen_commit": "3c2f1301ab5b206ceffce12d10c3f98fc0b919bb",
+  "verifier_sha256": "1d7b7a6751d7c66659e06e52b5faa5b3f7343b8cf7de7fbb023adc4dbcee76ba",
+  "scope": "Independent artifact/hash/rank/qrel/statistical/cost consistency; not independent provider billing authentication. No network or data writes."
+}

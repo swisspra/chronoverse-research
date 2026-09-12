@@ -1,0 +1,906 @@
+{
+  "selection_note": "Deterministic largest positive/negative nDCG differences; illustrative only, all test queries remain in aggregate scores.",
+  "scifact": [
+    {
+      "selection": "largest losses versus hybrid",
+      "query_id": "859",
+      "query": "Normal expression of RUNX1 has tumor-promoting effects.",
+      "metrics": {
+        "bm25": {
+          "ndcg@10": 0.6309297535714575,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr@10": 0.5,
+          "hit@1": 0.0
+        },
+        "dense_minilm": {
+          "ndcg@10": 0.5,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr@10": 0.3333333333333333,
+          "hit@1": 0.0
+        },
+        "rrf_bm25_dense": {
+          "ndcg@10": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr@10": 1.0,
+          "hit@1": 1.0
+        },
+        "chronoverse_store_optimized_cache": {
+          "ndcg@10": 0.0,
+          "recall@5": 0.0,
+          "recall@10": 0.0,
+          "mrr@10": 0.0,
+          "hit@1": 0.0
+        }
+      },
+      "rankings": {
+        "bm25": [
+          {
+            "id": "22049489",
+            "title": "The long non-coding RNA H19-derived miR-675 modulates human gastric cancer cell proliferation by targeting tumor suppressor RUNX1."
+          },
+          {
+            "id": "1982286",
+            "title": "Reverse engineering of TLX oncogenic transcriptional networks identifies RUNX1 as tumor suppressor in T-ALL"
+          },
+          {
+            "id": "25726838",
+            "title": "IL-17 promotes tumor development through the induction of tumor promoting microenvironments at tumor sites and myeloid-derived suppressor cells."
+          },
+          {
+            "id": "12315072",
+            "title": "Early chromatin unfolding by RUNX1: a molecular explanation for differential requirements during specification versus maintenance of the hematopoietic gene expression program."
+          },
+          {
+            "id": "13007205",
+            "title": "Intrinsic genetic characteristics determine tumor-modifying capacity of fibroblasts: matrix metalloproteinase-3 5A/5A genotype enhances breast cancer cell invasion"
+          },
+          {
+            "id": "16364639",
+            "title": "An Extensive MicroRNA-Mediated Network of RNA-RNA Interactions Regulates Established Oncogenic Pathways in Glioblastoma"
+          },
+          {
+            "id": "9076196",
+            "title": "GFI1 and GFI1B control the loss of endothelial identity of hemogenic endothelium during hematopoietic commitment."
+          },
+          {
+            "id": "5774746",
+            "title": "A link between inflammation and metastasis: serum amyloid A1 and A3 induce metastasis, and are targets of metastasis-inducing S100A4"
+          },
+          {
+            "id": "7228140",
+            "title": "Virtual microdissection identifies distinct tumor- and stroma-specific subtypes of pancreatic ductal adenocarcinoma"
+          },
+          {
+            "id": "13048272",
+            "title": "Combinatorial transcriptional control in blood stem/progenitor cells: genome-wide analysis of ten major transcriptional regulators."
+          }
+        ],
+        "dense_minilm": [
+          {
+            "id": "9076196",
+            "title": "GFI1 and GFI1B control the loss of endothelial identity of hemogenic endothelium during hematopoietic commitment."
+          },
+          {
+            "id": "4429118",
+            "title": "Cancer-related inflammation"
+          },
+          {
+            "id": "1982286",
+            "title": "Reverse engineering of TLX oncogenic transcriptional networks identifies RUNX1 as tumor suppressor in T-ALL"
+          },
+          {
+            "id": "57783564",
+            "title": "CDX2 inhibits the proliferation and tumor formation of colon cancer cells by suppressing Wnt/\u03b2-catenin signaling via transactivation of GSK-3\u03b2 and Axin2 expression"
+          },
+          {
+            "id": "6944800",
+            "title": "Microenvironmental regulation of tumor progression and metastasis"
+          },
+          {
+            "id": "33030946",
+            "title": "Hypoxia\u2010Sensitive COMMD1 Integrates Signaling and Cellular Metabolism in Human Macrophages and Suppresses Osteoclastogenesis"
+          },
+          {
+            "id": "15946643",
+            "title": "A CXCL1 Paracrine Network Links Cancer Chemoresistance and Metastasis"
+          },
+          {
+            "id": "825728",
+            "title": "Metastatic colonization requires the repression of the epithelial-mesenchymal transition inducer Prrx1."
+          },
+          {
+            "id": "33638477",
+            "title": "BCL9 promotes tumor progression by conferring enhanced proliferative, metastatic, and angiogenic properties to cancer cells."
+          },
+          {
+            "id": "12315072",
+            "title": "Early chromatin unfolding by RUNX1: a molecular explanation for differential requirements during specification versus maintenance of the hematopoietic gene expression program."
+          }
+        ],
+        "rrf_bm25_dense": [
+          {
+            "id": "1982286",
+            "title": "Reverse engineering of TLX oncogenic transcriptional networks identifies RUNX1 as tumor suppressor in T-ALL"
+          },
+          {
+            "id": "9076196",
+            "title": "GFI1 and GFI1B control the loss of endothelial identity of hemogenic endothelium during hematopoietic commitment."
+          },
+          {
+            "id": "12315072",
+            "title": "Early chromatin unfolding by RUNX1: a molecular explanation for differential requirements during specification versus maintenance of the hematopoietic gene expression program."
+          },
+          {
+            "id": "22049489",
+            "title": "The long non-coding RNA H19-derived miR-675 modulates human gastric cancer cell proliferation by targeting tumor suppressor RUNX1."
+          },
+          {
+            "id": "33638477",
+            "title": "BCL9 promotes tumor progression by conferring enhanced proliferative, metastatic, and angiogenic properties to cancer cells."
+          },
+          {
+            "id": "3559136",
+            "title": "Cancer-Associated Fibroblasts Neutralize the Anti-tumor Effect of CSF1 Receptor Blockade by Inducing PMN-MDSC Infiltration of Tumors."
+          },
+          {
+            "id": "4429118",
+            "title": "Cancer-related inflammation"
+          },
+          {
+            "id": "2030623",
+            "title": "Inhibition of fatty acid oxidation modulates immunosuppressive functions of myeloid-derived suppressor cells and enhances cancer therapies"
+          },
+          {
+            "id": "24974080",
+            "title": "Role of the vascular endothelial growth factor pathway in tumor growth and angiogenesis."
+          },
+          {
+            "id": "10812605",
+            "title": "Fibroblast heterogeneity in the cancer wound"
+          }
+        ],
+        "chronoverse_store_optimized_cache": [
+          {
+            "id": "2030623",
+            "title": "Inhibition of fatty acid oxidation modulates immunosuppressive functions of myeloid-derived suppressor cells and enhances cancer therapies"
+          },
+          {
+            "id": "3559136",
+            "title": "Cancer-Associated Fibroblasts Neutralize the Anti-tumor Effect of CSF1 Receptor Blockade by Inducing PMN-MDSC Infiltration of Tumors."
+          },
+          {
+            "id": "24974080",
+            "title": "Role of the vascular endothelial growth factor pathway in tumor growth and angiogenesis."
+          },
+          {
+            "id": "22049489",
+            "title": "The long non-coding RNA H19-derived miR-675 modulates human gastric cancer cell proliferation by targeting tumor suppressor RUNX1."
+          },
+          {
+            "id": "13007205",
+            "title": "Intrinsic genetic characteristics determine tumor-modifying capacity of fibroblasts: matrix metalloproteinase-3 5A/5A genotype enhances breast cancer cell invasion"
+          },
+          {
+            "id": "4429118",
+            "title": "Cancer-related inflammation"
+          },
+          {
+            "id": "57783564",
+            "title": "CDX2 inhibits the proliferation and tumor formation of colon cancer cells by suppressing Wnt/\u03b2-catenin signaling via transactivation of GSK-3\u03b2 and Axin2 expression"
+          },
+          {
+            "id": "24349992",
+            "title": "Oxidative stress in cancer associated fibroblasts drives tumor-stroma co-evolution: A new paradigm for understanding tumor metabolism, the field effect and genomic instability in cancer cells."
+          },
+          {
+            "id": "6944800",
+            "title": "Microenvironmental regulation of tumor progression and metastasis"
+          },
+          {
+            "id": "33638477",
+            "title": "BCL9 promotes tumor progression by conferring enhanced proliferative, metastatic, and angiogenic properties to cancer cells."
+          }
+        ]
+      }
+    },
+    {
+      "selection": "largest losses versus hybrid",
+      "query_id": "1303",
+      "query": "Tirasemtiv has no effect on fast-twitch muscle.",
+      "metrics": {
+        "bm25": {
+          "ndcg@10": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr@10": 1.0,
+          "hit@1": 1.0
+        },
+        "dense_minilm": {
+          "ndcg@10": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr@10": 1.0,
+          "hit@1": 1.0
+        },
+        "rrf_bm25_dense": {
+          "ndcg@10": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr@10": 1.0,
+          "hit@1": 1.0
+        },
+        "chronoverse_store_optimized_cache": {
+          "ndcg@10": 0.0,
+          "recall@5": 0.0,
+          "recall@10": 0.0,
+          "mrr@10": 0.0,
+          "hit@1": 0.0
+        }
+      },
+      "rankings": {
+        "bm25": [
+          {
+            "id": "12631697",
+            "title": "Activation of fast skeletal muscle troponin as a potential therapeutic approach for treating neuromuscular diseases"
+          },
+          {
+            "id": "40631095",
+            "title": "The Combination of Exercise and Respiratory Training Improves Respiratory Muscle Function in Pulmonary Hypertension"
+          },
+          {
+            "id": "43048059",
+            "title": "Hydrogen sulfide interacts with nitric oxide in the heart: possible involvement of nitroxyl."
+          },
+          {
+            "id": "34328964",
+            "title": "Intimal smooth muscle cell proliferation after balloon catheter injury. The role of basic fibroblast growth factor."
+          },
+          {
+            "id": "33554389",
+            "title": "The relationship of the level of cyclic amp to differentiation in primary cultures of chick muscle cells."
+          },
+          {
+            "id": "1507222",
+            "title": "Increased gene expression of brown fat uncoupling protein (UCP)1 and skeletal muscle UCP2 and UCP3 in MAC16-induced cancer cachexia."
+          },
+          {
+            "id": "5828251",
+            "title": "Notch signalling acts in postmitotic avian myogenic cells to control MyoD activation."
+          },
+          {
+            "id": "4164929",
+            "title": "The emerging role of skeletal muscle extracellular matrix remodelling in obesity and exercise."
+          },
+          {
+            "id": "31200375",
+            "title": "Gene expression in human skeletal muscle: alternative normalization method and effect of repeated biopsies"
+          },
+          {
+            "id": "52175065",
+            "title": "Acute and chronic exercise in patients with heart failure with reduced ejection fraction: evidence of structural and functional plasticity and intact angiogenic signalling in skeletal muscle"
+          }
+        ],
+        "dense_minilm": [
+          {
+            "id": "12631697",
+            "title": "Activation of fast skeletal muscle troponin as a potential therapeutic approach for treating neuromuscular diseases"
+          },
+          {
+            "id": "37037012",
+            "title": "Regional vascular resistance during exercise: role of cardiac afferents and exercise training."
+          },
+          {
+            "id": "2475059",
+            "title": "Once-a-day Concerta methylphenidate versus three-times-daily methylphenidate in laboratory and natural settings."
+          },
+          {
+            "id": "33554389",
+            "title": "The relationship of the level of cyclic amp to differentiation in primary cultures of chick muscle cells."
+          },
+          {
+            "id": "35271381",
+            "title": "Exercise training-induced adaptations in the coronary circulation."
+          },
+          {
+            "id": "17097974",
+            "title": "Exercise causes a tissue-specific change of NO production in the kidney and lung."
+          },
+          {
+            "id": "14584755",
+            "title": "Differences in the Clinical Effects of Angiotensin-Converting Enzyme Inhibitors and Angiotensin Receptor Blockers: A Critical Review of the Evidence"
+          },
+          {
+            "id": "6549091",
+            "title": "Permanent cardiac pacing versus medical treatment for the prevention of recurrent vasovagal syncope: a multicenter, randomized, controlled trial."
+          },
+          {
+            "id": "38752049",
+            "title": "A chart review of cyproheptadine for stimulant-induced weight loss."
+          },
+          {
+            "id": "25816994",
+            "title": "Renal outcomes with telmisartan, ramipril, or both, in people at high vascular risk (the ONTARGET study): a multicentre, randomised, double-blind, controlled trial."
+          }
+        ],
+        "rrf_bm25_dense": [
+          {
+            "id": "12631697",
+            "title": "Activation of fast skeletal muscle troponin as a potential therapeutic approach for treating neuromuscular diseases"
+          },
+          {
+            "id": "33554389",
+            "title": "The relationship of the level of cyclic amp to differentiation in primary cultures of chick muscle cells."
+          },
+          {
+            "id": "34328964",
+            "title": "Intimal smooth muscle cell proliferation after balloon catheter injury. The role of basic fibroblast growth factor."
+          },
+          {
+            "id": "25970224",
+            "title": "The selectivity of beta-adrenoceptor antagonists on isoprenaline-induced changes in heart rate, blood pressure, soleus muscle contractility and airways function in anaesthetized cats."
+          },
+          {
+            "id": "43566999",
+            "title": "Exercise blood flow patterns within and among rat muscles after training."
+          },
+          {
+            "id": "20418809",
+            "title": "Inducible depletion of satellite cells in adult, sedentary mice impairs muscle regenerative capacity without affecting sarcopenia"
+          },
+          {
+            "id": "35271381",
+            "title": "Exercise training-induced adaptations in the coronary circulation."
+          },
+          {
+            "id": "52175065",
+            "title": "Acute and chronic exercise in patients with heart failure with reduced ejection fraction: evidence of structural and functional plasticity and intact angiogenic signalling in skeletal muscle"
+          },
+          {
+            "id": "4653837",
+            "title": "MicroRNA-29 induces cellular senescence in aging muscle through multiple signaling pathways"
+          },
+          {
+            "id": "3285059",
+            "title": "Lack of Skeletal Muscle IL-6 Affects Pyruvate Dehydrogenase Activity at Rest and during Prolonged Exercise"
+          }
+        ],
+        "chronoverse_store_optimized_cache": [
+          {
+            "id": "5828251",
+            "title": "Notch signalling acts in postmitotic avian myogenic cells to control MyoD activation."
+          },
+          {
+            "id": "33554389",
+            "title": "The relationship of the level of cyclic amp to differentiation in primary cultures of chick muscle cells."
+          },
+          {
+            "id": "34328964",
+            "title": "Intimal smooth muscle cell proliferation after balloon catheter injury. The role of basic fibroblast growth factor."
+          },
+          {
+            "id": "43566999",
+            "title": "Exercise blood flow patterns within and among rat muscles after training."
+          },
+          {
+            "id": "25970224",
+            "title": "The selectivity of beta-adrenoceptor antagonists on isoprenaline-induced changes in heart rate, blood pressure, soleus muscle contractility and airways function in anaesthetized cats."
+          },
+          {
+            "id": "6397191",
+            "title": "Endothelin-1 is induced by cytokines in human vascular smooth muscle cells: evidence for intracellular endothelin-converting enzyme."
+          },
+          {
+            "id": "7708803",
+            "title": "Enhancement of hippocampal pyramidal cell excitability by the novel selective slow-afterhyperpolarization channel blocker 3-(triphenylmethylaminomethyl)pyridine (UCL2077)."
+          },
+          {
+            "id": "25822299",
+            "title": "Effects of exercise training of 8 weeks and detraining on plasma levels of endothelium-derived factors, endothelin-1 and nitric oxide, in healthy young humans."
+          },
+          {
+            "id": "6945285",
+            "title": "Bezafibrate in men with lower extremity arterial disease: randomised controlled trial."
+          },
+          {
+            "id": "37037012",
+            "title": "Regional vascular resistance during exercise: role of cardiac afferents and exercise training."
+          }
+        ]
+      }
+    },
+    {
+      "selection": "largest gains versus hybrid",
+      "query_id": "1279",
+      "query": "The treatment of cancer patients with co-IR blockade precipitates adverse autoimmune events.",
+      "metrics": {
+        "bm25": {
+          "ndcg@10": 0.0,
+          "recall@5": 0.0,
+          "recall@10": 0.0,
+          "mrr@10": 0.0,
+          "hit@1": 0.0
+        },
+        "dense_minilm": {
+          "ndcg@10": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr@10": 1.0,
+          "hit@1": 1.0
+        },
+        "rrf_bm25_dense": {
+          "ndcg@10": 0.0,
+          "recall@5": 0.0,
+          "recall@10": 0.0,
+          "mrr@10": 0.0,
+          "hit@1": 0.0
+        },
+        "chronoverse_store_optimized_cache": {
+          "ndcg@10": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr@10": 1.0,
+          "hit@1": 1.0
+        }
+      },
+      "rankings": {
+        "bm25": [
+          {
+            "id": "3825750",
+            "title": "Aliskiren combined with losartan in type 2 diabetes and nephropathy."
+          },
+          {
+            "id": "11254040",
+            "title": "Adverse Events Associated With the Treatment of Multidrug-Resistant Tuberculosis: A Systematic Review and Meta-analysis."
+          },
+          {
+            "id": "49432306",
+            "title": "Key questions about the checkpoint blockade-are microRNAs an answer?"
+          },
+          {
+            "id": "1454773",
+            "title": "In vitro characterization of the anti-PD-1 antibody nivolumab, BMS-936558, and in vivo toxicology in non-human primates."
+          },
+          {
+            "id": "5132358",
+            "title": "Chimeric antigen receptor-modified T cells for acute lymphoid leukemia."
+          },
+          {
+            "id": "308862",
+            "title": "Duration of androgen suppression in the treatment of prostate cancer."
+          },
+          {
+            "id": "24873253",
+            "title": "Clinical benefits and considerations of bisphosphonate treatment in metastatic bone disease."
+          },
+          {
+            "id": "15648443",
+            "title": "Long-term effect of aspirin on cancer risk in carriers of hereditary colorectal cancer: an analysis from the CAPP2 randomised controlled trial"
+          },
+          {
+            "id": "23599024",
+            "title": "Surfactant Protein B Suppresses Lung Cancer Progression by Inhibiting Secretory Phospholipase A2 Activity and Arachidonic Acid Production"
+          },
+          {
+            "id": "52180874",
+            "title": "Efficacy of PD-1 or PD-L1 inhibitors and PD-L1 expression status in cancer: meta-analysis"
+          }
+        ],
+        "dense_minilm": [
+          {
+            "id": "11335781",
+            "title": "Is autoimmunity the Achilles' heel of cancer immunotherapy?"
+          },
+          {
+            "id": "9909405",
+            "title": "ImmTACs for targeted cancer therapy: Why, what, how, and which."
+          },
+          {
+            "id": "10162553",
+            "title": "Ablation and regeneration of tolerance-inducing medullary thymic epithelial cells after cyclosporine, cyclophosphamide, and dexamethasone treatment."
+          },
+          {
+            "id": "24726600",
+            "title": "Combination cancer immunotherapies tailored to the tumour microenvironment"
+          },
+          {
+            "id": "4468861",
+            "title": "Radiation and Dual Checkpoint Blockade Activates Non-Redundant Immune Mechanisms in Cancer"
+          },
+          {
+            "id": "12705056",
+            "title": "Cytokines and anti-cytokine biologicals in autoimmunity: present and future."
+          },
+          {
+            "id": "1196631",
+            "title": "ImmTAC-redirected tumour cell killing induces and potentiates antigen cross-presentation by dendritic cells"
+          },
+          {
+            "id": "3935126",
+            "title": "Axicabtagene Ciloleucel CAR T\u2010Cell Therapy in Refractory Large B\u2010Cell Lymphoma"
+          },
+          {
+            "id": "22635278",
+            "title": "Immunotherapy of metastatic kidney cancer."
+          },
+          {
+            "id": "15405204",
+            "title": "Spontaneous autoimmunity prevented by thymic expression of a single self-antigen"
+          }
+        ],
+        "rrf_bm25_dense": [
+          {
+            "id": "3935126",
+            "title": "Axicabtagene Ciloleucel CAR T\u2010Cell Therapy in Refractory Large B\u2010Cell Lymphoma"
+          },
+          {
+            "id": "5132358",
+            "title": "Chimeric antigen receptor-modified T cells for acute lymphoid leukemia."
+          },
+          {
+            "id": "4468861",
+            "title": "Radiation and Dual Checkpoint Blockade Activates Non-Redundant Immune Mechanisms in Cancer"
+          },
+          {
+            "id": "25589047",
+            "title": "Treatment-related mortality with bevacizumab in cancer patients: a meta-analysis."
+          },
+          {
+            "id": "1900152",
+            "title": "Beyond melanoma: inhibiting the PD-1/PD-L1 pathway in solid tumors."
+          },
+          {
+            "id": "11254040",
+            "title": "Adverse Events Associated With the Treatment of Multidrug-Resistant Tuberculosis: A Systematic Review and Meta-analysis."
+          },
+          {
+            "id": "1454773",
+            "title": "In vitro characterization of the anti-PD-1 antibody nivolumab, BMS-936558, and in vivo toxicology in non-human primates."
+          },
+          {
+            "id": "52180874",
+            "title": "Efficacy of PD-1 or PD-L1 inhibitors and PD-L1 expression status in cancer: meta-analysis"
+          },
+          {
+            "id": "22635278",
+            "title": "Immunotherapy of metastatic kidney cancer."
+          },
+          {
+            "id": "49432306",
+            "title": "Key questions about the checkpoint blockade-are microRNAs an answer?"
+          }
+        ],
+        "chronoverse_store_optimized_cache": [
+          {
+            "id": "11335781",
+            "title": "Is autoimmunity the Achilles' heel of cancer immunotherapy?"
+          },
+          {
+            "id": "25589047",
+            "title": "Treatment-related mortality with bevacizumab in cancer patients: a meta-analysis."
+          },
+          {
+            "id": "5132358",
+            "title": "Chimeric antigen receptor-modified T cells for acute lymphoid leukemia."
+          },
+          {
+            "id": "1454773",
+            "title": "In vitro characterization of the anti-PD-1 antibody nivolumab, BMS-936558, and in vivo toxicology in non-human primates."
+          },
+          {
+            "id": "4468861",
+            "title": "Radiation and Dual Checkpoint Blockade Activates Non-Redundant Immune Mechanisms in Cancer"
+          },
+          {
+            "id": "3935126",
+            "title": "Axicabtagene Ciloleucel CAR T\u2010Cell Therapy in Refractory Large B\u2010Cell Lymphoma"
+          },
+          {
+            "id": "34025053",
+            "title": "Antithymocyte globulin treatment for patients with recent-onset type 1 diabetes: 12-month results of a randomised, placebo-controlled, phase 2 trial."
+          },
+          {
+            "id": "10162553",
+            "title": "Ablation and regeneration of tolerance-inducing medullary thymic epithelial cells after cyclosporine, cyclophosphamide, and dexamethasone treatment."
+          },
+          {
+            "id": "22635278",
+            "title": "Immunotherapy of metastatic kidney cancer."
+          },
+          {
+            "id": "19130782",
+            "title": "Interferon-Gamma at the Crossroads of Tumor Immune Surveillance or Evasion"
+          }
+        ]
+      }
+    },
+    {
+      "selection": "largest gains versus hybrid",
+      "query_id": "691",
+      "query": "Leukemia associated Rho guanine nucleotide-exchange factor represses RhoA in response to SRC activation.",
+      "metrics": {
+        "bm25": {
+          "ndcg@10": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr@10": 1.0,
+          "hit@1": 1.0
+        },
+        "dense_minilm": {
+          "ndcg@10": 0.0,
+          "recall@5": 0.0,
+          "recall@10": 0.0,
+          "mrr@10": 0.0,
+          "hit@1": 0.0
+        },
+        "rrf_bm25_dense": {
+          "ndcg@10": 0.3333333333333333,
+          "recall@5": 0.0,
+          "recall@10": 1.0,
+          "mrr@10": 0.14285714285714285,
+          "hit@1": 0.0
+        },
+        "chronoverse_store_optimized_cache": {
+          "ndcg@10": 1.0,
+          "recall@5": 1.0,
+          "recall@10": 1.0,
+          "mrr@10": 1.0,
+          "hit@1": 1.0
+        }
+      },
+      "rankings": {
+        "bm25": [
+          {
+            "id": "10991183",
+            "title": "The Rho GEFs LARG and GEF-H1 regulate the mechanical response to force on integrins"
+          },
+          {
+            "id": "14461101",
+            "title": "Tyrosine-Phosphorylated Caveolin-1 Blocks Bacterial Uptake by Inducing Vav2-RhoA-Mediated Cytoskeletal Rearrangements"
+          },
+          {
+            "id": "33076846",
+            "title": "Role of RhoA-specific guanine exchange factors in regulation of endomitosis in megakaryocytes."
+          },
+          {
+            "id": "24881307",
+            "title": "Control of synapse development and plasticity by Rho GTPase regulatory proteins"
+          },
+          {
+            "id": "8093935",
+            "title": "Structure of the Guanine Nucleotide Exchange Factor Sec7 Domain of Human Arno and Analysis of the Interaction with ARF GTPase"
+          },
+          {
+            "id": "14119470",
+            "title": "The Ran GTPase regulates mitotic spindle assembly"
+          },
+          {
+            "id": "10530014",
+            "title": "A point mutation in KINDLIN3 ablates activation of three integrin subfamilies in humans"
+          },
+          {
+            "id": "16511863",
+            "title": "Integrin-linked kinase expression is elevated in human cardiac hypertrophy and induces hypertrophy in transgenic mice."
+          },
+          {
+            "id": "23700330",
+            "title": "Angiopoietin-1 requires p190 RhoGAP to protect against vascular leakage in vivo."
+          },
+          {
+            "id": "7114092",
+            "title": "From bloodjournal.hematologylibrary.org at PENN STATE UNIVERSITY on February 23, 2013. For personal use only."
+          }
+        ],
+        "dense_minilm": [
+          {
+            "id": "29073751",
+            "title": "Redox-dependent downregulation of Rho by Rac"
+          },
+          {
+            "id": "33076846",
+            "title": "Role of RhoA-specific guanine exchange factors in regulation of endomitosis in megakaryocytes."
+          },
+          {
+            "id": "4373445",
+            "title": "Coordination of Rho GTPase activities during cell protrusion"
+          },
+          {
+            "id": "36345185",
+            "title": "Rho, Rac and Cdc42 regulate actin organization and cell adhesion in macrophages."
+          },
+          {
+            "id": "1127562",
+            "title": "Loss of the RhoGAP SRGP-1 promotes the clearance of dead and injured cells in Caenorhabditis elegans"
+          },
+          {
+            "id": "11887584",
+            "title": "c-Src and cooperating partners in human cancer."
+          },
+          {
+            "id": "28195565",
+            "title": "Regulation of the small GTP-binding protein Rho by cell adhesion and the cytoskeleton."
+          },
+          {
+            "id": "9460704",
+            "title": "Molecular pathways: induction of polyploidy as a novel differentiation therapy for leukemia."
+          },
+          {
+            "id": "9641846",
+            "title": "G1 arrest and differentiation can occur independently of Rb family function"
+          },
+          {
+            "id": "46617075",
+            "title": "Retinoblastoma regulatory pathway in lung cancer."
+          }
+        ],
+        "rrf_bm25_dense": [
+          {
+            "id": "33076846",
+            "title": "Role of RhoA-specific guanine exchange factors in regulation of endomitosis in megakaryocytes."
+          },
+          {
+            "id": "4373445",
+            "title": "Coordination of Rho GTPase activities during cell protrusion"
+          },
+          {
+            "id": "29073751",
+            "title": "Redox-dependent downregulation of Rho by Rac"
+          },
+          {
+            "id": "28195565",
+            "title": "Regulation of the small GTP-binding protein Rho by cell adhesion and the cytoskeleton."
+          },
+          {
+            "id": "8093935",
+            "title": "Structure of the Guanine Nucleotide Exchange Factor Sec7 Domain of Human Arno and Analysis of the Interaction with ARF GTPase"
+          },
+          {
+            "id": "36345185",
+            "title": "Rho, Rac and Cdc42 regulate actin organization and cell adhesion in macrophages."
+          },
+          {
+            "id": "10991183",
+            "title": "The Rho GEFs LARG and GEF-H1 regulate the mechanical response to force on integrins"
+          },
+          {
+            "id": "45764440",
+            "title": "Inhibition of SRC expression and activity inhibits tumor progression and metastasis of human pancreatic adenocarcinoma cells in an orthotopic nude mouse model."
+          },
+          {
+            "id": "18041692",
+            "title": "Rho GTPase signalling in cell migration"
+          },
+          {
+            "id": "10450725",
+            "title": "Pamidronate induced anti-proliferative, apoptotic, and anti-migratory effects in hepatocellular carcinoma."
+          }
+        ],
+        "chronoverse_store_optimized_cache": [
+          {
+            "id": "10991183",
+            "title": "The Rho GEFs LARG and GEF-H1 regulate the mechanical response to force on integrins"
+          },
+          {
+            "id": "33076846",
+            "title": "Role of RhoA-specific guanine exchange factors in regulation of endomitosis in megakaryocytes."
+          },
+          {
+            "id": "29073751",
+            "title": "Redox-dependent downregulation of Rho by Rac"
+          },
+          {
+            "id": "4373445",
+            "title": "Coordination of Rho GTPase activities during cell protrusion"
+          },
+          {
+            "id": "27306942",
+            "title": "Rearrangement of CRLF2 is associated with mutation of JAK kinases, alteration of IKZF1, Hispanic/Latino ethnicity, and a poor outcome in pediatric B-progenitor acute lymphoblastic leukemia."
+          },
+          {
+            "id": "8093935",
+            "title": "Structure of the Guanine Nucleotide Exchange Factor Sec7 Domain of Human Arno and Analysis of the Interaction with ARF GTPase"
+          },
+          {
+            "id": "24881307",
+            "title": "Control of synapse development and plasticity by Rho GTPase regulatory proteins"
+          },
+          {
+            "id": "4396105",
+            "title": "K-Ras(G12C) inhibitors allosterically control GTP affinity and effector interactions"
+          },
+          {
+            "id": "36345185",
+            "title": "Rho, Rac and Cdc42 regulate actin organization and cell adhesion in macrophages."
+          },
+          {
+            "id": "14119470",
+            "title": "The Ran GTPase regulates mitotic spindle assembly"
+          }
+        ]
+      }
+    }
+  ],
+  "temporal_empty": {
+    "id": "q-0007",
+    "category": "retraction_empty",
+    "query": "Asterbrook bridge collapse status",
+    "hl_keywords": [
+      "collapse status"
+    ],
+    "ll_keywords": [
+      "Asterbrook bridge"
+    ],
+    "scope": {
+      "valid_at": "2023-06-01",
+      "known_at": "2023-06-04",
+      "world": "main",
+      "plane": "report",
+      "perspective": "general"
+    },
+    "gold_assertion_ids": [],
+    "returned": [
+      {
+        "id": "t-17331",
+        "subject": "Asterbrook park",
+        "predicate": "reopened on",
+        "object": "June 6"
+      },
+      {
+        "id": "t-17981",
+        "subject": "Asterbrook park",
+        "predicate": "reopened on",
+        "object": "June 5"
+      },
+      {
+        "id": "t-11957",
+        "subject": "Asterbrook storm",
+        "predicate": "injured count",
+        "object": "2"
+      },
+      {
+        "id": "t-11503",
+        "subject": "Glimmerbay park",
+        "predicate": "reopened on",
+        "object": "June 6"
+      },
+      {
+        "id": "t-14150",
+        "subject": "Glimmerbay park",
+        "predicate": "reopened on",
+        "object": "June 5"
+      },
+      {
+        "id": "t-15173",
+        "subject": "Cobaltford park",
+        "predicate": "reopened on",
+        "object": "June 6"
+      },
+      {
+        "id": "t-14485",
+        "subject": "Cobaltford park",
+        "predicate": "reopened on",
+        "object": "June 5"
+      },
+      {
+        "id": "t-14993",
+        "subject": "Larchmere park",
+        "predicate": "reopened on",
+        "object": "June 6"
+      },
+      {
+        "id": "t-14413",
+        "subject": "Larchmere park",
+        "predicate": "reopened on",
+        "object": "June 5"
+      },
+      {
+        "id": "t-12452",
+        "subject": "Brindlehaven park",
+        "predicate": "reopened on",
+        "object": "June 5"
+      }
+    ]
+  }
+}

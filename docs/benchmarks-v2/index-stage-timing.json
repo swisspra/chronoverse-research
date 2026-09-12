@@ -1,0 +1,243 @@
+{
+  "queries": 10,
+  "timing_totals": {
+    "wall_seconds": 10.352952709996316,
+    "eligibility_and_projection": 2.5062518359918613,
+    "lexical_tokenization": 3.9542019455111586,
+    "query_embedding": 0.2949170829815557,
+    "vector_read_validate_and_cosine": 1.1968773350017727,
+    "other_query_work": 2.400704510509968
+  },
+  "vector_fraction": 0.1156073410676478,
+  "timing_means": {
+    "wall_seconds": 1.0352952709996317,
+    "eligibility_and_projection": 0.2506251835991861,
+    "lexical_tokenization": 0.3954201945511159,
+    "query_embedding": 0.02949170829815557,
+    "vector_read_validate_and_cosine": 0.11968773350017728,
+    "other_query_work": 0.24007045105099678
+  },
+  "per_query": [
+    {
+      "query_id": "1",
+      "wall_seconds": 0.9191854999953648,
+      "eligibility_and_projection": 0.25582916699931957,
+      "lexical_tokenization": 0.3673748794317362,
+      "query_embedding": 0.02487104100146098,
+      "vector_read_validate_and_cosine": 0.09681100000307197,
+      "ids": [
+        "31439189",
+        "43385013",
+        "32797183",
+        "16532419",
+        "22150633",
+        "6219790",
+        "121581019",
+        "4346436",
+        "803312",
+        "36637129"
+      ],
+      "other_query_work": 0.1742994125597761
+    },
+    {
+      "query_id": "3",
+      "wall_seconds": 0.9503639590038802,
+      "eligibility_and_projection": 0.19266383400099585,
+      "lexical_tokenization": 0.39125627300381893,
+      "query_embedding": 0.030545749999873806,
+      "vector_read_validate_and_cosine": 0.10162029200000688,
+      "ids": [
+        "14717500",
+        "4414547",
+        "19058822",
+        "2739854",
+        "23389795",
+        "10944947",
+        "13519661",
+        "4632921",
+        "32181055",
+        "25571386"
+      ],
+      "other_query_work": 0.23427780999918468
+    },
+    {
+      "query_id": "5",
+      "wall_seconds": 0.9120589999947697,
+      "eligibility_and_projection": 0.19949529099540086,
+      "lexical_tokenization": 0.33627973216061946,
+      "query_embedding": 0.025652999996964354,
+      "vector_read_validate_and_cosine": 0.10677708400180563,
+      "ids": [
+        "13734012",
+        "3413083",
+        "18617259",
+        "834336",
+        "7482674",
+        "4449524",
+        "12779444",
+        "5850219",
+        "11880289",
+        "42291761"
+      ],
+      "other_query_work": 0.24385389283997938
+    },
+    {
+      "query_id": "13",
+      "wall_seconds": 0.8509102089956286,
+      "eligibility_and_projection": 0.19551079200027743,
+      "lexical_tokenization": 0.3267101948877098,
+      "query_embedding": 0.02466570799879264,
+      "vector_read_validate_and_cosine": 0.09352591700007906,
+      "ids": [
+        "1263446",
+        "26611834",
+        "8842332",
+        "8529693",
+        "5487448",
+        "7662395",
+        "4791384",
+        "17626822",
+        "25182647",
+        "11748341"
+      ],
+      "other_query_work": 0.2104975971087697
+    },
+    {
+      "query_id": "36",
+      "wall_seconds": 0.9706482080000569,
+      "eligibility_and_projection": 0.21617008400062332,
+      "lexical_tokenization": 0.33661699157528346,
+      "query_embedding": 0.0324116249976214,
+      "vector_read_validate_and_cosine": 0.1350115419991198,
+      "ids": [
+        "18557974",
+        "33409100",
+        "16252863",
+        "21636085",
+        "37424881",
+        "42441846",
+        "11705328",
+        "24049225",
+        "3215494",
+        "18256197"
+      ],
+      "other_query_work": 0.2504379654274089
+    },
+    {
+      "query_id": "42",
+      "wall_seconds": 0.8576947920009843,
+      "eligibility_and_projection": 0.2229226249983185,
+      "lexical_tokenization": 0.316531708194816,
+      "query_embedding": 0.024022707999392878,
+      "vector_read_validate_and_cosine": 0.09636266699817497,
+      "ids": [
+        "18174210",
+        "40913091",
+        "27889071",
+        "10128893",
+        "4449524",
+        "45218443",
+        "6315132",
+        "27162821",
+        "18557974",
+        "39506601"
+      ],
+      "other_query_work": 0.19785508381028194
+    },
+    {
+      "query_id": "48",
+      "wall_seconds": 1.2188425830026972,
+      "eligibility_and_projection": 0.2958720840033493,
+      "lexical_tokenization": 0.48430338830075925,
+      "query_embedding": 0.02866683399770409,
+      "vector_read_validate_and_cosine": 0.1474327079995419,
+      "ids": [
+        "5850219",
+        "24512064",
+        "11349166",
+        "3716075",
+        "29955650",
+        "13322804",
+        "18914652",
+        "3413083",
+        "31560225",
+        "23267371"
+      ],
+      "other_query_work": 0.2625675687013427
+    },
+    {
+      "query_id": "49",
+      "wall_seconds": 0.9017327499968815,
+      "eligibility_and_projection": 0.21440449999499833,
+      "lexical_tokenization": 0.33273209715116536,
+      "query_embedding": 0.028813041993998922,
+      "vector_read_validate_and_cosine": 0.10240529199654702,
+      "ids": [
+        "5953485",
+        "5702790",
+        "1333643",
+        "18654430",
+        "13964633",
+        "86602746",
+        "15590539",
+        "18467982",
+        "2619579",
+        "7029990"
+      ],
+      "other_query_work": 0.22337781886017183
+    },
+    {
+      "query_id": "50",
+      "wall_seconds": 1.275602459005313,
+      "eligibility_and_projection": 0.36579216700192774,
+      "lexical_tokenization": 0.45969591476750793,
+      "query_embedding": 0.029836083995178342,
+      "vector_read_validate_and_cosine": 0.14226349999808008,
+      "ids": [
+        "12580014",
+        "39559521",
+        "18488986",
+        "17844478",
+        "25738896",
+        "22401720",
+        "1554348",
+        "42279414",
+        "29124963",
+        "4561402"
+      ],
+      "other_query_work": 0.2780147932426189
+    },
+    {
+      "query_id": "51",
+      "wall_seconds": 1.49591325000074,
+      "eligibility_and_projection": 0.3475912919966504,
+      "lexical_tokenization": 0.6027007660377421,
+      "query_embedding": 0.04543129100056831,
+      "vector_read_validate_and_cosine": 0.17466733300534543,
+      "ids": [
+        "45638119",
+        "8963413",
+        "32001951",
+        "21439640",
+        "17648235",
+        "29366489",
+        "24349992",
+        "24341590",
+        "24249915",
+        "13007205"
+      ],
+      "other_query_work": 0.32552256796043366
+    }
+  ],
+  "notes": [
+    "Same original production functions with perf_counter wrappers only; no scoring/eligibility replacement.",
+    "Model and persisted documents warmed; ten distinct queries encoded fresh. Wrapper overhead included; shared machine.",
+    "Stage totals are disjoint; vector stage includes all SQLite vector reads, checksum validation, reconstruction and cosine. This fraction is an upper bound on what eliminating that entire stage could save in this sample.",
+    "All ten instrumented top10 lists checked against the full production benchmark."
+  ],
+  "production_source_sha256": {
+    "store.py": "d9895964ef6f436e7d7d5c6f6b9bb6166fa6d8f01f02d15d6947ab211050197d",
+    "semantic.py": "58ff66f2e7f10a554eaeab69b938fe6ae5f2803214cebe189158574c1bb19a10",
+    "vector_index.py": "557027676dd906899c034622ea1f8cdc1175743a6112da2b491363a506c2ac6d"
+  }
+}

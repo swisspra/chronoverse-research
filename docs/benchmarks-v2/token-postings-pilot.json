@@ -1,0 +1,1578 @@
+{
+  "created_at": "2026-09-12T14:42:48.798864+00:00",
+  "experiment": "exact lexical token-postings pilot; not production",
+  "documents": 5183,
+  "queries": 300,
+  "document_score_equality_checks": 1554900,
+  "all_document_scores_exact": true,
+  "tokenizer": "chronoverse.store._tokens, unique tokens per document and query",
+  "posting_type": "array('I'), itemsize=4",
+  "cohort_key": "SHA-256 over length-prefixed UTF-8 owner, document count, then every exact text in order; hash recomputed in the hash-inclusive condition",
+  "cache_scope": "One cohort owned by one profile/Store concept. Old cohort discarded on any ordered-text change. No global cross-profile cache implemented.",
+  "memory": {
+    "instance_and_attribute_dict_bytes": 320,
+    "attribute_keys_and_scalar_values_bytes": 470,
+    "posting_dict_bytes": 961280,
+    "token_strings_bytes": 2006883,
+    "posting_arrays_bytes": 6443404,
+    "unique_tokens": 41124,
+    "posting_positions": 659691,
+    "total_bytes": 9412357,
+    "limit_bytes": 67108864,
+    "within_retained_cache_limit": true,
+    "cached_document_sets_deep_estimate_bytes": 73590795,
+    "caller_source_texts_estimate_bytes": 9971544,
+    "caveat": "sys.getsizeof retained-Python-object estimate includes posting dict, token strings, arrays, object attributes, owner and hash. Not RSS. Transient tokenizer/build/query objects and caller-owned source texts are outside retained admission cap."
+  },
+  "build_seconds": {
+    "postings_including_fingerprint": 2.731109167005343,
+    "cached_document_sets": 1.2255946660006884
+  },
+  "query_timings": {
+    "production_style_retokenize": {
+      "samples": 300,
+      "p50_seconds": 0.15514047899705474,
+      "p95_seconds": 0.9618560652001179,
+      "mean_seconds": 0.2754018577729342,
+      "total_seconds": 82.62055733188026
+    },
+    "cached_document_sets": {
+      "samples": 300,
+      "p50_seconds": 0.0022751459982828237,
+      "p95_seconds": 0.01757363399956376,
+      "mean_seconds": 0.004532703740042052,
+      "total_seconds": 1.3598111220126157
+    },
+    "postings_only": {
+      "samples": 300,
+      "p50_seconds": 0.0005544379964703694,
+      "p95_seconds": 0.002951883347122931,
+      "mean_seconds": 0.0008981449831480859,
+      "total_seconds": 0.26944349494442577
+    },
+    "postings_with_exact_text_hash": {
+      "samples": 300,
+      "p50_seconds": 0.005089936996228062,
+      "p95_seconds": 0.027681988149197423,
+      "mean_seconds": 0.008114032666586961,
+      "total_seconds": 2.434209799976088
+    }
+  },
+  "total_query_speedup_vs_hash_inclusive_postings": {
+    "production_style_retokenize": 33.94142827487256,
+    "cached_document_sets": 0.5586252762707526
+  },
+  "query_checks": [
+    {
+      "query_id": "1",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "3",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "5",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "13",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "36",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "42",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "48",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "49",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "50",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "51",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "53",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "54",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "56",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "57",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "70",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "72",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "75",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "94",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "99",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "100",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "113",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "115",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "118",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "124",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "127",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "128",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "129",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "130",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "132",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "133",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "137",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "141",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "142",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "143",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "146",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "148",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "163",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "171",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "179",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "180",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "183",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "185",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "198",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "208",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "212",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "213",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "216",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "217",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "218",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "219",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "230",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "232",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "233",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "236",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "237",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "238",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "239",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "248",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "249",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "261",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "268",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "269",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "274",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "275",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "279",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "294",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "295",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "298",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "300",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "303",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "312",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "314",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "324",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "327",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "338",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "343",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "350",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "354",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "362",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "380",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "384",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "385",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "386",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "388",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "399",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "410",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "411",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "415",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "421",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "431",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "436",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "437",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "439",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "440",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "443",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "452",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "475",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "478",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "491",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "501",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "502",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "507",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "508",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "513",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "514",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "516",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "517",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "521",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "525",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "527",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "528",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "532",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "533",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "535",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "536",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "539",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "540",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "544",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "549",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "551",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "552",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "554",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "560",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "569",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "575",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "577",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "578",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "587",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "589",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "593",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "597",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "598",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "613",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "619",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "623",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "628",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "636",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "637",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "641",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "644",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "649",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "659",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "660",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "674",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "684",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "690",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "691",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "692",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "693",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "700",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "702",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "715",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "716",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "718",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "721",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "723",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "727",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "728",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "729",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "742",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "743",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "744",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "756",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "759",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "768",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "770",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "775",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "781",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "783",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "784",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "785",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "793",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "800",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "805",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "808",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "811",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "814",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "820",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "821",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "823",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "830",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "831",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "832",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "834",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "837",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "839",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "845",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "847",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "852",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "859",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "870",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "873",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "879",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "880",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "882",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "887",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "903",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "904",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "907",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "911",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "913",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "914",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "921",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "922",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "936",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "956",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "957",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "960",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "967",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "971",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "975",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "982",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "985",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "993",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1012",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1014",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1019",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1020",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1021",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1024",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1029",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1041",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1049",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1062",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1086",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1088",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1089",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1099",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1100",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1104",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1107",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1110",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1121",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1130",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1132",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1137",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1140",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1144",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1146",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1150",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1163",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1175",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1179",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1180",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1185",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1187",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1191",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1194",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1196",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1197",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1199",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1200",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1202",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1204",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1207",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1213",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1216",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1221",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1225",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1226",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1232",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1241",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1245",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1259",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1262",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1266",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1270",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1271",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1272",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1273",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1274",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1278",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1279",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1280",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1281",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1282",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1290",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1292",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1298",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1303",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1316",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1319",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1320",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1332",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1335",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1336",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1337",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1339",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1344",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1352",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1359",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1362",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1363",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1368",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1370",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1379",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1382",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1385",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1389",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    },
+    {
+      "query_id": "1395",
+      "all_document_scores_exact": true,
+      "documents_compared": 5183
+    }
+  ],
+  "canonical_text_sha256": "34cafe42858e0df6aa8d2774707283f716a31861c65bdb325c5942bd0020317e",
+  "tokenizer_source_sha256": "5225aa19f4bdaaf8943bdd26c055bf2000c873bd1ae665c0faf9cf1845f1cecd",
+  "python": "3.12.13 (main, Jul 18 2026, 16:55:18) [Clang 22.1.3 ]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "limitations": [
+    "Lexical component only; no end-to-end Store latency claim.",
+    "300 sequential queries on a shared machine; no throughput or independent repetition claim.",
+    "The hash-inclusive condition accounts for exact-cohort validation, but production scope/event projection remains a separate cost.",
+    "Memory bound is retained cache admission, not a strict bound on transient build memory or process RSS.",
+    "Canonical text changes when evidence visibility changes; any future integration must rebuild or select the matching cohort."
+  ]
+}

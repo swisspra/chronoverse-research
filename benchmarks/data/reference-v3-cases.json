@@ -1,0 +1,586 @@
+[
+  {
+    "name": "delayedcorrection",
+    "ledger": {
+      "assertions": [
+        {
+          "id": "a1",
+          "world": "w1",
+          "plane": "p1",
+          "perspective": "v1",
+          "valid_from": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "assertion_id": "a1",
+          "type": "correct",
+          "effective_at": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-05T00:00:00Z"
+        }
+      ],
+      "receipts": [
+        {
+          "id": "r1",
+          "recipient_id": "u1",
+          "item_type": "assertion",
+          "item_id": "a1",
+          "received_at": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        },
+        {
+          "id": "r2",
+          "recipient_id": "u1",
+          "item_type": "event",
+          "item_id": "e1",
+          "received_at": "2023-01-05T00:00:00Z",
+          "recorded_at": "2023-01-05T00:00:00Z"
+        }
+      ]
+    },
+    "query": {
+      "recipient_id": "u1",
+      "scope": {
+        "valid_at": "2023-01-02T00:00:00Z",
+        "known_at": "2023-01-04T00:00:00Z",
+        "received_by": "2023-01-06T00:00:00Z",
+        "world": "w1",
+        "plane": "p1",
+        "perspective": "v1"
+      }
+    },
+    "expected_assertion_ids": [
+      "a1"
+    ],
+    "expected_evidence_ids": [],
+    "expected_event_ids": []
+  },
+  {
+    "name": "unseenretraction",
+    "ledger": {
+      "assertions": [
+        {
+          "id": "a1",
+          "world": "w1",
+          "plane": "p1",
+          "perspective": "v1",
+          "valid_from": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "assertion_id": "a1",
+          "type": "retract",
+          "effective_at": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        }
+      ],
+      "receipts": [
+        {
+          "id": "r1",
+          "recipient_id": "u1",
+          "item_type": "assertion",
+          "item_id": "a1",
+          "received_at": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        }
+      ]
+    },
+    "query": {
+      "recipient_id": "u1",
+      "scope": {
+        "valid_at": "2023-01-02T00:00:00Z",
+        "known_at": "2023-01-02T00:00:00Z",
+        "received_by": "2023-01-02T00:00:00Z",
+        "world": "w1",
+        "plane": "p1",
+        "perspective": "v1"
+      }
+    },
+    "expected_assertion_ids": [
+      "a1"
+    ],
+    "expected_evidence_ids": [],
+    "expected_event_ids": []
+  },
+  {
+    "name": "correction_before_replacement",
+    "ledger": {
+      "assertions": [
+        {
+          "id": "a1",
+          "world": "w1",
+          "plane": "p1",
+          "perspective": "v1",
+          "valid_from": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        },
+        {
+          "id": "a2",
+          "world": "w1",
+          "plane": "p1",
+          "perspective": "v1",
+          "valid_from": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-05T00:00:00Z"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "assertion_id": "a1",
+          "type": "correct",
+          "effective_at": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-02T00:00:00Z",
+          "replacement_id": "a2"
+        }
+      ],
+      "receipts": [
+        {
+          "id": "r1",
+          "recipient_id": "u1",
+          "item_type": "assertion",
+          "item_id": "a1",
+          "received_at": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        },
+        {
+          "id": "r2",
+          "recipient_id": "u1",
+          "item_type": "event",
+          "item_id": "e1",
+          "received_at": "2023-01-02T00:00:00Z",
+          "recorded_at": "2023-01-02T00:00:00Z"
+        }
+      ]
+    },
+    "query": {
+      "recipient_id": "u1",
+      "scope": {
+        "valid_at": "2023-01-03T00:00:00Z",
+        "known_at": "2023-01-03T00:00:00Z",
+        "received_by": "2023-01-03T00:00:00Z",
+        "world": "w1",
+        "plane": "p1",
+        "perspective": "v1"
+      }
+    },
+    "expected_assertion_ids": [],
+    "expected_evidence_ids": [],
+    "expected_event_ids": [
+      "e1"
+    ]
+  },
+  {
+    "name": "orphan_evidence",
+    "ledger": {
+      "assertions": [
+        {
+          "id": "a1",
+          "world": "w1",
+          "plane": "p1",
+          "perspective": "v1",
+          "valid_from": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "ev1",
+          "parent_id": "a1",
+          "text": "txt",
+          "title": "t",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        }
+      ],
+      "receipts": [
+        {
+          "id": "r1",
+          "recipient_id": "u1",
+          "item_type": "evidence",
+          "item_id": "ev1",
+          "received_at": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        }
+      ]
+    },
+    "query": {
+      "recipient_id": "u1",
+      "scope": {
+        "valid_at": "2023-01-02T00:00:00Z",
+        "known_at": "2023-01-02T00:00:00Z",
+        "received_by": "2023-01-02T00:00:00Z",
+        "world": "w1",
+        "plane": "p1",
+        "perspective": "v1"
+      }
+    },
+    "expected_assertion_ids": [],
+    "expected_evidence_ids": [
+      "ev1"
+    ],
+    "expected_event_ids": []
+  },
+  {
+    "name": "eventonly",
+    "ledger": {
+      "assertions": [
+        {
+          "id": "a1",
+          "world": "w1",
+          "plane": "p1",
+          "perspective": "v1",
+          "valid_from": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "assertion_id": "a1",
+          "type": "retract",
+          "effective_at": "2023-01-05T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        }
+      ],
+      "receipts": [
+        {
+          "id": "r1",
+          "recipient_id": "u1",
+          "item_type": "event",
+          "item_id": "e1",
+          "received_at": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        }
+      ]
+    },
+    "query": {
+      "recipient_id": "u1",
+      "scope": {
+        "valid_at": "2023-01-02T00:00:00Z",
+        "known_at": "2023-01-02T00:00:00Z",
+        "received_by": "2023-01-02T00:00:00Z",
+        "world": "w1",
+        "plane": "p1",
+        "perspective": "v1"
+      }
+    },
+    "expected_assertion_ids": [],
+    "expected_evidence_ids": [],
+    "expected_event_ids": [
+      "e1"
+    ]
+  },
+  {
+    "name": "inclusive_knowledge_receipt",
+    "ledger": {
+      "assertions": [
+        {
+          "id": "a1",
+          "world": "w1",
+          "plane": "p1",
+          "perspective": "v1",
+          "valid_from": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-02T00:00:00Z"
+        }
+      ],
+      "receipts": [
+        {
+          "id": "r1",
+          "recipient_id": "u1",
+          "item_type": "assertion",
+          "item_id": "a1",
+          "received_at": "2023-01-02T00:00:00Z",
+          "recorded_at": "2023-01-02T00:00:00Z"
+        }
+      ]
+    },
+    "query": {
+      "recipient_id": "u1",
+      "scope": {
+        "valid_at": "2023-01-01T00:00:00Z",
+        "known_at": "2023-01-02T00:00:00Z",
+        "received_by": "2023-01-02T00:00:00Z",
+        "world": "w1",
+        "plane": "p1",
+        "perspective": "v1"
+      }
+    },
+    "expected_assertion_ids": [
+      "a1"
+    ],
+    "expected_evidence_ids": [],
+    "expected_event_ids": []
+  },
+  {
+    "name": "exclusive_validend",
+    "ledger": {
+      "assertions": [
+        {
+          "id": "a1",
+          "world": "w1",
+          "plane": "p1",
+          "perspective": "v1",
+          "valid_from": "2023-01-01T00:00:00Z",
+          "valid_to": "2023-01-02T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        }
+      ],
+      "receipts": [
+        {
+          "id": "r1",
+          "recipient_id": "u1",
+          "item_type": "assertion",
+          "item_id": "a1",
+          "received_at": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        }
+      ]
+    },
+    "query": {
+      "recipient_id": "u1",
+      "scope": {
+        "valid_at": "2023-01-02T00:00:00Z",
+        "known_at": "2023-01-02T00:00:00Z",
+        "received_by": "2023-01-02T00:00:00Z",
+        "world": "w1",
+        "plane": "p1",
+        "perspective": "v1"
+      }
+    },
+    "expected_assertion_ids": [],
+    "expected_evidence_ids": [],
+    "expected_event_ids": []
+  },
+  {
+    "name": "timezoneoffset",
+    "ledger": {
+      "assertions": [
+        {
+          "id": "a1",
+          "world": "w1",
+          "plane": "p1",
+          "perspective": "v1",
+          "valid_from": "2023-01-01T05:00:00-05:00",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        }
+      ],
+      "receipts": [
+        {
+          "id": "r1",
+          "recipient_id": "u1",
+          "item_type": "assertion",
+          "item_id": "a1",
+          "received_at": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        }
+      ]
+    },
+    "query": {
+      "recipient_id": "u1",
+      "scope": {
+        "valid_at": "2023-01-01T10:00:00Z",
+        "known_at": "2023-01-01T10:00:00Z",
+        "received_by": "2023-01-01T10:00:00Z",
+        "world": "w1",
+        "plane": "p1",
+        "perspective": "v1"
+      }
+    },
+    "expected_assertion_ids": [
+      "a1"
+    ],
+    "expected_evidence_ids": [],
+    "expected_event_ids": []
+  },
+  {
+    "name": "duplicate_receipt",
+    "ledger": {
+      "assertions": [
+        {
+          "id": "a1",
+          "world": "w1",
+          "plane": "p1",
+          "perspective": "v1",
+          "valid_from": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        }
+      ],
+      "receipts": [
+        {
+          "id": "r1",
+          "recipient_id": "u1",
+          "item_type": "assertion",
+          "item_id": "a1",
+          "received_at": "2023-01-10T00:00:00Z",
+          "recorded_at": "2023-01-10T00:00:00Z"
+        },
+        {
+          "id": "r2",
+          "recipient_id": "u1",
+          "item_type": "assertion",
+          "item_id": "a1",
+          "received_at": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        }
+      ]
+    },
+    "query": {
+      "recipient_id": "u1",
+      "scope": {
+        "valid_at": "2023-01-02T00:00:00Z",
+        "known_at": "2023-01-02T00:00:00Z",
+        "received_by": "2023-01-02T00:00:00Z",
+        "world": "w1",
+        "plane": "p1",
+        "perspective": "v1"
+      }
+    },
+    "expected_assertion_ids": [
+      "a1"
+    ],
+    "expected_evidence_ids": [],
+    "expected_event_ids": []
+  },
+  {
+    "name": "future_source",
+    "ledger": {
+      "assertions": [
+        {
+          "id": "a1",
+          "world": "w1",
+          "plane": "p1",
+          "perspective": "v1",
+          "valid_from": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-10T00:00:00Z"
+        }
+      ],
+      "receipts": [
+        {
+          "id": "r1",
+          "recipient_id": "u1",
+          "item_type": "assertion",
+          "item_id": "a1",
+          "received_at": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        }
+      ]
+    },
+    "query": {
+      "recipient_id": "u1",
+      "scope": {
+        "valid_at": "2023-01-02T00:00:00Z",
+        "known_at": "2023-01-05T00:00:00Z",
+        "received_by": "2023-01-05T00:00:00Z",
+        "world": "w1",
+        "plane": "p1",
+        "perspective": "v1"
+      }
+    },
+    "expected_assertion_ids": [],
+    "expected_evidence_ids": [],
+    "expected_event_ids": []
+  },
+  {
+    "name": "wrongrecipient",
+    "ledger": {
+      "assertions": [
+        {
+          "id": "a1",
+          "world": "w1",
+          "plane": "p1",
+          "perspective": "v1",
+          "valid_from": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        }
+      ],
+      "receipts": [
+        {
+          "id": "r1",
+          "recipient_id": "u2",
+          "item_type": "assertion",
+          "item_id": "a1",
+          "received_at": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        }
+      ]
+    },
+    "query": {
+      "recipient_id": "u1",
+      "scope": {
+        "valid_at": "2023-01-02T00:00:00Z",
+        "known_at": "2023-01-02T00:00:00Z",
+        "received_by": "2023-01-02T00:00:00Z",
+        "world": "w1",
+        "plane": "p1",
+        "perspective": "v1"
+      }
+    },
+    "expected_assertion_ids": [],
+    "expected_evidence_ids": [],
+    "expected_event_ids": []
+  },
+  {
+    "name": "future_supersede",
+    "ledger": {
+      "assertions": [
+        {
+          "id": "a1",
+          "world": "w1",
+          "plane": "p1",
+          "perspective": "v1",
+          "valid_from": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "assertion_id": "a1",
+          "type": "supersede",
+          "effective_at": "2023-01-10T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        }
+      ],
+      "receipts": [
+        {
+          "id": "r1",
+          "recipient_id": "u1",
+          "item_type": "assertion",
+          "item_id": "a1",
+          "received_at": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        },
+        {
+          "id": "r2",
+          "recipient_id": "u1",
+          "item_type": "event",
+          "item_id": "e1",
+          "received_at": "2023-01-01T00:00:00Z",
+          "recorded_at": "2023-01-01T00:00:00Z"
+        }
+      ]
+    },
+    "query": {
+      "recipient_id": "u1",
+      "scope": {
+        "valid_at": "2023-01-05T00:00:00Z",
+        "known_at": "2023-01-05T00:00:00Z",
+        "received_by": "2023-01-05T00:00:00Z",
+        "world": "w1",
+        "plane": "p1",
+        "perspective": "v1"
+      }
+    },
+    "expected_assertion_ids": [
+      "a1"
+    ],
+    "expected_evidence_ids": [],
+    "expected_event_ids": [
+      "e1"
+    ]
+  }
+]

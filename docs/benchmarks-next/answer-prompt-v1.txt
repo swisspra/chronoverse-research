@@ -1,0 +1,13 @@
+Answer strictly from the supplied context.
+Question: {question}
+Recipient: {recipient_id}
+Valid time: {valid_at}
+Ledger cutoff: {known_at}
+Delivery cutoff: {received_by}
+Context (each item has an ID):
+{context}
+
+Rules:
+- Use only the supplied context. Do not use outside knowledge.
+- If the context does not support an answer, reply exactly: INSUFFICIENT EVIDENCE
+- Otherwise answer in one short sentence, then on a new line write CITATIONS: followed by a JSON array of the supporting context IDs.

@@ -1,0 +1,619 @@
+{
+  "status": "complete",
+  "experiment": "FANToM presence-rule adapter diagnostic, not official leaderboard or passage retrieval evaluation",
+  "inventory": {
+    "counts": {
+      "sets": 870,
+      "conversations": 253,
+      "parts": 368,
+      "factQA": 870,
+      "beliefQAs": 1540,
+      "infoAccessibilityQA_list": 870,
+      "answerabilityQA_list": 870,
+      "infoAccessibilityQAs_binary": 3571,
+      "answerabilityQAs_binary": 3571
+    },
+    "presence_mapping": {
+      "mapped_sets": 869,
+      "unmapped_sets": 1,
+      "rules": {
+        "initial_departure_then_next_own_turn": 241,
+        "first_turn_arrival": 629
+      },
+      "warning_counts": {
+        "short_window_alignment_not_unique": 1
+      }
+    },
+    "not_scored_types": {
+      "factQA": {
+        "count": 870,
+        "reason": "Free-form fact answer requires an answerer; no official passage qrels."
+      },
+      "beliefQAs": {
+        "count": 1540,
+        "reason": "Belief reasoning and generated multiple-choice prompts require an answerer; presence is not belief."
+      }
+    }
+  },
+  "upstream_commit": "1cae6fa30f5ba04ca0fff5f5716b5ba7055e2e85",
+  "source_sha256": {
+    "dataset_json": "6a898e95df9fa48608232e45a8eb8f531e4d633aaf1a023a2b910991a6bc7c6e",
+    "official_archive": "1d08dfa0ea474c7f83b9bc7e3a7b466eab25194043489dd618b4c5223e1253a4",
+    "official_evaluator": "42c9bc24c0b64c031a3b7513af23ee05337b134b7482230bf53a03fbbc15f390",
+    "adapter": "3d9ce9293d0054851edfa6f25466fde1a9207d3319222afca29249bd9eb2011a",
+    "protocol": "be8d88e0cf5ccb7b18c115d57d366bceb5bc3a00fdeea36adf27b2f9fa72ea65"
+  },
+  "model": null,
+  "paid_api_calls": 0,
+  "provenance": {
+    "git_commit": "7c2eed48adbf219c7dd544955c7ac15029c9def4",
+    "git_dirty": false,
+    "git_dirty_paths": [],
+    "git_describe": "round-3-as-published-5-g7c2eed4",
+    "python": "3.12.13",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "started_at": "2026-09-12T16:40:58.467252+00:00",
+    "load_average": [
+      2.4775390625,
+      3.109375,
+      3.14013671875
+    ],
+    "requirements_sha256": "f90acc4c0e560436929e429ea9364f6c7202086a0d3a2bf9bdf5555e0e132963",
+    "requirements_path": null,
+    "package_freeze": "PyJWT==2.14.0\nPyYAML==6.0.3\nPygments==2.21.0\nannotated-doc==0.0.5\nannotated-types==0.8.0\nanyio==4.15.1\nattrs==26.1.0\ncertifi==2026.7.22\ncffi==2.1.1\ncharset-normalizer==3.5.1\nchronoverse==0.1.0\nclick==8.5.0\ncryptography==50.0.1\nfastapi==0.141.1\nfastembed==0.8.0\nfilelock==3.32.6\nflatbuffers==25.12.19\nfsspec==2026.7.0\nh11==0.16.0\nhf-xet==1.6.0\nhttpcore2==2.12.0\nhttpcore==1.0.9\nhttpx2==2.12.0\nhttpx==0.28.1\nhuggingface_hub==1.31.0\nidna==3.19\niniconfig==2.3.0\njsonschema-specifications==2025.9.1\njsonschema==4.26.0\nloguru==0.7.3\nmcp-types==2.2.0\nmcp==2.2.0\nmmh3==5.3.0\nnumpy==2.5.3\nonnxruntime==1.30.0\nopentelemetry-api==1.44.0\npackaging==26.3\npillow==12.3.0\npluggy==1.6.0\nprotobuf==7.36.1\npy_rust_stemmers==0.1.8\npycparser==3.0\npydantic==2.13.5\npydantic_core==2.46.5\npypdf==6.18.1\npytest==9.1.1\npython-multipart==0.0.32\nrank-bm25==0.2.2\nreferencing==0.37.0\nrequests==2.34.2\nrpds-py==2026.6.3\nsse-starlette==3.4.11\nstarlette==1.6.0\ntokenizers==0.23.2\ntqdm==4.70.1\ntruststore==0.10.4\ntyping-inspection==0.4.4\ntyping_extensions==4.16.0\nurllib3==2.7.0\nuvicorn==0.52.4\n",
+    "package_freeze_sha256": "f90acc4c0e560436929e429ea9364f6c7202086a0d3a2bf9bdf5555e0e132963",
+    "package_freeze_format": "importlib.metadata installed Name==Version snapshot; editable project code is covered by source_sha256",
+    "source_sha256": {
+      "backend/chronoverse/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "backend/chronoverse/api.py": "1bdbb79b5e31feca57657850c48fc804e768ee30803c31eaec71618122431da1",
+      "backend/chronoverse/imports.py": "5c49767d6f8dc7c1d871121c4aded1c5ba8c922b5e11cc2e7a71f697c3bfdef1",
+      "backend/chronoverse/lexical_index.py": "ef011561de8c3fa8775cae6daa7b9f6fc42a8cf89679fcfc4d237c8eebdf7149",
+      "backend/chronoverse/mcp_server.py": "defe4aca29f65724bf8930d75a804a6aad3718965818dcea03ce50a5afb0f90b",
+      "backend/chronoverse/models.py": "fd2ef45f3ca3e4178b3c641e568a0491439a4c3332a8292405c3fe4359ef4b6d",
+      "backend/chronoverse/pdf_extract.py": "8b92c1ab0555c4b4e7c07b05998d33ce080991b93e05b2f6a6116152722ab4d6",
+      "backend/chronoverse/profiles.py": "1c8fcfd6f02f8c7ce0090936a9590bfc840f9de9d72547d27992f08b686cd41f",
+      "backend/chronoverse/seed.py": "84d36078e5e86376d16617c08b12c8519820cf70b7f8d8faaa07f023a818042f",
+      "backend/chronoverse/semantic.py": "58ff66f2e7f10a554eaeab69b938fe6ae5f2803214cebe189158574c1bb19a10",
+      "backend/chronoverse/store.py": "70992a01ee8761b043026b685de2d6798e5184d9f034ea9fc3030fbda1867138",
+      "backend/chronoverse/vector_index.py": "557027676dd906899c034622ea1f8cdc1175743a6112da2b491363a506c2ac6d",
+      "backend/pyproject.toml": "596366ae4d2d4ae1742f27e7941211ad39362053bc11228a049de52551936663",
+      "backend/requirements.lock": "ed4fc50851d3acfb6d2b977ce6c3ed4607bdb33fdc766874f350aa59be394825",
+      "backend/tests/test_api.py": "408509c48dc4e93f3d0805ddb5e86f872a1511f4122fffacf17fd177570def79",
+      "backend/tests/test_lexical_index.py": "5b9459819b3db7fcd799910c3e44f1524ecf21b2f9cb32c0c9ccbca98959e27c",
+      "backend/tests/test_mcp.py": "c90e06ecc718ca90f53a2b87c9072491a0cea34de8b6ed8fdc263a3f101875df",
+      "backend/tests/test_profiles_imports.py": "de0b0fde7c77ea8f629916a9b586084743ba2f307e2710c726030eae68b7ce5a",
+      "backend/tests/test_projection_performance.py": "e1fe14c0499a69b8452978edb070da7528ef3cf5ae8503157eeac34f7aa584e9",
+      "backend/tests/test_review_semantics.py": "3daee072a846827f4dc1360c21c990999351b9ac46e36c04ced4337a692224d4",
+      "backend/tests/test_semantic.py": "da2063ab63d58b04ea8b85e3ad7bf10985aae6ed5afc5b199dc52fd7bf80dc7d",
+      "backend/tests/test_store.py": "a9528365d506016aed48e75740d6f5fcd6d43cb3791f688a2e7ce30e7a8a951c",
+      "backend/tests/test_vector_index.py": "a5b3ef38d706ea5da0f3ca8b1ce5eaa26b78652370853a529f30848364edb0ac",
+      "backend/uv.lock": "222040216b43da97f40d7f0ee7fea8d5f6e9ba59dfb8ec788dde80ebb8bf2ddc",
+      "benchmarks/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "benchmarks/cross_domain.py": "f9026f7bf56ae69cfb853a1789ae4de07bc337e070e18acfb26e9e964d8e4dd8",
+      "benchmarks/cross_domain_v3.py": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+      "benchmarks/delivery_experiment.py": "1883d734db2994c968d967a7ff8ccf40fe0e221232174fe86d30c136971b61ee",
+      "benchmarks/delivery_fixture.py": "a5edaedc5e5ec2ae18caed8aa7eb3fcc38a86ad46f5ce30eb4d64f9e3a536802",
+      "benchmarks/delivery_projection.py": "870b9c55f47fc2837acf3f74394687810ae63b91dd6642c67cde91ef18c8a8de",
+      "benchmarks/download_cross_domain.py": "d159af6ae99d79351227e9dc6d596610c2c346b554c8bbe8deb0c714166ca9dd",
+      "benchmarks/failure_cases.py": "8d9b28889f8313fe48f2dc22046761a69033b3f48db587d8a51e4ffcc175afe9",
+      "benchmarks/fantom_adapter.py": "3d9ce9293d0054851edfa6f25466fde1a9207d3319222afca29249bd9eb2011a",
+      "benchmarks/filter_lightrag.py": "9372f5808a70769ab7d1aa510de6c14d786e2482810a01456d29eb6b55ef6b88",
+      "benchmarks/generate_temporal.py": "d558cfbfc8359cd74307612954a18b169c4ef3d413c18d94ec1e6ce9c9f63ec7",
+      "benchmarks/index_scifact.py": "5f94b7ef727ed0a47e47ac090429705502d723e844e003feb4ed582c57b6d7ab",
+      "benchmarks/lexical_optimize_index.py": "43e49ca11a7e57ddd87e876845786ff31f075a3e60c796079ffaca3a4f845d7e",
+      "benchmarks/lightrag_compare.py": "64b1d033108c5040a204de89f0daa0adecc4d802b8dea435e6eab1c3a27482dc",
+      "benchmarks/metrics.py": "80a978346ff10c7905f5625eb9276359f3d10d3e2f1782cc4428f4717059d713",
+      "benchmarks/optimize_index.py": "fd8a0dfe96532e3054eb862a65abaf04ec5a5c856fa46dde936b59c0dbdd34aa",
+      "benchmarks/profile_index.py": "77fc56ce372e539ceb953f78f01f3cbe9c44d1012fc9aec5ac715e5a45dfb50a",
+      "benchmarks/provenance.py": "fe837dbca0f4a181e1c5f464381e44ec1d778df6323592d93ca8fbc603279f24",
+      "benchmarks/render_delivery_report.py": "780575ec57b6b47fa53cb358005f4d444fe361006f0768d6b6e35ec6d35e9d38",
+      "benchmarks/render_report.py": "396300d33cb9ac0a96efca7afad140f28236998fda16b35f811bca0df3325432",
+      "benchmarks/render_report_v2.py": "1d35ab94fcfacedcc99fe66d306c20935a21408ba693402caf8816119244504c",
+      "benchmarks/requirements-cross-domain-v3-lexical.txt": "9e1c0acff464e0366561d50af9182feaa73acd8293c422258105cc367c5394f0",
+      "benchmarks/requirements-cross-domain-v3.txt": "0bd6bc92c8f1b5d0c1bb2a2b87b67dfc2b36a9dd289955c67990f3e3d0fa56b4",
+      "benchmarks/requirements-lightrag.txt": "4ca2d32494e24a4b7fe82d00d7e906c8c10fe87271a2b6c1e2da0b0fa627b0f2",
+      "benchmarks/requirements-scifact.txt": "00fb2bce974f921cfb8b6867526761bb64416bfc5d25c8b002367758ffc5e99f",
+      "benchmarks/rerank_v2.py": "d3d0bb74fab7c9357448c1d69c61d82e113dde99a6e503021d9ca53cb5c47e86",
+      "benchmarks/scaled_delivery_fixture.py": "8a4675b8f3471b8b300d407c3c90a5485e17c31dbbdfcf9fedbaabf7e0d8cd99",
+      "benchmarks/scifact.py": "5e3508c7bfe8edbb508d162e4295392e4bd7eb8bf69af341865b4d24575fc30a",
+      "benchmarks/statistics.py": "e5609e0890b29fb3d181682c9f34ad028d759230a661007c7186def6df664aa5",
+      "benchmarks/strong_lexical.py": "606ffbf6ba6b51a1dca48eb9f3550ee1c6a55251367deb786dd05f6030406618",
+      "benchmarks/temporal.py": "ff1143955d3a32f7a6d33d4cedb64c64451e9d1354464efd9605fc1ca4f44e20",
+      "benchmarks/temporal_v2.py": "5af25f5673d84a722b3ee1395dcf65e4cba416f6672c40abc603ac1faa36b29c",
+      "benchmarks/test_delivery_migration.py": "6263cd1a7f2db346652ff8e4555654ff9d949e005f23f647fcc24b035bf1d50f",
+      "benchmarks/test_delivery_projection.py": "82964e4cc898b96116c463f7ae5559669eda4800b64797fed9fdd320d6018164",
+      "benchmarks/test_delivery_review.py": "de8d343eab93805d637af18b6eb5c4aa68b3d1201fd0be05b18573f5fd276fbd",
+      "benchmarks/test_fantom_adapter.py": "7fa8e741905ef0a092ef8c694924d78ecaa87ed266a9cfb8831563c6bccdff51",
+      "benchmarks/test_temporal_fixture.py": "befa744face734d304e08497d2205598be186fceba5a18ccec3ae7fbb8843b6e",
+      "benchmarks/tests/test_cross_domain_v3.py": "d6343b8ea4933521362d6005d91011ba26cd1648f1b5931a5ef20cbe51aa62b8",
+      "benchmarks/tests/test_metrics.py": "88dadef901afd845e86529c0aa34842bfe8d75a1ac24918809dd02866b9a8080",
+      "benchmarks/tests/test_provenance.py": "6981ded58ddd277e8d16003789660ac1ed617db0051696bb2c944b714a71d3cb",
+      "benchmarks/tests/test_scaled_delivery_fixture.py": "dde95c31144b352cc27b04921c588854d6eb2617fbbb140d77b30175ab623722",
+      "benchmarks/tests/test_scifact.py": "35536972dd3d7ac58054ee955c0d5355af2168529fb8742776732a80be6f8374",
+      "benchmarks/tests/test_statistics.py": "27a63690ce75d610fb14c1c12523301c3fa5ae2498104a222bff15451218c9b4",
+      "benchmarks/tests/test_strong_lexical.py": "1853fb122c67992d28c7d826baee9f7d82081dfe9a426b699cf7e432c48f232d",
+      "benchmarks/tests/test_temporal_metrics.py": "7429f74897394f9e22f3668cc090b588257b22ea10c8eed3b390932422b40aff",
+      "benchmarks/tests/test_temporal_v2.py": "ce23b5252d92c2635ed5b051663850d674bbe18ced46384c04373b1dd0d6407b",
+      "benchmarks/tests/test_verifier_cli.py": "3772575f673d30ae8b4b963bf99200690242861afa1eac28669be88007e12b50",
+      "benchmarks/time_index_stages.py": "4161091e50868d34fb1d5668945ba4b18a3265e86ef8493adb1b9343d5b7769c",
+      "benchmarks/token_postings_pilot.py": "a1faeaf2cbc11ff2f454af8a9a5b5d631cde1d4d9d1e79957dfaf5c7502fc9d8",
+      "benchmarks/verify_delivery_experiment.py": "9daf8dcf3bb8aa3b6d241f0a3220a8147886505d32e472a820cfc39492364a5e",
+      "benchmarks/verify_v2_artifacts.py": "4b5f0beb73fdbc362172ac99f341d5e62063453490863f530ef7b7ec2ec4488e",
+      "docs/benchmarks-observer/source/backend/chronoverse/lexical_index.py": "ef011561de8c3fa8775cae6daa7b9f6fc42a8cf89679fcfc4d237c8eebdf7149",
+      "docs/benchmarks-observer/source/backend/chronoverse/models.py": "fd2ef45f3ca3e4178b3c641e568a0491439a4c3332a8292405c3fe4359ef4b6d",
+      "docs/benchmarks-observer/source/backend/chronoverse/semantic.py": "58ff66f2e7f10a554eaeab69b938fe6ae5f2803214cebe189158574c1bb19a10",
+      "docs/benchmarks-observer/source/backend/chronoverse/store.py": "70992a01ee8761b043026b685de2d6798e5184d9f034ea9fc3030fbda1867138",
+      "docs/benchmarks-observer/source/backend/chronoverse/vector_index.py": "557027676dd906899c034622ea1f8cdc1175743a6112da2b491363a506c2ac6d",
+      "docs/benchmarks-observer/source/benchmarks/observer_experiment.py": "8cdad8b0c5c87b850f8ce0a8de84fb1c7373d26d3949d54eca7c4bdb926c3aa9",
+      "docs/benchmarks-observer/source/benchmarks/observer_fixture.py": "b8df1f3d8649759affeede9ec693b4d63ad111333e1b95db0e5d8c8af163cb89",
+      "docs/benchmarks-observer/source/benchmarks/observer_projection.py": "4920657a1fb30d8a718bdab68c25ce026d60453642b46807d155dd93c35fbedc",
+      "docs/benchmarks-v2/requirements-app-frozen.txt": "74e7d351aae7d538c7a5a40ea38194b1942e70b9d7ff653dc03b51236f740bb9",
+      "docs/benchmarks-v2/requirements-index-frozen.txt": "91d1e72d7abf530eec7c622bdd4be9ea8849f94865c65f3fa0c6ce8ffd2bae03",
+      "docs/benchmarks-v2/requirements-mps-frozen.txt": "a45d249fa5260a64e803c60319a393428384221294c61ff637476a41e2293b6e",
+      "docs/benchmarks-v2/source/bulk-projection/models.py": "fd2ef45f3ca3e4178b3c641e568a0491439a4c3332a8292405c3fe4359ef4b6d",
+      "docs/benchmarks-v2/source/bulk-projection/semantic.py": "58ff66f2e7f10a554eaeab69b938fe6ae5f2803214cebe189158574c1bb19a10",
+      "docs/benchmarks-v2/source/bulk-projection/store.py": "5225aa19f4bdaaf8943bdd26c055bf2000c873bd1ae665c0faf9cf1845f1cecd",
+      "docs/benchmarks-v2/source/bulk-projection/vector_index.py": "557027676dd906899c034622ea1f8cdc1175743a6112da2b491363a506c2ac6d",
+      "docs/benchmarks-v2/source/cross-domain/cross_domain.py": "1c5d63d12c06e85478ce86887734030a36c644db5c92060b7653c355f34f1f31",
+      "docs/benchmarks-v2/source/lexical-postings/lexical_index.py": "ef011561de8c3fa8775cae6daa7b9f6fc42a8cf89679fcfc4d237c8eebdf7149",
+      "docs/benchmarks-v2/source/lexical-postings/models.py": "fd2ef45f3ca3e4178b3c641e568a0491439a4c3332a8292405c3fe4359ef4b6d",
+      "docs/benchmarks-v2/source/lexical-postings/semantic.py": "58ff66f2e7f10a554eaeab69b938fe6ae5f2803214cebe189158574c1bb19a10",
+      "docs/benchmarks-v2/source/lexical-postings/store.py": "70992a01ee8761b043026b685de2d6798e5184d9f034ea9fc3030fbda1867138",
+      "docs/benchmarks-v2/source/lexical-postings/vector_index.py": "557027676dd906899c034622ea1f8cdc1175743a6112da2b491363a506c2ac6d",
+      "docs/benchmarks-v2/source/persistent-index/models.py": "fd2ef45f3ca3e4178b3c641e568a0491439a4c3332a8292405c3fe4359ef4b6d",
+      "docs/benchmarks-v2/source/persistent-index/semantic.py": "58ff66f2e7f10a554eaeab69b938fe6ae5f2803214cebe189158574c1bb19a10",
+      "docs/benchmarks-v2/source/persistent-index/store.py": "d9895964ef6f436e7d7d5c6f6b9bb6166fa6d8f01f02d15d6947ab211050197d",
+      "docs/benchmarks-v2/source/persistent-index/vector_index.py": "557027676dd906899c034622ea1f8cdc1175743a6112da2b491363a506c2ac6d",
+      "docs/benchmarks-v2/source/token_postings_pilot.py": "c4de30d7c45e64e5f4c07a47e1a6cbbe0ed975b8e14aa5f38b641fe8167622f2",
+      "scripts/download_model.py": "74df7807459d6f6d0864e39c02f536aeae453d74e95431b6403c51806f219407",
+      "scripts/prewarm_profile.py": "d1eb401a8a0104efa75f2fcc32365039be2d1485ef346e707e2180c35a5777d1",
+      "scripts/run_local.py": "30fb97e3d78053b9035f378f1f68edcf8684abb31716c2d34944d70b7658e26d",
+      "scripts/smoke_mcp.py": "4375b7530b31950d7ad275ea3f81949127808a124483b0cfd587ab2eb68b8a51"
+    },
+    "predictions_sha256": "c0b762d5bd3939951ef79c99e0c076ac4a2c382a3fab799709ea20e6156d4699",
+    "predictions_commit": "33a06b6792a6ec9c731d806f110e9ee4e4dbc6fa",
+    "predictions_committed_exactly": true,
+    "git_describe_at_write": "round-3-as-published-5-g7c2eed4",
+    "checked_at": "2026-09-12T16:40:59.121291+00:00",
+    "load_average_at_write": [
+      2.4775390625,
+      3.109375,
+      3.14013671875
+    ],
+    "allow_dirty": false,
+    "generated_outputs": [
+      "docs/benchmarks-next/fantom-results.json"
+    ],
+    "generated_outputs_dirty_exemption": false
+  },
+  "methods": {
+    "Global temporal": {
+      "metrics": {
+        "short:infoAccessibilityQA_list": {
+          "raw_queries": 870,
+          "official_eligible_queries": 870,
+          "excluded_no_long": 0,
+          "mapped_queries": 869,
+          "coverage": 0.9988505747126437,
+          "accuracy_all_eligible_unmapped_wrong": 0.25517241379310346,
+          "accuracy_mapped_only": 0.2554660529344074,
+          "weighted_f1_all_eligible": null
+        },
+        "short:answerabilityQA_list": {
+          "raw_queries": 870,
+          "official_eligible_queries": 870,
+          "excluded_no_long": 0,
+          "mapped_queries": 869,
+          "coverage": 0.9988505747126437,
+          "accuracy_all_eligible_unmapped_wrong": 0.25517241379310346,
+          "accuracy_mapped_only": 0.2554660529344074,
+          "weighted_f1_all_eligible": null
+        },
+        "short:infoAccessibilityQAs_binary": {
+          "raw_queries": 3571,
+          "official_eligible_queries": 3014,
+          "excluded_no_long": 557,
+          "mapped_queries": 3011,
+          "coverage": 0.9990046449900465,
+          "accuracy_all_eligible_unmapped_wrong": 0.7866622428666225,
+          "accuracy_mapped_only": 0.7874460312188641,
+          "weighted_f1_all_eligible": 0.6934433515313875
+        },
+        "short:answerabilityQAs_binary": {
+          "raw_queries": 3571,
+          "official_eligible_queries": 3014,
+          "excluded_no_long": 557,
+          "mapped_queries": 3011,
+          "coverage": 0.9990046449900465,
+          "accuracy_all_eligible_unmapped_wrong": 0.7863304578633046,
+          "accuracy_mapped_only": 0.7871139156426437,
+          "weighted_f1_all_eligible": 0.6929874962109449
+        },
+        "full:infoAccessibilityQA_list": {
+          "raw_queries": 870,
+          "official_eligible_queries": 870,
+          "excluded_no_long": 0,
+          "mapped_queries": 869,
+          "coverage": 0.9988505747126437,
+          "accuracy_all_eligible_unmapped_wrong": 0.2045977011494253,
+          "accuracy_mapped_only": 0.2048331415420023,
+          "weighted_f1_all_eligible": null
+        },
+        "full:answerabilityQA_list": {
+          "raw_queries": 870,
+          "official_eligible_queries": 870,
+          "excluded_no_long": 0,
+          "mapped_queries": 869,
+          "coverage": 0.9988505747126437,
+          "accuracy_all_eligible_unmapped_wrong": 0.2045977011494253,
+          "accuracy_mapped_only": 0.2048331415420023,
+          "weighted_f1_all_eligible": null
+        },
+        "full:infoAccessibilityQAs_binary": {
+          "raw_queries": 3571,
+          "official_eligible_queries": 3571,
+          "excluded_no_long": 0,
+          "mapped_queries": 3566,
+          "coverage": 0.9985998319798376,
+          "accuracy_all_eligible_unmapped_wrong": 0.7664519742369085,
+          "accuracy_mapped_only": 0.7675266404935502,
+          "weighted_f1_all_eligible": 0.7224470714107337
+        },
+        "full:answerabilityQAs_binary": {
+          "raw_queries": 3571,
+          "official_eligible_queries": 3571,
+          "excluded_no_long": 0,
+          "mapped_queries": 3566,
+          "coverage": 0.9985998319798376,
+          "accuracy_all_eligible_unmapped_wrong": 0.766171940632876,
+          "accuracy_mapped_only": 0.7672462142456534,
+          "weighted_f1_all_eligible": 0.722102459638583
+        }
+      }
+    },
+    "Scalar clock": {
+      "metrics": {
+        "short:infoAccessibilityQA_list": {
+          "raw_queries": 870,
+          "official_eligible_queries": 870,
+          "excluded_no_long": 0,
+          "mapped_queries": 869,
+          "coverage": 0.9988505747126437,
+          "accuracy_all_eligible_unmapped_wrong": 0.25517241379310346,
+          "accuracy_mapped_only": 0.2554660529344074,
+          "weighted_f1_all_eligible": null
+        },
+        "short:answerabilityQA_list": {
+          "raw_queries": 870,
+          "official_eligible_queries": 870,
+          "excluded_no_long": 0,
+          "mapped_queries": 869,
+          "coverage": 0.9988505747126437,
+          "accuracy_all_eligible_unmapped_wrong": 0.25517241379310346,
+          "accuracy_mapped_only": 0.2554660529344074,
+          "weighted_f1_all_eligible": null
+        },
+        "short:infoAccessibilityQAs_binary": {
+          "raw_queries": 3571,
+          "official_eligible_queries": 3014,
+          "excluded_no_long": 557,
+          "mapped_queries": 3011,
+          "coverage": 0.9990046449900465,
+          "accuracy_all_eligible_unmapped_wrong": 0.7866622428666225,
+          "accuracy_mapped_only": 0.7874460312188641,
+          "weighted_f1_all_eligible": 0.6934433515313875
+        },
+        "short:answerabilityQAs_binary": {
+          "raw_queries": 3571,
+          "official_eligible_queries": 3014,
+          "excluded_no_long": 557,
+          "mapped_queries": 3011,
+          "coverage": 0.9990046449900465,
+          "accuracy_all_eligible_unmapped_wrong": 0.7863304578633046,
+          "accuracy_mapped_only": 0.7871139156426437,
+          "weighted_f1_all_eligible": 0.6929874962109449
+        },
+        "full:infoAccessibilityQA_list": {
+          "raw_queries": 870,
+          "official_eligible_queries": 870,
+          "excluded_no_long": 0,
+          "mapped_queries": 869,
+          "coverage": 0.9988505747126437,
+          "accuracy_all_eligible_unmapped_wrong": 0.2045977011494253,
+          "accuracy_mapped_only": 0.2048331415420023,
+          "weighted_f1_all_eligible": null
+        },
+        "full:answerabilityQA_list": {
+          "raw_queries": 870,
+          "official_eligible_queries": 870,
+          "excluded_no_long": 0,
+          "mapped_queries": 869,
+          "coverage": 0.9988505747126437,
+          "accuracy_all_eligible_unmapped_wrong": 0.2045977011494253,
+          "accuracy_mapped_only": 0.2048331415420023,
+          "weighted_f1_all_eligible": null
+        },
+        "full:infoAccessibilityQAs_binary": {
+          "raw_queries": 3571,
+          "official_eligible_queries": 3571,
+          "excluded_no_long": 0,
+          "mapped_queries": 3566,
+          "coverage": 0.9985998319798376,
+          "accuracy_all_eligible_unmapped_wrong": 0.7664519742369085,
+          "accuracy_mapped_only": 0.7675266404935502,
+          "weighted_f1_all_eligible": 0.7224470714107337
+        },
+        "full:answerabilityQAs_binary": {
+          "raw_queries": 3571,
+          "official_eligible_queries": 3571,
+          "excluded_no_long": 0,
+          "mapped_queries": 3566,
+          "coverage": 0.9985998319798376,
+          "accuracy_all_eligible_unmapped_wrong": 0.766171940632876,
+          "accuracy_mapped_only": 0.7672462142456534,
+          "weighted_f1_all_eligible": 0.722102459638583
+        }
+      }
+    },
+    "Filter after projection": {
+      "metrics": {
+        "short:infoAccessibilityQA_list": {
+          "raw_queries": 870,
+          "official_eligible_queries": 870,
+          "excluded_no_long": 0,
+          "mapped_queries": 869,
+          "coverage": 0.9988505747126437,
+          "accuracy_all_eligible_unmapped_wrong": 0.7218390804597701,
+          "accuracy_mapped_only": 0.7226697353279632,
+          "weighted_f1_all_eligible": null
+        },
+        "short:answerabilityQA_list": {
+          "raw_queries": 870,
+          "official_eligible_queries": 870,
+          "excluded_no_long": 0,
+          "mapped_queries": 869,
+          "coverage": 0.9988505747126437,
+          "accuracy_all_eligible_unmapped_wrong": 0.7218390804597701,
+          "accuracy_mapped_only": 0.7226697353279632,
+          "weighted_f1_all_eligible": null
+        },
+        "short:infoAccessibilityQAs_binary": {
+          "raw_queries": 3571,
+          "official_eligible_queries": 3014,
+          "excluded_no_long": 557,
+          "mapped_queries": 3011,
+          "coverage": 0.9990046449900465,
+          "accuracy_all_eligible_unmapped_wrong": 0.9230258792302588,
+          "accuracy_mapped_only": 0.9239455330454999,
+          "weighted_f1_all_eligible": 0.9273241327422079
+        },
+        "short:answerabilityQAs_binary": {
+          "raw_queries": 3571,
+          "official_eligible_queries": 3014,
+          "excluded_no_long": 557,
+          "mapped_queries": 3011,
+          "coverage": 0.9990046449900465,
+          "accuracy_all_eligible_unmapped_wrong": 0.9233576642335767,
+          "accuracy_mapped_only": 0.9242776486217203,
+          "weighted_f1_all_eligible": 0.9276184386523176
+        },
+        "full:infoAccessibilityQA_list": {
+          "raw_queries": 870,
+          "official_eligible_queries": 870,
+          "excluded_no_long": 0,
+          "mapped_queries": 869,
+          "coverage": 0.9988505747126437,
+          "accuracy_all_eligible_unmapped_wrong": 0.7218390804597701,
+          "accuracy_mapped_only": 0.7226697353279632,
+          "weighted_f1_all_eligible": null
+        },
+        "full:answerabilityQA_list": {
+          "raw_queries": 870,
+          "official_eligible_queries": 870,
+          "excluded_no_long": 0,
+          "mapped_queries": 869,
+          "coverage": 0.9988505747126437,
+          "accuracy_all_eligible_unmapped_wrong": 0.7218390804597701,
+          "accuracy_mapped_only": 0.7226697353279632,
+          "weighted_f1_all_eligible": null
+        },
+        "full:infoAccessibilityQAs_binary": {
+          "raw_queries": 3571,
+          "official_eligible_queries": 3571,
+          "excluded_no_long": 0,
+          "mapped_queries": 3566,
+          "coverage": 0.9985998319798376,
+          "accuracy_all_eligible_unmapped_wrong": 0.9294315317838141,
+          "accuracy_mapped_only": 0.9307347167694896,
+          "weighted_f1_all_eligible": 0.9312894258596727
+        },
+        "full:answerabilityQAs_binary": {
+          "raw_queries": 3571,
+          "official_eligible_queries": 3571,
+          "excluded_no_long": 0,
+          "mapped_queries": 3566,
+          "coverage": 0.9985998319798376,
+          "accuracy_all_eligible_unmapped_wrong": 0.9297115653878465,
+          "accuracy_mapped_only": 0.9310151430173864,
+          "weighted_f1_all_eligible": 0.9315577039046801
+        }
+      }
+    },
+    "Ordinary SQL receipt filter": {
+      "metrics": {
+        "short:infoAccessibilityQA_list": {
+          "raw_queries": 870,
+          "official_eligible_queries": 870,
+          "excluded_no_long": 0,
+          "mapped_queries": 869,
+          "coverage": 0.9988505747126437,
+          "accuracy_all_eligible_unmapped_wrong": 0.7218390804597701,
+          "accuracy_mapped_only": 0.7226697353279632,
+          "weighted_f1_all_eligible": null
+        },
+        "short:answerabilityQA_list": {
+          "raw_queries": 870,
+          "official_eligible_queries": 870,
+          "excluded_no_long": 0,
+          "mapped_queries": 869,
+          "coverage": 0.9988505747126437,
+          "accuracy_all_eligible_unmapped_wrong": 0.7218390804597701,
+          "accuracy_mapped_only": 0.7226697353279632,
+          "weighted_f1_all_eligible": null
+        },
+        "short:infoAccessibilityQAs_binary": {
+          "raw_queries": 3571,
+          "official_eligible_queries": 3014,
+          "excluded_no_long": 557,
+          "mapped_queries": 3011,
+          "coverage": 0.9990046449900465,
+          "accuracy_all_eligible_unmapped_wrong": 0.9230258792302588,
+          "accuracy_mapped_only": 0.9239455330454999,
+          "weighted_f1_all_eligible": 0.9273241327422079
+        },
+        "short:answerabilityQAs_binary": {
+          "raw_queries": 3571,
+          "official_eligible_queries": 3014,
+          "excluded_no_long": 557,
+          "mapped_queries": 3011,
+          "coverage": 0.9990046449900465,
+          "accuracy_all_eligible_unmapped_wrong": 0.9233576642335767,
+          "accuracy_mapped_only": 0.9242776486217203,
+          "weighted_f1_all_eligible": 0.9276184386523176
+        },
+        "full:infoAccessibilityQA_list": {
+          "raw_queries": 870,
+          "official_eligible_queries": 870,
+          "excluded_no_long": 0,
+          "mapped_queries": 869,
+          "coverage": 0.9988505747126437,
+          "accuracy_all_eligible_unmapped_wrong": 0.7218390804597701,
+          "accuracy_mapped_only": 0.7226697353279632,
+          "weighted_f1_all_eligible": null
+        },
+        "full:answerabilityQA_list": {
+          "raw_queries": 870,
+          "official_eligible_queries": 870,
+          "excluded_no_long": 0,
+          "mapped_queries": 869,
+          "coverage": 0.9988505747126437,
+          "accuracy_all_eligible_unmapped_wrong": 0.7218390804597701,
+          "accuracy_mapped_only": 0.7226697353279632,
+          "weighted_f1_all_eligible": null
+        },
+        "full:infoAccessibilityQAs_binary": {
+          "raw_queries": 3571,
+          "official_eligible_queries": 3571,
+          "excluded_no_long": 0,
+          "mapped_queries": 3566,
+          "coverage": 0.9985998319798376,
+          "accuracy_all_eligible_unmapped_wrong": 0.9294315317838141,
+          "accuracy_mapped_only": 0.9307347167694896,
+          "weighted_f1_all_eligible": 0.9312894258596727
+        },
+        "full:answerabilityQAs_binary": {
+          "raw_queries": 3571,
+          "official_eligible_queries": 3571,
+          "excluded_no_long": 0,
+          "mapped_queries": 3566,
+          "coverage": 0.9985998319798376,
+          "accuracy_all_eligible_unmapped_wrong": 0.9297115653878465,
+          "accuracy_mapped_only": 0.9310151430173864,
+          "weighted_f1_all_eligible": 0.9315577039046801
+        }
+      }
+    },
+    "Delivery projection": {
+      "metrics": {
+        "short:infoAccessibilityQA_list": {
+          "raw_queries": 870,
+          "official_eligible_queries": 870,
+          "excluded_no_long": 0,
+          "mapped_queries": 869,
+          "coverage": 0.9988505747126437,
+          "accuracy_all_eligible_unmapped_wrong": 0.7218390804597701,
+          "accuracy_mapped_only": 0.7226697353279632,
+          "weighted_f1_all_eligible": null
+        },
+        "short:answerabilityQA_list": {
+          "raw_queries": 870,
+          "official_eligible_queries": 870,
+          "excluded_no_long": 0,
+          "mapped_queries": 869,
+          "coverage": 0.9988505747126437,
+          "accuracy_all_eligible_unmapped_wrong": 0.7218390804597701,
+          "accuracy_mapped_only": 0.7226697353279632,
+          "weighted_f1_all_eligible": null
+        },
+        "short:infoAccessibilityQAs_binary": {
+          "raw_queries": 3571,
+          "official_eligible_queries": 3014,
+          "excluded_no_long": 557,
+          "mapped_queries": 3011,
+          "coverage": 0.9990046449900465,
+          "accuracy_all_eligible_unmapped_wrong": 0.9230258792302588,
+          "accuracy_mapped_only": 0.9239455330454999,
+          "weighted_f1_all_eligible": 0.9273241327422079
+        },
+        "short:answerabilityQAs_binary": {
+          "raw_queries": 3571,
+          "official_eligible_queries": 3014,
+          "excluded_no_long": 557,
+          "mapped_queries": 3011,
+          "coverage": 0.9990046449900465,
+          "accuracy_all_eligible_unmapped_wrong": 0.9233576642335767,
+          "accuracy_mapped_only": 0.9242776486217203,
+          "weighted_f1_all_eligible": 0.9276184386523176
+        },
+        "full:infoAccessibilityQA_list": {
+          "raw_queries": 870,
+          "official_eligible_queries": 870,
+          "excluded_no_long": 0,
+          "mapped_queries": 869,
+          "coverage": 0.9988505747126437,
+          "accuracy_all_eligible_unmapped_wrong": 0.7218390804597701,
+          "accuracy_mapped_only": 0.7226697353279632,
+          "weighted_f1_all_eligible": null
+        },
+        "full:answerabilityQA_list": {
+          "raw_queries": 870,
+          "official_eligible_queries": 870,
+          "excluded_no_long": 0,
+          "mapped_queries": 869,
+          "coverage": 0.9988505747126437,
+          "accuracy_all_eligible_unmapped_wrong": 0.7218390804597701,
+          "accuracy_mapped_only": 0.7226697353279632,
+          "weighted_f1_all_eligible": null
+        },
+        "full:infoAccessibilityQAs_binary": {
+          "raw_queries": 3571,
+          "official_eligible_queries": 3571,
+          "excluded_no_long": 0,
+          "mapped_queries": 3566,
+          "coverage": 0.9985998319798376,
+          "accuracy_all_eligible_unmapped_wrong": 0.9294315317838141,
+          "accuracy_mapped_only": 0.9307347167694896,
+          "weighted_f1_all_eligible": 0.9312894258596727
+        },
+        "full:answerabilityQAs_binary": {
+          "raw_queries": 3571,
+          "official_eligible_queries": 3571,
+          "excluded_no_long": 0,
+          "mapped_queries": 3566,
+          "coverage": 0.9985998319798376,
+          "accuracy_all_eligible_unmapped_wrong": 0.9297115653878465,
+          "accuracy_mapped_only": 0.9310151430173864,
+          "weighted_f1_all_eligible": 0.9315577039046801
+        }
+      }
+    }
+  },
+  "raw_artifact": {
+    "file": "fantom-results.json.gz",
+    "encoding": "gzip of exact original JSON bytes",
+    "uncompressed_sha256": "eaf2c813e114b0e45257260ea25a8322d424c142baa168675e2dc43da677895c",
+    "compressed_sha256": "eda13367b6ae113f0e48b3a13dbc2b669dec2d5be52de26f61eda9d22373687f",
+    "uncompressed_bytes": 113447518,
+    "compressed_bytes": 3375540
+  }
+}

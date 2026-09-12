@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "audits": [
+    "300 fresh/reopened ID and score lists independently compared",
+    "Production projection and lexical optimization preserve all300 lists",
+    "Historical production source archive matches original recorded hashes",
+    "All6 systems cover all1271 public queries,100 unique eligible document IDs each",
+    "All18 cross-domain aggregate metric triples independently recomputed with linear gains",
+    "No query/document ID self matches in public runs",
+    "All12 document/query vector arrays match recorded hashes,dimensions,dtype and finite unit norms",
+    "Frozen temporal fixture hashes, split sizes, and scenario-family separation verified",
+    "Reranker covers all300 unique official queries; full50 candidate pools preserved and metrics independently recomputed"
+  ],
+  "artifact_sha256": {
+    "temporal-results.json": "4f4b332de140a93925f0c2c15104b878557b6f2417bc4df2cd010e44f6a8aa0c",
+    "index-results.json": "51f73be728ade186f6f584ae3074160396dca74d4a8761caf07b023f034cc668",
+    "rerank-results.json": "402234840d7539066dff88d38f23b68b4f1cae3de28a13dcca6b0f2448faf42a",
+    "lexical-optimization-results.json": "31ac889d0fc95074db940056f5692e8f1dbbc0def0a77274a879d0ae022562cd",
+    "cross-domain-results.json": "5209cacbbd0c9c1083a97a13384bde9560b78e9fbe9e93e72b0f6ec5389e78b0",
+    "optimization-results.json": "8d75370451d5e35951b011abb4fdbe26ff43ff520634775bcf7b8a767450f304"
+  }
+}

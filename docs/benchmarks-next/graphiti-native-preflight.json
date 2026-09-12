@@ -1,0 +1,166 @@
+{
+  "graphiti": {
+    "version": "0.30.2",
+    "release_tag": "v0.30.2",
+    "commit": "eaa4128681bc53487138a4bbc22d58336ebe70d2",
+    "wheel_sha256": "97674a49514130db175faecf23221ce9338240be3cbe13a7e23e5a5033892b9f",
+    "sdist_sha256": "b8ac6999705d350ebb53d799505d49b76f5d74c20265a09df4094645b5d8ada9",
+    "package": {
+      "required_distribution": "graphiti-core==0.30.2",
+      "installed_in_current_interpreter": "0.30.2",
+      "version_matches": true
+    }
+  },
+  "dataset": {
+    "name": "LongMemEval-S cleaned",
+    "revision": "98d7416c24c778c2fee6e6f3006e7a073259d48f",
+    "sha256": "d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442",
+    "inventory": {
+      "questions": 500,
+      "question_types": {
+        "knowledge-update": 78,
+        "multi-session": 133,
+        "single-session-assistant": 56,
+        "single-session-preference": 30,
+        "single-session-user": 70,
+        "temporal-reasoning": 133
+      },
+      "abstention_questions": 30,
+      "sessions": 23867,
+      "native_message_episodes": 246750,
+      "min_episodes_per_question": 396,
+      "max_episodes_per_question": 616,
+      "mean_episodes_per_question": 493.5,
+      "pilot_question_ids": [
+        "001be529",
+        "00ca467f",
+        "06878be2",
+        "08f4fc43",
+        "01493427",
+        "0e5e2d1a"
+      ],
+      "ingress_fields": [
+        "question_id",
+        "haystack_session_ids",
+        "haystack_dates",
+        "role",
+        "content"
+      ],
+      "excluded_ingress_fields": [
+        "answer",
+        "answer_session_ids",
+        "has_answer"
+      ]
+    }
+  },
+  "runtime": {
+    "docker": {
+      "cli_detected": true,
+      "desktop_linux_socket_present": false,
+      "dedicated_http_port_17474_open": false,
+      "dedicated_bolt_port_17687_open": false,
+      "mutation_performed": false
+    },
+    "provider": {
+      "adapter": "OpenAIGenericClient + OpenAIEmbedder",
+      "llm_base_url_configured": false,
+      "llm_api_key_configured": false,
+      "llm_model": null,
+      "small_model": null,
+      "structured_output_mode": "json_schema",
+      "embedding_base_url_configured": false,
+      "embedding_api_key_configured": false,
+      "embedding_model": null,
+      "embedding_dimension": 3072,
+      "secrets_serialized": false
+    }
+  },
+  "protocol": {
+    "status": "preflight_only",
+    "native_graphiti_ingestion_executed": false,
+    "native_graphiti_search_executed": false,
+    "answer_generation_executed": false,
+    "paid_api_calls": 0,
+    "open_source_system": "Graphiti; Apache-2.0; self-hosted",
+    "hosted_system_excluded": "Zep managed Context Graph service",
+    "database": {
+      "driver": "Neo4jDriver",
+      "database": "neo4j",
+      "image": "neo4j:5.26.2@sha256:099b9f74968c123209972835417985ed2a1cc19c0422c0753a313e26a736c365",
+      "indices": "Graphiti.build_indices_and_constraints(delete_existing=False) once before ingestion"
+    },
+    "ingestion": {
+      "api": "await Graphiti.add_episode(...)",
+      "episode_type": "EpisodeType.message",
+      "unit": "one LongMemEval turn per episode",
+      "ordering": "sessions ascending reference_time; ties retain dataset order; turns retain session order",
+      "execution": "sequential and awaited within each question partition",
+      "partition": "one deterministic group_id per question",
+      "community_updates": false,
+      "raw_episode_content": true
+    },
+    "search": {
+      "api": "await Graphiti.search(question, group_ids=[group_id], num_results=10)",
+      "returned_layer": "EntityEdge facts",
+      "recipe": "EDGE_HYBRID_SEARCH_RRF",
+      "methods": [
+        "edge BM25",
+        "edge cosine similarity"
+      ],
+      "reranker": "reciprocal-rank fusion",
+      "limit": 10,
+      "cross_encoder_used": false,
+      "question_date_filter": false
+    },
+    "upstream_defaults_not_silently_used": {
+      "default_openai_llm": "gpt-5.5 medium prompts; gpt-4.1-nano small prompts",
+      "generic_openai_compatible_llm": "gpt-4.1-mini if model omitted",
+      "default_embedding": "text-embedding-3-small truncated to EMBEDDING_DIM=1024",
+      "default_cross_encoder": "gpt-4.1-nano; not invoked by basic Graphiti.search",
+      "core_semaphore_limit": 20,
+      "planned_pilot_semaphore_limit": 2,
+      "telemetry": "upstream opt-out; planned comparison sets GRAPHITI_TELEMETRY_ENABLED=false"
+    }
+  },
+  "next_gate": "Record the provider/model price table and a bounded run reservation, then run one full-question smoke before the frozen six-ability pilot.",
+  "provenance": {
+    "git_commit": "0c8e1b10bd214c3351b867a9d74604a84b9e7f5b",
+    "git_dirty": false,
+    "git_dirty_paths": [],
+    "git_describe": "round-3-as-published-19-g0c8e1b1",
+    "python": "3.12.13",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "started_at": "2026-09-12T17:27:19.154363+00:00",
+    "load_average": [
+      3.5986328125,
+      3.66162109375,
+      3.57666015625
+    ],
+    "requirements_sha256": "ab68c71f60010c16ff1fc08a5b4c2cf49630473c028090cd95c9cc6b20cbe411",
+    "requirements_path": "benchmarks/requirements-graphiti-native.txt",
+    "package_freeze": "annotated-types==0.8.0\nanyio==4.15.1\nbackoff==2.2.1\ncertifi==2026.7.22\ncharset-normalizer==3.5.1\ndistro==1.9.0\ngraphiti-core==0.30.2\nh11==0.16.0\nhttpcore==1.0.9\nhttpx==0.28.1\nidna==3.19\njiter==0.17.0\nneo4j==6.3.0\nnumpy==2.5.3\nopenai==2.32.0\nposthog==7.53.0\npydantic==2.13.5\npydantic_core==2.46.5\npython-dotenv==1.2.3\npytz==2026.3.post1\nrequests==2.34.2\nsniffio==1.3.1\ntenacity==9.1.4\ntqdm==4.70.1\ntyping-inspection==0.4.4\ntyping_extensions==4.16.0\nurllib3==2.7.0\n",
+    "package_freeze_sha256": "00ab86862df2c20b92365bf39b9c3f262b45807d92b36ec0420deac556a0c26f",
+    "package_freeze_format": "importlib.metadata installed Name==Version snapshot; editable project code is covered by source_sha256",
+    "source_sha256": {
+      "benchmarks/graphiti_native_preflight.py": "0912f58d104dee96faed0607dd93b5b7e4d0af4b9aacfc147b1c576ef1141e2d",
+      "benchmarks/provenance.py": "de3bdcd069817dc6b5983a956d1b5e4dc945e372194c19d67fad68772f4d9b67",
+      "benchmarks/requirements-graphiti-native.txt": "ab68c71f60010c16ff1fc08a5b4c2cf49630473c028090cd95c9cc6b20cbe411",
+      "benchmarks/graphiti-native.compose.yaml": "8bc0b6694fbcf2e11d7ef3a540e233f4976dee3fc0d7f13bd3ce0c7910841bcc"
+    },
+    "predictions_sha256": "c0b762d5bd3939951ef79c99e0c076ac4a2c382a3fab799709ea20e6156d4699",
+    "predictions_commit": "33a06b6792a6ec9c731d806f110e9ee4e4dbc6fa",
+    "predictions_committed_exactly": true,
+    "git_describe_at_write": "round-3-as-published-19-g0c8e1b1",
+    "checked_at": "2026-09-12T17:27:20.345910+00:00",
+    "load_average_at_write": [
+      3.5986328125,
+      3.66162109375,
+      3.57666015625
+    ],
+    "allow_dirty": false,
+    "generated_outputs": [
+      "docs/benchmarks-next/graphiti-native-preflight.json"
+    ],
+    "generated_outputs_dirty_exemption": false
+  }
+}

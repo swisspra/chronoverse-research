@@ -1,0 +1,26 @@
+{
+  "queries": 50,
+  "requests": 750,
+  "repeats": 3,
+  "prompt_sha256": "3bb012d59e1a712665f130637fd1c38c7d406d53d0bba5751039bf530ed7b497",
+  "arms": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "input_token_reservation": 6737967,
+  "output_token_reservation": 768000,
+  "counting": "UTF-8 bytes + 512 chat-framing allowance; not exact model tokenizer count",
+  "model": "vertex_ai/gemini-3.8-flash",
+  "transport": "Synchronous, one worker; Batch availability unverified",
+  "max_input_tokens_A_C_D_E": 8192,
+  "max_input_tokens_B": 16384,
+  "max_completion_tokens": 1024,
+  "usd_reservation": null,
+  "pricing": "Proxy pricing unknown; no USD estimate claimed",
+  "status": "offline estimate; no dispatch by generator",
+  "manifest_sha256": "e807eacb8b49a965f1c53257a7903d9006f122b1cc7facc935e5798988e872ce",
+  "expected_response_model": "vertex_ai/gemini-3.8-flash"
+}

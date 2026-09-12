@@ -1,0 +1,7 @@
+# Native open-source Graphiti comparator. The release commit and artifact hashes
+# are documented in docs/benchmarks-next/GRAPHITI-NATIVE-PREFLIGHT.md.
+graphiti-core==0.30.2
+# Graphiti's tagged uv.lock uses this version. The broad upstream constraint
+# otherwise resolves to openai 3.x, whose renamed httpx2 dependency leaves
+# Graphiti 0.30.2's direct ``import httpx`` unsatisfied at import time.
+openai==2.32.0

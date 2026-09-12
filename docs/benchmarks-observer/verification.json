@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "result_sha256": "f2797bd08159c1f96f307d935901d0eff588f8d9e962be31173bf091ee0fa11a",
+  "fixture_sha256": "20ce2a70ee5208549e93d27d29b04d0c5dd4b3b6021bbc01dae7a9bd40f03cd7",
+  "checks": [
+    "50 unique fixed query scopes; no padded duplicates",
+    "250 method/query outcomes and all reported metrics per method independently recalculated",
+    "Receipt AND source recording cutoffs independently audited for every returned item",
+    "50/50 full SQL and observer result/projection payloads identical",
+    "Standalone evidence-only gold counted as answerable and missed",
+    "All executed and archived source hashes match; production source matches previous round"
+  ]
+}

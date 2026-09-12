@@ -1,0 +1,3079 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-12T17:04:47.436401+00:00",
+  "benchmark": "full-corpus BEIR strong lexical and matched 256/512-token retrieval",
+  "command": ".bench-mps-venv/bin/python benchmarks/cross_domain_v3.py",
+  "runtime": {
+    "python": "3.12.13 (main, Jul 18 2026, 16:55:18) [Clang 22.1.3 ]",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "dense_backend": "SentenceTransformers MPS FP32",
+    "paid_api_calls": 0
+  },
+  "protocol": {
+    "ranking_limit": 100,
+    "rrf_k": 60,
+    "ndcg_gain": "linear qrel gain matching trec_eval/BEIR ndcg_cut",
+    "context_lengths": [
+      256,
+      512
+    ],
+    "primary_context": 256,
+    "matched_512_role": "predeclared sensitivity family; MiniLM@512 exceeds its documented training/default length",
+    "exact_dense_search": "L2-normalized vectors, exhaustive dot product, deterministic document-ID tie break",
+    "canonical_dense_text": "non-empty title, newline, passage",
+    "strong_lexical_fields": "title and passage indexed separately at equal weight",
+    "rrf_candidate_pool": 100,
+    "qrels_isolation": "grades enter only evaluation after all rankings are frozen",
+    "bootstrap_samples": 10000,
+    "seed": 20260912,
+    "inferential_metric": "nDCG@10; recall@10 and MRR@10 are descriptive",
+    "multiple_comparisons": "Holm-adjusted paired permutation p-values; separately labelled Bonferroni simultaneous paired-bootstrap intervals",
+    "timing_limitation": "shared-machine observational timing; reused and fresh vector cells are not causal latency comparisons"
+  },
+  "sources": {
+    "pyserini_beir_2cr": "https://castorini.github.io/pyserini/2cr/beir.html",
+    "anserini_default_english_analyzer": "https://github.com/castorini/anserini/blob/master/src/main/java/io/anserini/analysis/DefaultEnglishAnalyzer.java",
+    "beir_multifield_resource_paper": "https://ehsk.github.io/assets/pdf/SIGIR_2024__BEIR_Resource.pdf",
+    "minilm": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2",
+    "bge": "https://huggingface.co/BAAI/bge-small-en-v1.5"
+  },
+  "models": {
+    "minilm": {
+      "name": "sentence-transformers/all-MiniLM-L6-v2",
+      "path": ".model-cache/mps/models--sentence-transformers--all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "query_prefix": "",
+      "dimensions": 384,
+      "documented_training_tokens": 256,
+      "artifact_tree_sha256": "e8ef1b320e1c4e2a870c19f5f920c184c92b5fa2188b1fae9ce9a02e59318505"
+    },
+    "bge": {
+      "name": "BAAI/bge-small-en-v1.5",
+      "path": ".model-cache/mps/models--BAAI--bge-small-en-v1.5",
+      "revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+      "query_prefix": "Represent this sentence for searching relevant passages: ",
+      "dimensions": 384,
+      "documented_training_tokens": 512,
+      "artifact_tree_sha256": "4783e263bb4cf1b3d33501d690bc564783df8a43f49c432476642fdff2f2b723"
+    }
+  },
+  "datasets": {
+    "scifact": {
+      "corpus_count": 5183,
+      "test_query_count": 300,
+      "qrel_pairs": 339,
+      "canonical_content_sha256": "1ac1ba87209e2da9d853310ed6df85c49f560239820c396143384c351e56bf46",
+      "test_queries_sha256": "73a1ef72e338536646e7e1cac83dd9e2a687fe4a0e4161b722108539fac9b3fd",
+      "strong_lexical": {
+        "path": ".benchmark-data/v3/strong-lexical/scifact-rankings.json",
+        "provenance": {
+          "git_commit": "259bec5858ec36296dbeb21e02dfbd706f5762a9",
+          "git_dirty": false,
+          "git_dirty_paths": [],
+          "git_describe": "round-3-as-published-11-g259bec5",
+          "python": "3.12.13",
+          "platform": "macOS-26.6.2-arm64-arm-64bit",
+          "started_at": "2026-09-12T17:03:31.135130+00:00",
+          "load_average": [
+            3.578125,
+            3.9404296875,
+            3.97900390625
+          ],
+          "requirements_sha256": "9e1c0acff464e0366561d50af9182feaa73acd8293c422258105cc367c5394f0",
+          "requirements_path": "benchmarks/requirements-cross-domain-v3-lexical.txt",
+          "package_freeze": "Authlib==1.8.0\nFlask==3.1.3\nJinja2==3.1.6\nMarkupSafe==3.0.3\nPyJWT==2.14.0\nPyYAML==6.0.3\nPygments==2.21.0\nWerkzeug==3.1.8\naiofile==3.12.3\naiohappyeyeballs==2.7.1\naiohttp==3.14.3\naiosignal==1.4.0\nannotated-doc==0.0.5\nannotated-types==0.8.0\nanyio==4.15.1\nattrs==26.1.0\nbeartype==0.22.9\nblinker==1.9.0\ncachetools==7.1.8\ncaio==0.12.4\ncertifi==2026.7.22\ncffi==2.1.1\ncharset-normalizer==3.5.1\nclick==8.5.0\ncloudpickle==3.1.2\ncontourpy==1.4.0\ncryptography==50.0.1\ncycler==0.12.1\ncyclopts==4.25.2\ndatasets==5.0.1\ndill==0.4.1\ndnspython==2.8.0\ndocstring_parser==0.18.0\nemail-validator==2.3.0\nexceptiongroup==1.3.1\nfastapi==0.141.1\nfastmcp-slim==4.0.3\nfastmcp==4.0.3\nfilelock==3.32.6\nflatbuffers==25.12.19\nfonttools==4.65.0\nfrozenlist==1.8.0\nfsspec==2026.6.0\ngriffelib==2.3.0\nh11==0.16.0\nhf-xet==1.6.0\nhttpcore2==2.12.0\nhttpcore==1.0.9\nhttpx2==2.12.0\nhttpx==0.28.1\nhuggingface_hub==1.31.0\nidna==3.19\nitsdangerous==2.2.0\njaraco.classes==3.4.0\njaraco.context==6.1.2\njaraco.functools==4.6.0\njiter==0.17.0\njoblib==1.6.0\njoserfc==1.7.5\njsonref==1.1.0\njsonschema-path==0.5.0\njsonschema-specifications==2025.9.1\njsonschema==4.26.0\nkeyring==25.7.0\nkiwisolver==1.5.1\nmarkdown-it-py==4.2.0\nmatplotlib==3.11.2\nmcp-types==2.2.0\nmcp==2.2.0\nmdurl==0.1.2\nmore-itertools==11.1.0\nmpmath==1.3.0\nmultidict==6.8.0\nmultiprocess==0.70.19\nnarwhals==2.26.0\nnetworkx==3.6.1\nnumpy==2.4.3\nonnxruntime==1.30.0\nopenai==3.13.0\nopenapi-pydantic==0.5.1\nopentelemetry-api==1.44.0\npackaging==26.3\npandas==3.0.5\npathable==0.6.0\npillow==12.3.0\nplatformdirs==4.11.8\npropcache==0.5.2\nprotobuf==7.36.1\npy-key-value-aio==0.4.5\npyarrow==25.0.1\npycparser==3.0\npydantic-settings==2.15.0\npydantic==2.13.5\npydantic_core==2.46.5\npyjnius==1.7.0\npyparsing==3.3.2\npyperclip==1.11.0\npyserini==2.4.0\npython-dateutil==2.9.0.post0\npython-dotenv==1.2.3\npython-multipart==0.0.32\nreferencing==0.37.0\nregex==2026.9.10\nrequests==2.34.2\nrich-rst==2.1.0\nrich==15.0.0\nrpds-py==2026.6.3\nsafetensors==0.8.0\nscikit-learn==1.9.1\nscipy==1.18.1\nsentencepiece==0.2.2\nsetuptools==84.0.0\nshellingham==1.5.4\nsix==1.17.0\nsniffio==1.3.1\nsse-starlette==3.4.11\nstarlette==1.6.0\nsympy==1.14.0\nthreadpoolctl==3.6.0\ntiktoken==0.14.0\ntokenizers==0.23.2\ntorch==2.14.0\ntqdm==4.70.1\ntransformers==5.17.0\ntruststore==0.10.4\ntyper==0.27.2\ntyping-inspection==0.4.4\ntyping_extensions==4.16.0\nuncalled-for==0.4.0\nurllib3==2.7.0\nuvicorn==0.52.4\nwatchfiles==1.2.0\nwebsockets==17.1\nxxhash==4.0.1\nyarl==1.24.5\n",
+          "package_freeze_sha256": "8c98ac813a0fc114a61a7493a935c84aa4675c5248ce61e89c54aeb5892c71ec",
+          "package_freeze_format": "importlib.metadata installed Name==Version snapshot; editable project code is covered by source_sha256",
+          "source_sha256": {
+            "benchmarks/strong_lexical.py": "1723932746ed5cd675b036f0236c322764e3ec4ba074d509c5d5104ab1a96669",
+            "benchmarks/provenance.py": "de3bdcd069817dc6b5983a956d1b5e4dc945e372194c19d67fad68772f4d9b67"
+          },
+          "predictions_sha256": "c0b762d5bd3939951ef79c99e0c076ac4a2c382a3fab799709ea20e6156d4699",
+          "predictions_commit": "33a06b6792a6ec9c731d806f110e9ee4e4dbc6fa",
+          "predictions_committed_exactly": true,
+          "git_describe_at_write": "round-3-as-published-11-g259bec5",
+          "checked_at": "2026-09-12T17:03:47.239004+00:00",
+          "load_average_at_write": [
+            4.158203125,
+            4.05615234375,
+            4.01904296875
+          ],
+          "allow_dirty": false,
+          "generated_outputs": [
+            ".benchmark-data/v3/strong-lexical/scifact-rankings.json"
+          ],
+          "generated_outputs_dirty_exemption": false
+        },
+        "protocol": {
+          "engine": "Pyserini/Anserini/Lucene",
+          "pyserini": "2.4.0",
+          "java": "openjdk version \"21.0.12.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode, sharing)",
+          "document_generator": "DefaultLuceneDocumentGenerator",
+          "analyzer": "DefaultEnglishAnalyzer: StandardTokenizer, English possessive, lowercase, Lucene English stop set, Porter stemming",
+          "bm25": {
+            "k1": 0.9,
+            "b": 0.4
+          },
+          "fields": {
+            "contents": 1.0,
+            "title": 1.0
+          },
+          "index_threads": 1,
+          "search_hits": 1000,
+          "rrf_pool": 100,
+          "self_document_exclusion": true,
+          "index_command": [
+            "python",
+            "-m",
+            "pyserini.index.lucene",
+            "--collection",
+            "JsonCollection",
+            "--input",
+            "<EXTERNAL>/collection",
+            "--index",
+            "<EXTERNAL>/index",
+            "--generator",
+            "DefaultLuceneDocumentGenerator",
+            "--threads",
+            "1",
+            "--fields",
+            "title",
+            "--storePositions",
+            "--storeDocvectors",
+            "--storeRaw"
+          ],
+          "qrels_isolation": "qrels supply TEST query IDs only; relevance grades are not loaded by this runner"
+        },
+        "corpus_input_count": 5183,
+        "indexed_document_count": 5183,
+        "empty_document_count": 0
+      },
+      "official_pyserini_multifield_sanity": {
+        "published_ndcg@10": 0.665,
+        "observed_ndcg@10": 0.6647045224999929,
+        "difference": -0.00029547750000713524,
+        "role": "post-freeze reproduction check, never a tuning target"
+      },
+      "truncation": {
+        "minilm": {
+          "tokenizer": "sentence-transformers/all-MiniLM-L6-v2",
+          "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "add_special_tokens": true,
+          "query_prefix_included": "",
+          "documents": {
+            "count": 5183,
+            "p50": 316.0,
+            "p95": 567.8999999999996,
+            "p99": 760.7200000000012,
+            "max": 1939,
+            "over_256": 3681,
+            "over_256_fraction": 0.710206444144318,
+            "over_512": 455,
+            "over_512_fraction": 0.08778699594829249
+          },
+          "queries": {
+            "count": 300,
+            "p50": 21.0,
+            "p95": 41.0,
+            "p99": 44.0,
+            "max": 64,
+            "over_256": 0,
+            "over_256_fraction": 0.0,
+            "over_512": 0,
+            "over_512_fraction": 0.0
+          }
+        },
+        "bge": {
+          "tokenizer": "BAAI/bge-small-en-v1.5",
+          "model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+          "add_special_tokens": true,
+          "query_prefix_included": "Represent this sentence for searching relevant passages: ",
+          "documents": {
+            "count": 5183,
+            "p50": 316.0,
+            "p95": 567.8999999999996,
+            "p99": 760.7200000000012,
+            "max": 1939,
+            "over_256": 3681,
+            "over_256_fraction": 0.710206444144318,
+            "over_512": 455,
+            "over_512_fraction": 0.08778699594829249
+          },
+          "queries": {
+            "count": 300,
+            "p50": 29.0,
+            "p95": 49.0,
+            "p99": 52.0,
+            "max": 72,
+            "over_256": 0,
+            "over_256_fraction": 0.0,
+            "over_512": 0,
+            "over_512_fraction": 0.0
+          }
+        }
+      },
+      "matched_contexts": {
+        "256": {
+          "systems": {
+            "strong_bm25": {
+              "metrics": {
+                "ndcg@10": 0.6647045224999929,
+                "recall@10": 0.7997777777777778,
+                "mrr@10": 0.6302195767195766,
+                "query_count": 300
+              },
+              "latency": {
+                "samples": 300,
+                "p50_seconds": 0.020403125003213063,
+                "p95_seconds": 0.03154189024717198,
+                "mean_seconds": 0.02188540762324313,
+                "total_seconds": 6.565622286972939
+              }
+            },
+            "minilm_dense": {
+              "metrics": {
+                "ndcg@10": 0.6450816521455776,
+                "recall@10": 0.7833333333333333,
+                "mrr@10": 0.6047248677248678,
+                "query_count": 300
+              },
+              "latency": {
+                "samples": 300,
+                "p50_seconds": 0.00014358350017573684,
+                "p95_seconds": 0.00027807674559880984,
+                "mean_seconds": 0.00015899482673072877,
+                "total_seconds": 0.04769844801921863
+              }
+            },
+            "bge_dense": {
+              "metrics": {
+                "ndcg@10": 0.7005040179184696,
+                "recall@10": 0.8278888888888889,
+                "mrr@10": 0.6669179894179894,
+                "query_count": 300
+              },
+              "latency": {
+                "samples": 300,
+                "p50_seconds": 0.0001427710012649186,
+                "p95_seconds": 0.0002757794994977303,
+                "mean_seconds": 0.00015799306992751857,
+                "total_seconds": 0.04739792097825557
+              }
+            },
+            "minilm_hybrid_rrf": {
+              "metrics": {
+                "ndcg@10": 0.7039929342278247,
+                "recall@10": 0.835388888888889,
+                "mrr@10": 0.6691547619047619,
+                "query_count": 300
+              },
+              "latency": {
+                "samples": 300,
+                "p50_seconds": 0.020607271515473258,
+                "p95_seconds": 0.03183455239923205,
+                "mean_seconds": 0.022110169410298114,
+                "total_seconds": 6.633050823089434
+              },
+              "fusion_only_latency": {
+                "samples": 300,
+                "p50_seconds": 5.7812503655441105e-05,
+                "p95_seconds": 0.0001138481893576682,
+                "mean_seconds": 6.576696032425388e-05,
+                "total_seconds": 0.019730088097276166
+              }
+            },
+            "bge_hybrid_rrf": {
+              "metrics": {
+                "ndcg@10": 0.710544336554558,
+                "recall@10": 0.8437222222222223,
+                "mrr@10": 0.6747671957671958,
+                "query_count": 300
+              },
+              "latency": {
+                "samples": 300,
+                "p50_seconds": 0.020594625500962138,
+                "p95_seconds": 0.03184279645429342,
+                "mean_seconds": 0.022102762749564134,
+                "total_seconds": 6.630828824869241
+              },
+              "fusion_only_latency": {
+                "samples": 300,
+                "p50_seconds": 5.454200436361134e-05,
+                "p95_seconds": 9.301875907112845e-05,
+                "mean_seconds": 5.9362056393486755e-05,
+                "total_seconds": 0.017808616918046027
+              }
+            },
+            "three_way_rrf": {
+              "metrics": {
+                "ndcg@10": 0.7175202513369076,
+                "recall@10": 0.8495555555555556,
+                "mrr@10": 0.6801732804232805,
+                "query_count": 300
+              },
+              "latency": {
+                "samples": 300,
+                "p50_seconds": 0.020762084517627954,
+                "p95_seconds": 0.032012891038175444,
+                "mean_seconds": 0.022287391914093558,
+                "total_seconds": 6.686217574228067
+              },
+              "fusion_only_latency": {
+                "samples": 300,
+                "p50_seconds": 7.989600271685049e-05,
+                "p95_seconds": 0.00012500625525717622,
+                "mean_seconds": 8.499639419217904e-05,
+                "total_seconds": 0.025498918257653713
+              }
+            }
+          },
+          "vector_cache": {
+            "minilm": {
+              "documents": {
+                "dataset": "scifact",
+                "model": "sentence-transformers/all-MiniLM-L6-v2",
+                "kind": "documents",
+                "rows": 5183,
+                "dimensions": 384,
+                "content_sha256": "1ac1ba87209e2da9d853310ed6df85c49f560239820c396143384c351e56bf46",
+                "query_prefix": "",
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "mps-fp32",
+                "precision": "float32",
+                "model_cache_tree_sha256": "e8ef1b320e1c4e2a870c19f5f920c184c92b5fa2188b1fae9ce9a02e59318505",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 177.7129470419968,
+                "array_sha256": "e95fe397bcc1cfddc6347fc5e4784ed975c4a1eec7c7babcaf1ca0be191556d3",
+                "created_at": "2026-09-12T14:22:41.348334+00:00",
+                "context_tokens": 256,
+                "cache_reused": true,
+                "reuse_source": "docs/benchmarks-v2/source/cross-domain/cross_domain.py",
+                "reuse_source_sha256": "1c5d63d12c06e85478ce86887734030a36c644db5c92060b7653c355f34f1f31",
+                "legacy_meta_sha256": "7421b39d752908cfb8e58f67be2975f41bbae1a85d321c4f0fa73807a4786951",
+                "reuse_limitation": "v2 metadata omitted explicit context length; frozen executed source sets this exact model length"
+              },
+              "queries": {
+                "dataset": "scifact",
+                "model": "sentence-transformers/all-MiniLM-L6-v2",
+                "kind": "queries",
+                "rows": 300,
+                "dimensions": 384,
+                "content_sha256": "73a1ef72e338536646e7e1cac83dd9e2a687fe4a0e4161b722108539fac9b3fd",
+                "query_prefix": "",
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "mps-fp32",
+                "precision": "float32",
+                "model_cache_tree_sha256": "e8ef1b320e1c4e2a870c19f5f920c184c92b5fa2188b1fae9ce9a02e59318505",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 4.005570000001171,
+                "array_sha256": "0698dd7c1a7a40d9ce72d5be6030f36994387f71686e77b9c8d46b4036de2670",
+                "created_at": "2026-09-12T14:22:45.765776+00:00",
+                "context_tokens": 256,
+                "cache_reused": true,
+                "reuse_source": "docs/benchmarks-v2/source/cross-domain/cross_domain.py",
+                "reuse_source_sha256": "1c5d63d12c06e85478ce86887734030a36c644db5c92060b7653c355f34f1f31",
+                "legacy_meta_sha256": "c2ab2270df8b14b28163e27e0fb13402d73a3c4fa404966f39ce73c018aba41d",
+                "reuse_limitation": "v2 metadata omitted explicit context length; frozen executed source sets this exact model length"
+              }
+            },
+            "bge": {
+              "documents": {
+                "dataset": "scifact",
+                "model": "BAAI/bge-small-en-v1.5",
+                "model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+                "kind": "documents",
+                "rows": 5183,
+                "dimensions": 384,
+                "content_sha256": "1ac1ba87209e2da9d853310ed6df85c49f560239820c396143384c351e56bf46",
+                "query_prefix": "",
+                "context_tokens": 256,
+                "add_special_tokens": true,
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "sentence-transformers-mps-fp32",
+                "embedding_source_sha256": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                "model_cache_tree_sha256": "4783e263bb4cf1b3d33501d690bc564783df8a43f49c432476642fdff2f2b723",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 26.75523708399851,
+                "elapsed_seconds_this_run": 0.0,
+                "array_sha256": "f787aa02d0a90a2c9c1a4ea0eb92904f3ee7181144a0c980637b41a9f28fa107",
+                "created_at": "2026-09-12T16:41:55.270589+00:00",
+                "cache_reused": true,
+                "reuse_source_validation": {
+                  "method": "reviewed_legacy_whole_source_sha256",
+                  "accepted": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                  "rationale": "frozen commit 7c2eed4 initial v3 run; subsequent changes only add output metadata, path redaction, and verification"
+                }
+              },
+              "queries": {
+                "dataset": "scifact",
+                "model": "BAAI/bge-small-en-v1.5",
+                "model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+                "kind": "queries",
+                "rows": 300,
+                "dimensions": 384,
+                "content_sha256": "73a1ef72e338536646e7e1cac83dd9e2a687fe4a0e4161b722108539fac9b3fd",
+                "query_prefix": "Represent this sentence for searching relevant passages: ",
+                "context_tokens": 256,
+                "add_special_tokens": true,
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "sentence-transformers-mps-fp32",
+                "embedding_source_sha256": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                "model_cache_tree_sha256": "4783e263bb4cf1b3d33501d690bc564783df8a43f49c432476642fdff2f2b723",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 0.3901902500001597,
+                "elapsed_seconds_this_run": 0.0,
+                "array_sha256": "6654428a20b6aaa1c475e55478782dd86a03b9c44bd8f60b2a2c8b3923d8b09c",
+                "created_at": "2026-09-12T16:41:55.782181+00:00",
+                "cache_reused": true,
+                "reuse_source_validation": {
+                  "method": "reviewed_legacy_whole_source_sha256",
+                  "accepted": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                  "rationale": "frozen commit 7c2eed4 initial v3 run; subsequent changes only add output metadata, path redaction, and verification"
+                }
+              }
+            }
+          }
+        },
+        "512": {
+          "systems": {
+            "strong_bm25": {
+              "metrics": {
+                "ndcg@10": 0.6647045224999929,
+                "recall@10": 0.7997777777777778,
+                "mrr@10": 0.6302195767195766,
+                "query_count": 300
+              },
+              "latency": {
+                "samples": 300,
+                "p50_seconds": 0.020403125003213063,
+                "p95_seconds": 0.03154189024717198,
+                "mean_seconds": 0.02188540762324313,
+                "total_seconds": 6.565622286972939
+              }
+            },
+            "minilm_dense": {
+              "metrics": {
+                "ndcg@10": 0.6540837346606109,
+                "recall@10": 0.8080555555555556,
+                "mrr@10": 0.6070634920634921,
+                "query_count": 300
+              },
+              "latency": {
+                "samples": 300,
+                "p50_seconds": 0.00013999949442222714,
+                "p95_seconds": 0.00031052354825078515,
+                "mean_seconds": 0.0001572394596587401,
+                "total_seconds": 0.047171837897622027
+              }
+            },
+            "bge_dense": {
+              "metrics": {
+                "ndcg@10": 0.7127069247605036,
+                "recall@10": 0.8362222222222222,
+                "mrr@10": 0.6821931216931216,
+                "query_count": 300
+              },
+              "latency": {
+                "samples": 300,
+                "p50_seconds": 0.00014335400192067027,
+                "p95_seconds": 0.00027422740167821764,
+                "mean_seconds": 0.00015579354692211685,
+                "total_seconds": 0.046738064076635055
+              }
+            },
+            "minilm_hybrid_rrf": {
+              "metrics": {
+                "ndcg@10": 0.7073517277467953,
+                "recall@10": 0.8477222222222222,
+                "mrr@10": 0.668265873015873,
+                "query_count": 300
+              },
+              "latency": {
+                "samples": 300,
+                "p50_seconds": 0.02062135449523339,
+                "p95_seconds": 0.031863138794869884,
+                "mean_seconds": 0.022105459726881237,
+                "total_seconds": 6.631637918064371
+              },
+              "fusion_only_latency": {
+                "samples": 300,
+                "p50_seconds": 5.633300315821543e-05,
+                "p95_seconds": 0.00010081664586323315,
+                "mean_seconds": 6.281264397936562e-05,
+                "total_seconds": 0.018843793193809688
+              }
+            },
+            "bge_hybrid_rrf": {
+              "metrics": {
+                "ndcg@10": 0.7118220477110888,
+                "recall@10": 0.8437222222222223,
+                "mrr@10": 0.6777486772486773,
+                "query_count": 300
+              },
+              "latency": {
+                "samples": 300,
+                "p50_seconds": 0.02060845850064652,
+                "p95_seconds": 0.0317171715083532,
+                "mean_seconds": 0.022108898243895964,
+                "total_seconds": 6.632669473168789
+              },
+              "fusion_only_latency": {
+                "samples": 300,
+                "p50_seconds": 6.064549233997241e-05,
+                "p95_seconds": 0.0001049705024342984,
+                "mean_seconds": 6.769707373071772e-05,
+                "total_seconds": 0.020309122119215317
+              }
+            },
+            "three_way_rrf": {
+              "metrics": {
+                "ndcg@10": 0.7184207833612057,
+                "recall@10": 0.8528888888888889,
+                "mrr@10": 0.6802288359788361,
+                "query_count": 300
+              },
+              "latency": {
+                "samples": 300,
+                "p50_seconds": 0.020766313013155013,
+                "p95_seconds": 0.03201796174398623,
+                "mean_seconds": 0.02228805104653778,
+                "total_seconds": 6.686415313961334
+              },
+              "fusion_only_latency": {
+                "samples": 300,
+                "p50_seconds": 8.572899969294667e-05,
+                "p95_seconds": 0.0001208714966196567,
+                "mean_seconds": 8.961041671379158e-05,
+                "total_seconds": 0.026883125014137477
+              }
+            }
+          },
+          "vector_cache": {
+            "minilm": {
+              "documents": {
+                "dataset": "scifact",
+                "model": "sentence-transformers/all-MiniLM-L6-v2",
+                "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+                "kind": "documents",
+                "rows": 5183,
+                "dimensions": 384,
+                "content_sha256": "1ac1ba87209e2da9d853310ed6df85c49f560239820c396143384c351e56bf46",
+                "query_prefix": "",
+                "context_tokens": 512,
+                "add_special_tokens": true,
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "sentence-transformers-mps-fp32",
+                "embedding_source_sha256": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                "model_cache_tree_sha256": "e8ef1b320e1c4e2a870c19f5f920c184c92b5fa2188b1fae9ce9a02e59318505",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 24.962386416998925,
+                "elapsed_seconds_this_run": 0.0,
+                "array_sha256": "c2064e2bb2bcf80dc8cdfa1bcaecb8c3ee27b7407241e8e0671c259eb1de1b36",
+                "created_at": "2026-09-12T16:42:20.970442+00:00",
+                "cache_reused": true,
+                "reuse_source_validation": {
+                  "method": "reviewed_legacy_whole_source_sha256",
+                  "accepted": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                  "rationale": "frozen commit 7c2eed4 initial v3 run; subsequent changes only add output metadata, path redaction, and verification"
+                }
+              },
+              "queries": {
+                "dataset": "scifact",
+                "model": "sentence-transformers/all-MiniLM-L6-v2",
+                "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+                "kind": "queries",
+                "rows": 300,
+                "dimensions": 384,
+                "content_sha256": "73a1ef72e338536646e7e1cac83dd9e2a687fe4a0e4161b722108539fac9b3fd",
+                "query_prefix": "",
+                "context_tokens": 512,
+                "add_special_tokens": true,
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "sentence-transformers-mps-fp32",
+                "embedding_source_sha256": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                "model_cache_tree_sha256": "e8ef1b320e1c4e2a870c19f5f920c184c92b5fa2188b1fae9ce9a02e59318505",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 0.1647510000038892,
+                "elapsed_seconds_this_run": 0.0,
+                "array_sha256": "0698dd7c1a7a40d9ce72d5be6030f36994387f71686e77b9c8d46b4036de2670",
+                "created_at": "2026-09-12T16:42:21.227507+00:00",
+                "cache_reused": true,
+                "reuse_source_validation": {
+                  "method": "reviewed_legacy_whole_source_sha256",
+                  "accepted": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                  "rationale": "frozen commit 7c2eed4 initial v3 run; subsequent changes only add output metadata, path redaction, and verification"
+                }
+              }
+            },
+            "bge": {
+              "documents": {
+                "dataset": "scifact",
+                "model": "BAAI/bge-small-en-v1.5",
+                "kind": "documents",
+                "rows": 5183,
+                "dimensions": 384,
+                "content_sha256": "1ac1ba87209e2da9d853310ed6df85c49f560239820c396143384c351e56bf46",
+                "query_prefix": "",
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "mps-fp32",
+                "precision": "float32",
+                "model_cache_tree_sha256": "4783e263bb4cf1b3d33501d690bc564783df8a43f49c432476642fdff2f2b723",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 656.3424636249983,
+                "array_sha256": "db3d3dce93ea92e1fa5005d0bb3a8292f8078f912f392ca1b21b85624cfbf698",
+                "created_at": "2026-09-12T14:34:06.545480+00:00",
+                "context_tokens": 512,
+                "cache_reused": true,
+                "reuse_source": "docs/benchmarks-v2/source/cross-domain/cross_domain.py",
+                "reuse_source_sha256": "1c5d63d12c06e85478ce86887734030a36c644db5c92060b7653c355f34f1f31",
+                "legacy_meta_sha256": "22740252107a517975d776d419afdd7bae661ecb77ca83edfaf3d1f5a0e89649",
+                "reuse_limitation": "v2 metadata omitted explicit context length; frozen executed source sets this exact model length"
+              },
+              "queries": {
+                "dataset": "scifact",
+                "model": "BAAI/bge-small-en-v1.5",
+                "kind": "queries",
+                "rows": 300,
+                "dimensions": 384,
+                "content_sha256": "73a1ef72e338536646e7e1cac83dd9e2a687fe4a0e4161b722108539fac9b3fd",
+                "query_prefix": "Represent this sentence for searching relevant passages: ",
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "mps-fp32",
+                "precision": "float32",
+                "model_cache_tree_sha256": "4783e263bb4cf1b3d33501d690bc564783df8a43f49c432476642fdff2f2b723",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 3.3236378750007134,
+                "array_sha256": "6654428a20b6aaa1c475e55478782dd86a03b9c44bd8f60b2a2c8b3923d8b09c",
+                "created_at": "2026-09-12T14:34:10.258779+00:00",
+                "context_tokens": 512,
+                "cache_reused": true,
+                "reuse_source": "docs/benchmarks-v2/source/cross-domain/cross_domain.py",
+                "reuse_source_sha256": "1c5d63d12c06e85478ce86887734030a36c644db5c92060b7653c355f34f1f31",
+                "legacy_meta_sha256": "c28c5b18bffe748bba9ce4737a5213c4b811076428f9920bb7c0b08abf4acbf1",
+                "reuse_limitation": "v2 metadata omitted explicit context length; frozen executed source sets this exact model length"
+              }
+            }
+          }
+        }
+      },
+      "weak_lexical_supplement": {
+        "label": "historical weak regex-token rank_bm25 baseline; supplementary only",
+        "source": "docs/benchmarks-v2/cross-domain-results.json",
+        "source_sha256": "5209cacbbd0c9c1083a97a13384bde9560b78e9fbe9e93e72b0f6ec5389e78b0",
+        "systems": {
+          "bm25": {
+            "metrics": {
+              "ndcg@10": 0.6518925893260478,
+              "recall@10": 0.7739999999999999,
+              "mrr@10": 0.6186150793650793,
+              "query_count": 300
+            },
+            "latency": {
+              "samples": 300,
+              "p50_seconds": 0.05708022900216747,
+              "p95_seconds": 0.14612460419812123,
+              "mean_seconds": 0.06625767704654816,
+              "total_seconds": 19.877303113964444
+            }
+          },
+          "bge_dense": {
+            "metrics": {
+              "ndcg@10": 0.7127069247605036,
+              "recall@10": 0.8362222222222222,
+              "mrr@10": 0.6821931216931217,
+              "query_count": 300
+            },
+            "latency": {
+              "samples": 300,
+              "p50_seconds": 0.0005795415017928462,
+              "p95_seconds": 0.0009199917047226337,
+              "mean_seconds": 0.0006218956834345591,
+              "total_seconds": 0.1865687050303677
+            }
+          },
+          "bge_hybrid_rrf": {
+            "metrics": {
+              "ndcg@10": 0.7043007332143008,
+              "recall@10": 0.8148888888888889,
+              "mrr@10": 0.6756362433862434,
+              "query_count": 300
+            },
+            "latency": {
+              "samples": 300,
+              "p50_seconds": 0.05792845850010053,
+              "p95_seconds": 0.14677969619515352,
+              "mean_seconds": 0.06700346855335132,
+              "total_seconds": 20.101040566005395
+            }
+          }
+        }
+      }
+    },
+    "nfcorpus": {
+      "corpus_count": 3633,
+      "test_query_count": 323,
+      "qrel_pairs": 12334,
+      "canonical_content_sha256": "15f2e7669da0bb4cacede145a2b052affcc885a609b1ee563c30d28625106b91",
+      "test_queries_sha256": "246a3347871a00d67edc892f7f30fa3d8c3d7203fb351144759f07465c2e991b",
+      "strong_lexical": {
+        "path": ".benchmark-data/v3/strong-lexical/nfcorpus-rankings.json",
+        "provenance": {
+          "git_commit": "259bec5858ec36296dbeb21e02dfbd706f5762a9",
+          "git_dirty": false,
+          "git_dirty_paths": [],
+          "git_describe": "round-3-as-published-11-g259bec5",
+          "python": "3.12.13",
+          "platform": "macOS-26.6.2-arm64-arm-64bit",
+          "started_at": "2026-09-12T17:03:31.135130+00:00",
+          "load_average": [
+            3.578125,
+            3.9404296875,
+            3.97900390625
+          ],
+          "requirements_sha256": "9e1c0acff464e0366561d50af9182feaa73acd8293c422258105cc367c5394f0",
+          "requirements_path": "benchmarks/requirements-cross-domain-v3-lexical.txt",
+          "package_freeze": "Authlib==1.8.0\nFlask==3.1.3\nJinja2==3.1.6\nMarkupSafe==3.0.3\nPyJWT==2.14.0\nPyYAML==6.0.3\nPygments==2.21.0\nWerkzeug==3.1.8\naiofile==3.12.3\naiohappyeyeballs==2.7.1\naiohttp==3.14.3\naiosignal==1.4.0\nannotated-doc==0.0.5\nannotated-types==0.8.0\nanyio==4.15.1\nattrs==26.1.0\nbeartype==0.22.9\nblinker==1.9.0\ncachetools==7.1.8\ncaio==0.12.4\ncertifi==2026.7.22\ncffi==2.1.1\ncharset-normalizer==3.5.1\nclick==8.5.0\ncloudpickle==3.1.2\ncontourpy==1.4.0\ncryptography==50.0.1\ncycler==0.12.1\ncyclopts==4.25.2\ndatasets==5.0.1\ndill==0.4.1\ndnspython==2.8.0\ndocstring_parser==0.18.0\nemail-validator==2.3.0\nexceptiongroup==1.3.1\nfastapi==0.141.1\nfastmcp-slim==4.0.3\nfastmcp==4.0.3\nfilelock==3.32.6\nflatbuffers==25.12.19\nfonttools==4.65.0\nfrozenlist==1.8.0\nfsspec==2026.6.0\ngriffelib==2.3.0\nh11==0.16.0\nhf-xet==1.6.0\nhttpcore2==2.12.0\nhttpcore==1.0.9\nhttpx2==2.12.0\nhttpx==0.28.1\nhuggingface_hub==1.31.0\nidna==3.19\nitsdangerous==2.2.0\njaraco.classes==3.4.0\njaraco.context==6.1.2\njaraco.functools==4.6.0\njiter==0.17.0\njoblib==1.6.0\njoserfc==1.7.5\njsonref==1.1.0\njsonschema-path==0.5.0\njsonschema-specifications==2025.9.1\njsonschema==4.26.0\nkeyring==25.7.0\nkiwisolver==1.5.1\nmarkdown-it-py==4.2.0\nmatplotlib==3.11.2\nmcp-types==2.2.0\nmcp==2.2.0\nmdurl==0.1.2\nmore-itertools==11.1.0\nmpmath==1.3.0\nmultidict==6.8.0\nmultiprocess==0.70.19\nnarwhals==2.26.0\nnetworkx==3.6.1\nnumpy==2.4.3\nonnxruntime==1.30.0\nopenai==3.13.0\nopenapi-pydantic==0.5.1\nopentelemetry-api==1.44.0\npackaging==26.3\npandas==3.0.5\npathable==0.6.0\npillow==12.3.0\nplatformdirs==4.11.8\npropcache==0.5.2\nprotobuf==7.36.1\npy-key-value-aio==0.4.5\npyarrow==25.0.1\npycparser==3.0\npydantic-settings==2.15.0\npydantic==2.13.5\npydantic_core==2.46.5\npyjnius==1.7.0\npyparsing==3.3.2\npyperclip==1.11.0\npyserini==2.4.0\npython-dateutil==2.9.0.post0\npython-dotenv==1.2.3\npython-multipart==0.0.32\nreferencing==0.37.0\nregex==2026.9.10\nrequests==2.34.2\nrich-rst==2.1.0\nrich==15.0.0\nrpds-py==2026.6.3\nsafetensors==0.8.0\nscikit-learn==1.9.1\nscipy==1.18.1\nsentencepiece==0.2.2\nsetuptools==84.0.0\nshellingham==1.5.4\nsix==1.17.0\nsniffio==1.3.1\nsse-starlette==3.4.11\nstarlette==1.6.0\nsympy==1.14.0\nthreadpoolctl==3.6.0\ntiktoken==0.14.0\ntokenizers==0.23.2\ntorch==2.14.0\ntqdm==4.70.1\ntransformers==5.17.0\ntruststore==0.10.4\ntyper==0.27.2\ntyping-inspection==0.4.4\ntyping_extensions==4.16.0\nuncalled-for==0.4.0\nurllib3==2.7.0\nuvicorn==0.52.4\nwatchfiles==1.2.0\nwebsockets==17.1\nxxhash==4.0.1\nyarl==1.24.5\n",
+          "package_freeze_sha256": "8c98ac813a0fc114a61a7493a935c84aa4675c5248ce61e89c54aeb5892c71ec",
+          "package_freeze_format": "importlib.metadata installed Name==Version snapshot; editable project code is covered by source_sha256",
+          "source_sha256": {
+            "benchmarks/strong_lexical.py": "1723932746ed5cd675b036f0236c322764e3ec4ba074d509c5d5104ab1a96669",
+            "benchmarks/provenance.py": "de3bdcd069817dc6b5983a956d1b5e4dc945e372194c19d67fad68772f4d9b67"
+          },
+          "predictions_sha256": "c0b762d5bd3939951ef79c99e0c076ac4a2c382a3fab799709ea20e6156d4699",
+          "predictions_commit": "33a06b6792a6ec9c731d806f110e9ee4e4dbc6fa",
+          "predictions_committed_exactly": true,
+          "git_describe_at_write": "round-3-as-published-11-g259bec5",
+          "checked_at": "2026-09-12T17:03:51.922657+00:00",
+          "load_average_at_write": [
+            4.3857421875,
+            4.10498046875,
+            4.0361328125
+          ],
+          "allow_dirty": false,
+          "generated_outputs": [
+            ".benchmark-data/v3/strong-lexical/nfcorpus-rankings.json",
+            ".benchmark-data/v3/strong-lexical/scifact-rankings.json"
+          ],
+          "generated_outputs_dirty_exemption": false
+        },
+        "protocol": {
+          "engine": "Pyserini/Anserini/Lucene",
+          "pyserini": "2.4.0",
+          "java": "openjdk version \"21.0.12.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode, sharing)",
+          "document_generator": "DefaultLuceneDocumentGenerator",
+          "analyzer": "DefaultEnglishAnalyzer: StandardTokenizer, English possessive, lowercase, Lucene English stop set, Porter stemming",
+          "bm25": {
+            "k1": 0.9,
+            "b": 0.4
+          },
+          "fields": {
+            "contents": 1.0,
+            "title": 1.0
+          },
+          "index_threads": 1,
+          "search_hits": 1000,
+          "rrf_pool": 100,
+          "self_document_exclusion": true,
+          "index_command": [
+            "python",
+            "-m",
+            "pyserini.index.lucene",
+            "--collection",
+            "JsonCollection",
+            "--input",
+            "<EXTERNAL>/collection",
+            "--index",
+            "<EXTERNAL>/index",
+            "--generator",
+            "DefaultLuceneDocumentGenerator",
+            "--threads",
+            "1",
+            "--fields",
+            "title",
+            "--storePositions",
+            "--storeDocvectors",
+            "--storeRaw"
+          ],
+          "qrels_isolation": "qrels supply TEST query IDs only; relevance grades are not loaded by this runner"
+        },
+        "corpus_input_count": 3633,
+        "indexed_document_count": 3633,
+        "empty_document_count": 0
+      },
+      "official_pyserini_multifield_sanity": {
+        "published_ndcg@10": 0.325,
+        "observed_ndcg@10": 0.32544986436868645,
+        "difference": 0.00044986436868643676,
+        "role": "post-freeze reproduction check, never a tuning target"
+      },
+      "truncation": {
+        "minilm": {
+          "tokenizer": "sentence-transformers/all-MiniLM-L6-v2",
+          "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "add_special_tokens": true,
+          "query_prefix_included": "",
+          "documents": {
+            "count": 3633,
+            "p50": 357.0,
+            "p95": 558.0,
+            "p99": 690.6799999999998,
+            "max": 2377,
+            "over_256": 2864,
+            "over_256_fraction": 0.7883292045141757,
+            "over_512": 330,
+            "over_512_fraction": 0.09083402146985962
+          },
+          "queries": {
+            "count": 323,
+            "p50": 6.0,
+            "p95": 13.0,
+            "p99": 17.0,
+            "max": 28,
+            "over_256": 0,
+            "over_256_fraction": 0.0,
+            "over_512": 0,
+            "over_512_fraction": 0.0
+          }
+        },
+        "bge": {
+          "tokenizer": "BAAI/bge-small-en-v1.5",
+          "model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+          "add_special_tokens": true,
+          "query_prefix_included": "Represent this sentence for searching relevant passages: ",
+          "documents": {
+            "count": 3633,
+            "p50": 357.0,
+            "p95": 558.0,
+            "p99": 690.6799999999998,
+            "max": 2377,
+            "over_256": 2864,
+            "over_256_fraction": 0.7883292045141757,
+            "over_512": 330,
+            "over_512_fraction": 0.09083402146985962
+          },
+          "queries": {
+            "count": 323,
+            "p50": 14.0,
+            "p95": 21.0,
+            "p99": 25.0,
+            "max": 36,
+            "over_256": 0,
+            "over_256_fraction": 0.0,
+            "over_512": 0,
+            "over_512_fraction": 0.0
+          }
+        }
+      },
+      "matched_contexts": {
+        "256": {
+          "systems": {
+            "strong_bm25": {
+              "metrics": {
+                "ndcg@10": 0.32544986436868645,
+                "recall@10": 0.15708258049196255,
+                "mrr@10": 0.532516339869281,
+                "query_count": 323
+              },
+              "latency": {
+                "samples": 323,
+                "p50_seconds": 0.0042877910018432885,
+                "p95_seconds": 0.019485666694527025,
+                "mean_seconds": 0.007620690907713894,
+                "total_seconds": 2.4614831631915877
+              }
+            },
+            "minilm_dense": {
+              "metrics": {
+                "ndcg@10": 0.31667312754717797,
+                "recall@10": 0.15498797328057845,
+                "mrr@10": 0.5076539387684899,
+                "query_count": 323
+              },
+              "latency": {
+                "samples": 323,
+                "p50_seconds": 0.00012058300490025431,
+                "p95_seconds": 0.00022218780359253276,
+                "mean_seconds": 0.00013119853781060468,
+                "total_seconds": 0.04237712771282531
+              }
+            },
+            "bge_dense": {
+              "metrics": {
+                "ndcg@10": 0.344157313834379,
+                "recall@10": 0.162817353493182,
+                "mrr@10": 0.5363531377463266,
+                "query_count": 323
+              },
+              "latency": {
+                "samples": 323,
+                "p50_seconds": 0.0001086670090444386,
+                "p95_seconds": 0.00023895480844657866,
+                "mean_seconds": 0.00013306731287528395,
+                "total_seconds": 0.042980742058716714
+              }
+            },
+            "minilm_hybrid_rrf": {
+              "metrics": {
+                "ndcg@10": 0.3489587394696751,
+                "recall@10": 0.17129191720698764,
+                "mrr@10": 0.5423829180795124,
+                "query_count": 323
+              },
+              "latency": {
+                "samples": 323,
+                "p50_seconds": 0.004480332994717173,
+                "p95_seconds": 0.01969409609300783,
+                "mean_seconds": 0.0077861479471200475,
+                "total_seconds": 2.5149257869197754
+              },
+              "fusion_only_latency": {
+                "samples": 323,
+                "p50_seconds": 3.89159977203235e-05,
+                "p95_seconds": 4.419140459503978e-05,
+                "mean_seconds": 3.425850159554935e-05,
+                "total_seconds": 0.011065496015362442
+              }
+            },
+            "bge_hybrid_rrf": {
+              "metrics": {
+                "ndcg@10": 0.3579770228314465,
+                "recall@10": 0.17175581520128136,
+                "mrr@10": 0.5547434763379037,
+                "query_count": 323
+              },
+              "latency": {
+                "samples": 323,
+                "p50_seconds": 0.004417956981342286,
+                "p95_seconds": 0.019635203627694865,
+                "mean_seconds": 0.007792128910695854,
+                "total_seconds": 2.516857638154761
+              },
+              "fusion_only_latency": {
+                "samples": 323,
+                "p50_seconds": 3.8999991375021636e-05,
+                "p95_seconds": 4.599170060828328e-05,
+                "mean_seconds": 3.8370690106676645e-05,
+                "total_seconds": 0.012393732904456556
+              }
+            },
+            "three_way_rrf": {
+              "metrics": {
+                "ndcg@10": 0.35936382388723465,
+                "recall@10": 0.1720711222848477,
+                "mrr@10": 0.5497481448719839,
+                "query_count": 323
+              },
+              "latency": {
+                "samples": 323,
+                "p50_seconds": 0.004620122999767773,
+                "p95_seconds": 0.019834330306912305,
+                "mean_seconds": 0.007937755355241653,
+                "total_seconds": 2.563894979743054
+              },
+              "fusion_only_latency": {
+                "samples": 323,
+                "p50_seconds": 5.4625008488073945e-05,
+                "p95_seconds": 6.415860552806407e-05,
+                "mean_seconds": 5.279859684187135e-05,
+                "total_seconds": 0.017053946779924445
+              }
+            }
+          },
+          "vector_cache": {
+            "minilm": {
+              "documents": {
+                "dataset": "nfcorpus",
+                "model": "sentence-transformers/all-MiniLM-L6-v2",
+                "kind": "documents",
+                "rows": 3633,
+                "dimensions": 384,
+                "content_sha256": "15f2e7669da0bb4cacede145a2b052affcc885a609b1ee563c30d28625106b91",
+                "query_prefix": "",
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "mps-fp32",
+                "precision": "float32",
+                "model_cache_tree_sha256": "e8ef1b320e1c4e2a870c19f5f920c184c92b5fa2188b1fae9ce9a02e59318505",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 77.53705466599786,
+                "array_sha256": "12a9e6e7f61d0aa325e06bacb8fbb999c4aaf597e09ab3e392a49d68d5ab8bb6",
+                "created_at": "2026-09-12T14:35:32.120758+00:00",
+                "context_tokens": 256,
+                "cache_reused": true,
+                "reuse_source": "docs/benchmarks-v2/source/cross-domain/cross_domain.py",
+                "reuse_source_sha256": "1c5d63d12c06e85478ce86887734030a36c644db5c92060b7653c355f34f1f31",
+                "legacy_meta_sha256": "7bc9f342db3170ef3d3e23a19c054c1812c9b1ba10721564640d600af1f1caea",
+                "reuse_limitation": "v2 metadata omitted explicit context length; frozen executed source sets this exact model length"
+              },
+              "queries": {
+                "dataset": "nfcorpus",
+                "model": "sentence-transformers/all-MiniLM-L6-v2",
+                "kind": "queries",
+                "rows": 323,
+                "dimensions": 384,
+                "content_sha256": "246a3347871a00d67edc892f7f30fa3d8c3d7203fb351144759f07465c2e991b",
+                "query_prefix": "",
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "mps-fp32",
+                "precision": "float32",
+                "model_cache_tree_sha256": "e8ef1b320e1c4e2a870c19f5f920c184c92b5fa2188b1fae9ce9a02e59318505",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 7.823982125002658,
+                "array_sha256": "d4426af53a650357f3a2a575bb619992ace44f32e5bbb8bdeeb6f31099d40906",
+                "created_at": "2026-09-12T14:35:40.341540+00:00",
+                "context_tokens": 256,
+                "cache_reused": true,
+                "reuse_source": "docs/benchmarks-v2/source/cross-domain/cross_domain.py",
+                "reuse_source_sha256": "1c5d63d12c06e85478ce86887734030a36c644db5c92060b7653c355f34f1f31",
+                "legacy_meta_sha256": "9e26066305078f307ac796b538c925bb423f30ea69b4876fcc15700a0b9ba10d",
+                "reuse_limitation": "v2 metadata omitted explicit context length; frozen executed source sets this exact model length"
+              }
+            },
+            "bge": {
+              "documents": {
+                "dataset": "nfcorpus",
+                "model": "BAAI/bge-small-en-v1.5",
+                "model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+                "kind": "documents",
+                "rows": 3633,
+                "dimensions": 384,
+                "content_sha256": "15f2e7669da0bb4cacede145a2b052affcc885a609b1ee563c30d28625106b91",
+                "query_prefix": "",
+                "context_tokens": 256,
+                "add_special_tokens": true,
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "sentence-transformers-mps-fp32",
+                "embedding_source_sha256": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                "model_cache_tree_sha256": "4783e263bb4cf1b3d33501d690bc564783df8a43f49c432476642fdff2f2b723",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 19.454529959002684,
+                "elapsed_seconds_this_run": 0.0,
+                "array_sha256": "b05ba55fca8dc97faed70148b3830ed36c682162716c97d0931a99225c4e3335",
+                "created_at": "2026-09-12T16:42:42.565121+00:00",
+                "cache_reused": true,
+                "reuse_source_validation": {
+                  "method": "reviewed_legacy_whole_source_sha256",
+                  "accepted": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                  "rationale": "frozen commit 7c2eed4 initial v3 run; subsequent changes only add output metadata, path redaction, and verification"
+                }
+              },
+              "queries": {
+                "dataset": "nfcorpus",
+                "model": "BAAI/bge-small-en-v1.5",
+                "model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+                "kind": "queries",
+                "rows": 323,
+                "dimensions": 384,
+                "content_sha256": "246a3347871a00d67edc892f7f30fa3d8c3d7203fb351144759f07465c2e991b",
+                "query_prefix": "Represent this sentence for searching relevant passages: ",
+                "context_tokens": 256,
+                "add_special_tokens": true,
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "sentence-transformers-mps-fp32",
+                "embedding_source_sha256": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                "model_cache_tree_sha256": "4783e263bb4cf1b3d33501d690bc564783df8a43f49c432476642fdff2f2b723",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 0.3688921670036507,
+                "elapsed_seconds_this_run": 0.0,
+                "array_sha256": "539865b57d861b32702953cbe4036822a4b4ce3320946ddb1c1c84689dd0dd02",
+                "created_at": "2026-09-12T16:42:43.097780+00:00",
+                "cache_reused": true,
+                "reuse_source_validation": {
+                  "method": "reviewed_legacy_whole_source_sha256",
+                  "accepted": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                  "rationale": "frozen commit 7c2eed4 initial v3 run; subsequent changes only add output metadata, path redaction, and verification"
+                }
+              }
+            }
+          }
+        },
+        "512": {
+          "systems": {
+            "strong_bm25": {
+              "metrics": {
+                "ndcg@10": 0.32544986436868645,
+                "recall@10": 0.15708258049196255,
+                "mrr@10": 0.532516339869281,
+                "query_count": 323
+              },
+              "latency": {
+                "samples": 323,
+                "p50_seconds": 0.0042877910018432885,
+                "p95_seconds": 0.019485666694527025,
+                "mean_seconds": 0.007620690907713894,
+                "total_seconds": 2.4614831631915877
+              }
+            },
+            "minilm_dense": {
+              "metrics": {
+                "ndcg@10": 0.3104995487092087,
+                "recall@10": 0.15319618232695517,
+                "mrr@10": 0.5000749422576047,
+                "query_count": 323
+              },
+              "latency": {
+                "samples": 323,
+                "p50_seconds": 9.225000394508243e-05,
+                "p95_seconds": 0.000153054398833774,
+                "mean_seconds": 9.839278324139549e-05,
+                "total_seconds": 0.031780868986970745
+              }
+            },
+            "bge_dense": {
+              "metrics": {
+                "ndcg@10": 0.3437846673688362,
+                "recall@10": 0.16201750608013185,
+                "mrr@10": 0.5302091011843334,
+                "query_count": 323
+              },
+              "latency": {
+                "samples": 323,
+                "p50_seconds": 7.925000682007521e-05,
+                "p95_seconds": 0.00010419220052426681,
+                "mean_seconds": 8.146134370054196e-05,
+                "total_seconds": 0.026312014015275054
+              }
+            },
+            "minilm_hybrid_rrf": {
+              "metrics": {
+                "ndcg@10": 0.34611594491551423,
+                "recall@10": 0.17179373103850631,
+                "mrr@10": 0.538702147525677,
+                "query_count": 323
+              },
+              "latency": {
+                "samples": 323,
+                "p50_seconds": 0.00442958198254928,
+                "p95_seconds": 0.019608724788122343,
+                "mean_seconds": 0.007759803651402064,
+                "total_seconds": 2.5064165794028668
+              },
+              "fusion_only_latency": {
+                "samples": 323,
+                "p50_seconds": 4.054199962411076e-05,
+                "p95_seconds": 7.442060159519314e-05,
+                "mean_seconds": 4.071996044677512e-05,
+                "total_seconds": 0.013152547224308364
+              }
+            },
+            "bge_hybrid_rrf": {
+              "metrics": {
+                "ndcg@10": 0.3593271788227638,
+                "recall@10": 0.1708005367664517,
+                "mrr@10": 0.5529006339377855,
+                "query_count": 323
+              },
+              "latency": {
+                "samples": 323,
+                "p50_seconds": 0.004398791003040969,
+                "p95_seconds": 0.019601471502392085,
+                "mean_seconds": 0.007740532554525323,
+                "total_seconds": 2.500192015111679
+              },
+              "fusion_only_latency": {
+                "samples": 323,
+                "p50_seconds": 4.108299617655575e-05,
+                "p95_seconds": 5.853720067534592e-05,
+                "mean_seconds": 3.838030311088698e-05,
+                "total_seconds": 0.012396837904816493
+              }
+            },
+            "three_way_rrf": {
+              "metrics": {
+                "ndcg@10": 0.3599748123042726,
+                "recall@10": 0.17488495428114167,
+                "mrr@10": 0.5468585679885989,
+                "query_count": 323
+              },
+              "latency": {
+                "samples": 323,
+                "p50_seconds": 0.0045731260179309174,
+                "p95_seconds": 0.01970217919733841,
+                "mean_seconds": 0.007860610409736728,
+                "total_seconds": 2.5389771623449633
+              },
+              "fusion_only_latency": {
+                "samples": 323,
+                "p50_seconds": 5.9541998780332506e-05,
+                "p95_seconds": 7.55960922106169e-05,
+                "mean_seconds": 6.00653750808973e-05,
+                "total_seconds": 0.019401116151129827
+              }
+            }
+          },
+          "vector_cache": {
+            "minilm": {
+              "documents": {
+                "dataset": "nfcorpus",
+                "model": "sentence-transformers/all-MiniLM-L6-v2",
+                "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+                "kind": "documents",
+                "rows": 3633,
+                "dimensions": 384,
+                "content_sha256": "15f2e7669da0bb4cacede145a2b052affcc885a609b1ee563c30d28625106b91",
+                "query_prefix": "",
+                "context_tokens": 512,
+                "add_special_tokens": true,
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "sentence-transformers-mps-fp32",
+                "embedding_source_sha256": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                "model_cache_tree_sha256": "e8ef1b320e1c4e2a870c19f5f920c184c92b5fa2188b1fae9ce9a02e59318505",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 22.067074916994898,
+                "elapsed_seconds_this_run": 0.0,
+                "array_sha256": "cc7c0fc0d05619e2cceea2ce50316eda8dc7939b42115ee07248348a62d89c8b",
+                "created_at": "2026-09-12T16:43:05.296274+00:00",
+                "cache_reused": true,
+                "reuse_source_validation": {
+                  "method": "reviewed_legacy_whole_source_sha256",
+                  "accepted": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                  "rationale": "frozen commit 7c2eed4 initial v3 run; subsequent changes only add output metadata, path redaction, and verification"
+                }
+              },
+              "queries": {
+                "dataset": "nfcorpus",
+                "model": "sentence-transformers/all-MiniLM-L6-v2",
+                "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+                "kind": "queries",
+                "rows": 323,
+                "dimensions": 384,
+                "content_sha256": "246a3347871a00d67edc892f7f30fa3d8c3d7203fb351144759f07465c2e991b",
+                "query_prefix": "",
+                "context_tokens": 512,
+                "add_special_tokens": true,
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "sentence-transformers-mps-fp32",
+                "embedding_source_sha256": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                "model_cache_tree_sha256": "e8ef1b320e1c4e2a870c19f5f920c184c92b5fa2188b1fae9ce9a02e59318505",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 1.2232199999998556,
+                "elapsed_seconds_this_run": 0.0,
+                "array_sha256": "d4426af53a650357f3a2a575bb619992ace44f32e5bbb8bdeeb6f31099d40906",
+                "created_at": "2026-09-12T16:43:06.636925+00:00",
+                "cache_reused": true,
+                "reuse_source_validation": {
+                  "method": "reviewed_legacy_whole_source_sha256",
+                  "accepted": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                  "rationale": "frozen commit 7c2eed4 initial v3 run; subsequent changes only add output metadata, path redaction, and verification"
+                }
+              }
+            },
+            "bge": {
+              "documents": {
+                "dataset": "nfcorpus",
+                "model": "BAAI/bge-small-en-v1.5",
+                "kind": "documents",
+                "rows": 3633,
+                "dimensions": 384,
+                "content_sha256": "15f2e7669da0bb4cacede145a2b052affcc885a609b1ee563c30d28625106b91",
+                "query_prefix": "",
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "mps-fp32",
+                "precision": "float32",
+                "model_cache_tree_sha256": "4783e263bb4cf1b3d33501d690bc564783df8a43f49c432476642fdff2f2b723",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 315.9917421669961,
+                "array_sha256": "4dd876e7e35cc581d68b41e3f78e2a7731a45ce8df9d834633b2a42ce620eb89",
+                "created_at": "2026-09-12T14:40:57.003176+00:00",
+                "context_tokens": 512,
+                "cache_reused": true,
+                "reuse_source": "docs/benchmarks-v2/source/cross-domain/cross_domain.py",
+                "reuse_source_sha256": "1c5d63d12c06e85478ce86887734030a36c644db5c92060b7653c355f34f1f31",
+                "legacy_meta_sha256": "db790497a57ed2f6b0726365c4c8e66fd141b3a9a455f9194cc5af03db349127",
+                "reuse_limitation": "v2 metadata omitted explicit context length; frozen executed source sets this exact model length"
+              },
+              "queries": {
+                "dataset": "nfcorpus",
+                "model": "BAAI/bge-small-en-v1.5",
+                "kind": "queries",
+                "rows": 323,
+                "dimensions": 384,
+                "content_sha256": "246a3347871a00d67edc892f7f30fa3d8c3d7203fb351144759f07465c2e991b",
+                "query_prefix": "Represent this sentence for searching relevant passages: ",
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "mps-fp32",
+                "precision": "float32",
+                "model_cache_tree_sha256": "4783e263bb4cf1b3d33501d690bc564783df8a43f49c432476642fdff2f2b723",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 3.137472334004997,
+                "array_sha256": "539865b57d861b32702953cbe4036822a4b4ce3320946ddb1c1c84689dd0dd02",
+                "created_at": "2026-09-12T14:41:01.132868+00:00",
+                "context_tokens": 512,
+                "cache_reused": true,
+                "reuse_source": "docs/benchmarks-v2/source/cross-domain/cross_domain.py",
+                "reuse_source_sha256": "1c5d63d12c06e85478ce86887734030a36c644db5c92060b7653c355f34f1f31",
+                "legacy_meta_sha256": "388b6a4080e46a99bd4a3b052167b7c0405167aad6d0d98d3c5ba116e25d2e6e",
+                "reuse_limitation": "v2 metadata omitted explicit context length; frozen executed source sets this exact model length"
+              }
+            }
+          }
+        }
+      },
+      "weak_lexical_supplement": {
+        "label": "historical weak regex-token rank_bm25 baseline; supplementary only",
+        "source": "docs/benchmarks-v2/cross-domain-results.json",
+        "source_sha256": "5209cacbbd0c9c1083a97a13384bde9560b78e9fbe9e93e72b0f6ec5389e78b0",
+        "systems": {
+          "bm25": {
+            "metrics": {
+              "ndcg@10": 0.30636006036579616,
+              "recall@10": 0.15215322723953334,
+              "mrr@10": 0.5089709568037741,
+              "query_count": 323
+            },
+            "latency": {
+              "samples": 323,
+              "p50_seconds": 0.0045036249939585105,
+              "p95_seconds": 0.01383877150074113,
+              "mean_seconds": 0.0059210465944894005,
+              "total_seconds": 1.9124980500200763
+            }
+          },
+          "bge_dense": {
+            "metrics": {
+              "ndcg@10": 0.3437846673688363,
+              "recall@10": 0.16201750608013185,
+              "mrr@10": 0.5302091011843334,
+              "query_count": 323
+            },
+            "latency": {
+              "samples": 323,
+              "p50_seconds": 0.0008865409981808625,
+              "p95_seconds": 0.0045603332968312295,
+              "mean_seconds": 0.0016171195574577655,
+              "total_seconds": 0.5223296170588583
+            }
+          },
+          "bge_hybrid_rrf": {
+            "metrics": {
+              "ndcg@10": 0.34464907781988036,
+              "recall@10": 0.1643319579418487,
+              "mrr@10": 0.5516831293921077,
+              "query_count": 323
+            },
+            "latency": {
+              "samples": 323,
+              "p50_seconds": 0.006456041999626905,
+              "p95_seconds": 0.016702995006926343,
+              "mean_seconds": 0.007995103579208265,
+              "total_seconds": 2.5824184560842696
+            }
+          }
+        }
+      }
+    },
+    "fiqa": {
+      "corpus_count": 57638,
+      "test_query_count": 648,
+      "qrel_pairs": 1706,
+      "canonical_content_sha256": "acdd1b2139a0a3889f0e74ed15f644af89e555678097e07f6f059cb840326d20",
+      "test_queries_sha256": "ed1c5ee122fee9bf0f9e10c8a91528228b18091dea8c007b9ee1d00e75a22567",
+      "strong_lexical": {
+        "path": ".benchmark-data/v3/strong-lexical/fiqa-rankings.json",
+        "provenance": {
+          "git_commit": "259bec5858ec36296dbeb21e02dfbd706f5762a9",
+          "git_dirty": false,
+          "git_dirty_paths": [],
+          "git_describe": "round-3-as-published-11-g259bec5",
+          "python": "3.12.13",
+          "platform": "macOS-26.6.2-arm64-arm-64bit",
+          "started_at": "2026-09-12T17:03:31.135130+00:00",
+          "load_average": [
+            3.578125,
+            3.9404296875,
+            3.97900390625
+          ],
+          "requirements_sha256": "9e1c0acff464e0366561d50af9182feaa73acd8293c422258105cc367c5394f0",
+          "requirements_path": "benchmarks/requirements-cross-domain-v3-lexical.txt",
+          "package_freeze": "Authlib==1.8.0\nFlask==3.1.3\nJinja2==3.1.6\nMarkupSafe==3.0.3\nPyJWT==2.14.0\nPyYAML==6.0.3\nPygments==2.21.0\nWerkzeug==3.1.8\naiofile==3.12.3\naiohappyeyeballs==2.7.1\naiohttp==3.14.3\naiosignal==1.4.0\nannotated-doc==0.0.5\nannotated-types==0.8.0\nanyio==4.15.1\nattrs==26.1.0\nbeartype==0.22.9\nblinker==1.9.0\ncachetools==7.1.8\ncaio==0.12.4\ncertifi==2026.7.22\ncffi==2.1.1\ncharset-normalizer==3.5.1\nclick==8.5.0\ncloudpickle==3.1.2\ncontourpy==1.4.0\ncryptography==50.0.1\ncycler==0.12.1\ncyclopts==4.25.2\ndatasets==5.0.1\ndill==0.4.1\ndnspython==2.8.0\ndocstring_parser==0.18.0\nemail-validator==2.3.0\nexceptiongroup==1.3.1\nfastapi==0.141.1\nfastmcp-slim==4.0.3\nfastmcp==4.0.3\nfilelock==3.32.6\nflatbuffers==25.12.19\nfonttools==4.65.0\nfrozenlist==1.8.0\nfsspec==2026.6.0\ngriffelib==2.3.0\nh11==0.16.0\nhf-xet==1.6.0\nhttpcore2==2.12.0\nhttpcore==1.0.9\nhttpx2==2.12.0\nhttpx==0.28.1\nhuggingface_hub==1.31.0\nidna==3.19\nitsdangerous==2.2.0\njaraco.classes==3.4.0\njaraco.context==6.1.2\njaraco.functools==4.6.0\njiter==0.17.0\njoblib==1.6.0\njoserfc==1.7.5\njsonref==1.1.0\njsonschema-path==0.5.0\njsonschema-specifications==2025.9.1\njsonschema==4.26.0\nkeyring==25.7.0\nkiwisolver==1.5.1\nmarkdown-it-py==4.2.0\nmatplotlib==3.11.2\nmcp-types==2.2.0\nmcp==2.2.0\nmdurl==0.1.2\nmore-itertools==11.1.0\nmpmath==1.3.0\nmultidict==6.8.0\nmultiprocess==0.70.19\nnarwhals==2.26.0\nnetworkx==3.6.1\nnumpy==2.4.3\nonnxruntime==1.30.0\nopenai==3.13.0\nopenapi-pydantic==0.5.1\nopentelemetry-api==1.44.0\npackaging==26.3\npandas==3.0.5\npathable==0.6.0\npillow==12.3.0\nplatformdirs==4.11.8\npropcache==0.5.2\nprotobuf==7.36.1\npy-key-value-aio==0.4.5\npyarrow==25.0.1\npycparser==3.0\npydantic-settings==2.15.0\npydantic==2.13.5\npydantic_core==2.46.5\npyjnius==1.7.0\npyparsing==3.3.2\npyperclip==1.11.0\npyserini==2.4.0\npython-dateutil==2.9.0.post0\npython-dotenv==1.2.3\npython-multipart==0.0.32\nreferencing==0.37.0\nregex==2026.9.10\nrequests==2.34.2\nrich-rst==2.1.0\nrich==15.0.0\nrpds-py==2026.6.3\nsafetensors==0.8.0\nscikit-learn==1.9.1\nscipy==1.18.1\nsentencepiece==0.2.2\nsetuptools==84.0.0\nshellingham==1.5.4\nsix==1.17.0\nsniffio==1.3.1\nsse-starlette==3.4.11\nstarlette==1.6.0\nsympy==1.14.0\nthreadpoolctl==3.6.0\ntiktoken==0.14.0\ntokenizers==0.23.2\ntorch==2.14.0\ntqdm==4.70.1\ntransformers==5.17.0\ntruststore==0.10.4\ntyper==0.27.2\ntyping-inspection==0.4.4\ntyping_extensions==4.16.0\nuncalled-for==0.4.0\nurllib3==2.7.0\nuvicorn==0.52.4\nwatchfiles==1.2.0\nwebsockets==17.1\nxxhash==4.0.1\nyarl==1.24.5\n",
+          "package_freeze_sha256": "8c98ac813a0fc114a61a7493a935c84aa4675c5248ce61e89c54aeb5892c71ec",
+          "package_freeze_format": "importlib.metadata installed Name==Version snapshot; editable project code is covered by source_sha256",
+          "source_sha256": {
+            "benchmarks/strong_lexical.py": "1723932746ed5cd675b036f0236c322764e3ec4ba074d509c5d5104ab1a96669",
+            "benchmarks/provenance.py": "de3bdcd069817dc6b5983a956d1b5e4dc945e372194c19d67fad68772f4d9b67"
+          },
+          "predictions_sha256": "c0b762d5bd3939951ef79c99e0c076ac4a2c382a3fab799709ea20e6156d4699",
+          "predictions_commit": "33a06b6792a6ec9c731d806f110e9ee4e4dbc6fa",
+          "predictions_committed_exactly": true,
+          "git_describe_at_write": "round-3-as-published-11-g259bec5",
+          "checked_at": "2026-09-12T17:04:11.201684+00:00",
+          "load_average_at_write": [
+            4.30224609375,
+            4.111328125,
+            4.0400390625
+          ],
+          "allow_dirty": false,
+          "generated_outputs": [
+            ".benchmark-data/v3/strong-lexical/fiqa-rankings.json",
+            ".benchmark-data/v3/strong-lexical/nfcorpus-rankings.json",
+            ".benchmark-data/v3/strong-lexical/scifact-rankings.json"
+          ],
+          "generated_outputs_dirty_exemption": false
+        },
+        "protocol": {
+          "engine": "Pyserini/Anserini/Lucene",
+          "pyserini": "2.4.0",
+          "java": "openjdk version \"21.0.12.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode, sharing)",
+          "document_generator": "DefaultLuceneDocumentGenerator",
+          "analyzer": "DefaultEnglishAnalyzer: StandardTokenizer, English possessive, lowercase, Lucene English stop set, Porter stemming",
+          "bm25": {
+            "k1": 0.9,
+            "b": 0.4
+          },
+          "fields": {
+            "contents": 1.0,
+            "title": 1.0
+          },
+          "index_threads": 1,
+          "search_hits": 1000,
+          "rrf_pool": 100,
+          "self_document_exclusion": true,
+          "index_command": [
+            "python",
+            "-m",
+            "pyserini.index.lucene",
+            "--collection",
+            "JsonCollection",
+            "--input",
+            "<EXTERNAL>/collection",
+            "--index",
+            "<EXTERNAL>/index",
+            "--generator",
+            "DefaultLuceneDocumentGenerator",
+            "--threads",
+            "1",
+            "--fields",
+            "title",
+            "--storePositions",
+            "--storeDocvectors",
+            "--storeRaw"
+          ],
+          "qrels_isolation": "qrels supply TEST query IDs only; relevance grades are not loaded by this runner"
+        },
+        "corpus_input_count": 57638,
+        "indexed_document_count": 57600,
+        "empty_document_count": 38
+      },
+      "official_pyserini_multifield_sanity": {
+        "published_ndcg@10": 0.236,
+        "observed_ndcg@10": 0.2360668075849401,
+        "difference": 6.680758494012617e-05,
+        "role": "post-freeze reproduction check, never a tuning target"
+      },
+      "truncation": {
+        "minilm": {
+          "tokenizer": "sentence-transformers/all-MiniLM-L6-v2",
+          "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+          "add_special_tokens": true,
+          "query_prefix_included": "",
+          "documents": {
+            "count": 57638,
+            "p50": 120.0,
+            "p95": 481.0,
+            "p99": 837.6299999999974,
+            "max": 3599,
+            "over_256": 11040,
+            "over_256_fraction": 0.19154030327214686,
+            "over_512": 2417,
+            "over_512_fraction": 0.04193414067108505
+          },
+          "queries": {
+            "count": 648,
+            "p50": 15.0,
+            "p95": 25.0,
+            "p99": 29.0,
+            "max": 35,
+            "over_256": 0,
+            "over_256_fraction": 0.0,
+            "over_512": 0,
+            "over_512_fraction": 0.0
+          }
+        },
+        "bge": {
+          "tokenizer": "BAAI/bge-small-en-v1.5",
+          "model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+          "add_special_tokens": true,
+          "query_prefix_included": "Represent this sentence for searching relevant passages: ",
+          "documents": {
+            "count": 57638,
+            "p50": 120.0,
+            "p95": 481.0,
+            "p99": 837.6299999999974,
+            "max": 3599,
+            "over_256": 11040,
+            "over_256_fraction": 0.19154030327214686,
+            "over_512": 2417,
+            "over_512_fraction": 0.04193414067108505
+          },
+          "queries": {
+            "count": 648,
+            "p50": 23.0,
+            "p95": 33.0,
+            "p99": 37.0,
+            "max": 43,
+            "over_256": 0,
+            "over_256_fraction": 0.0,
+            "over_512": 0,
+            "over_512_fraction": 0.0
+          }
+        }
+      },
+      "matched_contexts": {
+        "256": {
+          "systems": {
+            "strong_bm25": {
+              "metrics": {
+                "ndcg@10": 0.2360668075849401,
+                "recall@10": 0.2950684432165913,
+                "mrr@10": 0.2955840926905741,
+                "query_count": 648
+              },
+              "latency": {
+                "samples": 648,
+                "p50_seconds": 0.019997333009087015,
+                "p95_seconds": 0.02202643969867495,
+                "mean_seconds": 0.02022443363883796,
+                "total_seconds": 13.105432997967
+              }
+            },
+            "minilm_dense": {
+              "metrics": {
+                "ndcg@10": 0.36867136984071575,
+                "recall@10": 0.44130556086574607,
+                "mrr@10": 0.44512235449735443,
+                "query_count": 648
+              },
+              "latency": {
+                "samples": 648,
+                "p50_seconds": 0.002429354004561901,
+                "p95_seconds": 0.0029634397091285788,
+                "mean_seconds": 0.0024266372190735928,
+                "total_seconds": 1.5724609179596882
+              }
+            },
+            "bge_dense": {
+              "metrics": {
+                "ndcg@10": 0.391261788248632,
+                "recall@10": 0.4486895092219166,
+                "mrr@10": 0.4763588820301783,
+                "query_count": 648
+              },
+              "latency": {
+                "samples": 648,
+                "p50_seconds": 0.0026010420042439364,
+                "p95_seconds": 0.0036056562516023406,
+                "mean_seconds": 0.0027268142932348662,
+                "total_seconds": 1.7669756620161934
+              }
+            },
+            "minilm_hybrid_rrf": {
+              "metrics": {
+                "ndcg@10": 0.36980392277768287,
+                "recall@10": 0.4495700629959889,
+                "mrr@10": 0.44670843131491283,
+                "query_count": 648
+              },
+              "latency": {
+                "samples": 648,
+                "p50_seconds": 0.02251491598872235,
+                "p95_seconds": 0.02457271909806877,
+                "mean_seconds": 0.022711321831660893,
+                "total_seconds": 14.716936546916259
+              },
+              "fusion_only_latency": {
+                "samples": 648,
+                "p50_seconds": 5.583399615716189e-05,
+                "p95_seconds": 8.333934674737973e-05,
+                "mean_seconds": 6.0250973749336685e-05,
+                "total_seconds": 0.03904263098957017
+              }
+            },
+            "bge_hybrid_rrf": {
+              "metrics": {
+                "ndcg@10": 0.36140413082207545,
+                "recall@10": 0.4316810761255206,
+                "mrr@10": 0.4372054428767392,
+                "query_count": 648
+              },
+              "latency": {
+                "samples": 648,
+                "p50_seconds": 0.022797040997829754,
+                "p95_seconds": 0.02526267084977007,
+                "mean_seconds": 0.0230085624307209,
+                "total_seconds": 14.909548455107142
+              },
+              "fusion_only_latency": {
+                "samples": 648,
+                "p50_seconds": 5.3395502618514e-05,
+                "p95_seconds": 7.612324407091364e-05,
+                "mean_seconds": 5.7314498648069004e-05,
+                "total_seconds": 0.037139795123948716
+              }
+            },
+            "three_way_rrf": {
+              "metrics": {
+                "ndcg@10": 0.40418315990776105,
+                "recall@10": 0.48946199976292576,
+                "mrr@10": 0.47863511659807956,
+                "query_count": 648
+              },
+              "latency": {
+                "samples": 648,
+                "p50_seconds": 0.025231208506738767,
+                "p95_seconds": 0.027723132896062447,
+                "mean_seconds": 0.025459631684475705,
+                "total_seconds": 16.497841331540258
+              },
+              "fusion_only_latency": {
+                "samples": 648,
+                "p50_seconds": 7.514600292779505e-05,
+                "p95_seconds": 0.0001293285022256896,
+                "mean_seconds": 8.174653332928385e-05,
+                "total_seconds": 0.05297175359737594
+              }
+            }
+          },
+          "vector_cache": {
+            "minilm": {
+              "documents": {
+                "dataset": "fiqa",
+                "model": "sentence-transformers/all-MiniLM-L6-v2",
+                "kind": "documents",
+                "rows": 57638,
+                "dimensions": 384,
+                "content_sha256": "acdd1b2139a0a3889f0e74ed15f644af89e555678097e07f6f059cb840326d20",
+                "query_prefix": "",
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "mps-fp32",
+                "precision": "float32",
+                "model_cache_tree_sha256": "e8ef1b320e1c4e2a870c19f5f920c184c92b5fa2188b1fae9ce9a02e59318505",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 194.80643691599835,
+                "array_sha256": "d7ba534045564f7ce0ca805a510a943a4a74b012681f6035163821c356a5c006",
+                "created_at": "2026-09-12T14:46:09.895027+00:00",
+                "context_tokens": 256,
+                "cache_reused": true,
+                "reuse_source": "docs/benchmarks-v2/source/cross-domain/cross_domain.py",
+                "reuse_source_sha256": "1c5d63d12c06e85478ce86887734030a36c644db5c92060b7653c355f34f1f31",
+                "legacy_meta_sha256": "920730d942f51f058fb887e09a9a9a6cea5fa2c598b635e9f332ea22b335348d",
+                "reuse_limitation": "v2 metadata omitted explicit context length; frozen executed source sets this exact model length"
+              },
+              "queries": {
+                "dataset": "fiqa",
+                "model": "sentence-transformers/all-MiniLM-L6-v2",
+                "kind": "queries",
+                "rows": 648,
+                "dimensions": 384,
+                "content_sha256": "ed1c5ee122fee9bf0f9e10c8a91528228b18091dea8c007b9ee1d00e75a22567",
+                "query_prefix": "",
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "mps-fp32",
+                "precision": "float32",
+                "model_cache_tree_sha256": "e8ef1b320e1c4e2a870c19f5f920c184c92b5fa2188b1fae9ce9a02e59318505",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 0.39647524999600137,
+                "array_sha256": "0dff82b662da164bcd91e884a2e87660e12248d9ff1a8a15a9079618df285fcb",
+                "created_at": "2026-09-12T14:46:10.400878+00:00",
+                "context_tokens": 256,
+                "cache_reused": true,
+                "reuse_source": "docs/benchmarks-v2/source/cross-domain/cross_domain.py",
+                "reuse_source_sha256": "1c5d63d12c06e85478ce86887734030a36c644db5c92060b7653c355f34f1f31",
+                "legacy_meta_sha256": "3f166c3e804810f7eb5ceada1614bf4898c5213736ba3ea7e7e63dc1b4b0a898",
+                "reuse_limitation": "v2 metadata omitted explicit context length; frozen executed source sets this exact model length"
+              }
+            },
+            "bge": {
+              "documents": {
+                "dataset": "fiqa",
+                "model": "BAAI/bge-small-en-v1.5",
+                "model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+                "kind": "documents",
+                "rows": 57638,
+                "dimensions": 384,
+                "content_sha256": "acdd1b2139a0a3889f0e74ed15f644af89e555678097e07f6f059cb840326d20",
+                "query_prefix": "",
+                "context_tokens": 256,
+                "add_special_tokens": true,
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "sentence-transformers-mps-fp32",
+                "embedding_source_sha256": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                "model_cache_tree_sha256": "4783e263bb4cf1b3d33501d690bc564783df8a43f49c432476642fdff2f2b723",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 356.93295174999366,
+                "elapsed_seconds_this_run": 0.0,
+                "array_sha256": "d5529cd7189a10bd2a2d49c087637226ac3f52def284d62be6ec5bc4f0cefd6c",
+                "created_at": "2026-09-12T16:49:06.513716+00:00",
+                "cache_reused": true,
+                "reuse_source_validation": {
+                  "method": "reviewed_legacy_whole_source_sha256",
+                  "accepted": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                  "rationale": "frozen commit 7c2eed4 initial v3 run; subsequent changes only add output metadata, path redaction, and verification"
+                }
+              },
+              "queries": {
+                "dataset": "fiqa",
+                "model": "BAAI/bge-small-en-v1.5",
+                "model_revision": "5c38ec7c405ec4b44b94cc5a9bb96e735b38267a",
+                "kind": "queries",
+                "rows": 648,
+                "dimensions": 384,
+                "content_sha256": "ed1c5ee122fee9bf0f9e10c8a91528228b18091dea8c007b9ee1d00e75a22567",
+                "query_prefix": "Represent this sentence for searching relevant passages: ",
+                "context_tokens": 256,
+                "add_special_tokens": true,
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "sentence-transformers-mps-fp32",
+                "embedding_source_sha256": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                "model_cache_tree_sha256": "4783e263bb4cf1b3d33501d690bc564783df8a43f49c432476642fdff2f2b723",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 0.5413254590093857,
+                "elapsed_seconds_this_run": 0.0,
+                "array_sha256": "2079b59da8e467e344462e0b9fdf12198d5ce49da88af36e9c0eb7e1df9660fa",
+                "created_at": "2026-09-12T16:49:07.205987+00:00",
+                "cache_reused": true,
+                "reuse_source_validation": {
+                  "method": "reviewed_legacy_whole_source_sha256",
+                  "accepted": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                  "rationale": "frozen commit 7c2eed4 initial v3 run; subsequent changes only add output metadata, path redaction, and verification"
+                }
+              }
+            }
+          }
+        },
+        "512": {
+          "systems": {
+            "strong_bm25": {
+              "metrics": {
+                "ndcg@10": 0.2360668075849401,
+                "recall@10": 0.2950684432165913,
+                "mrr@10": 0.2955840926905741,
+                "query_count": 648
+              },
+              "latency": {
+                "samples": 648,
+                "p50_seconds": 0.019997333009087015,
+                "p95_seconds": 0.02202643969867495,
+                "mean_seconds": 0.02022443363883796,
+                "total_seconds": 13.105432997967
+              }
+            },
+            "minilm_dense": {
+              "metrics": {
+                "ndcg@10": 0.3610301633379522,
+                "recall@10": 0.4325489753730494,
+                "mrr@10": 0.43685760826964537,
+                "query_count": 648
+              },
+              "latency": {
+                "samples": 648,
+                "p50_seconds": 0.002472249499987811,
+                "p95_seconds": 0.002983583651075605,
+                "mean_seconds": 0.0024637785478307146,
+                "total_seconds": 1.596528498994303
+              }
+            },
+            "bge_dense": {
+              "metrics": {
+                "ndcg@10": 0.40347442843300146,
+                "recall@10": 0.4638786410777152,
+                "mrr@10": 0.48786130707427,
+                "query_count": 648
+              },
+              "latency": {
+                "samples": 648,
+                "p50_seconds": 0.0025181454984704033,
+                "p95_seconds": 0.0031500039433012715,
+                "mean_seconds": 0.0025129772112438926,
+                "total_seconds": 1.6284092328860424
+              }
+            },
+            "minilm_hybrid_rrf": {
+              "metrics": {
+                "ndcg@10": 0.3679763089481155,
+                "recall@10": 0.4518768611361203,
+                "mrr@10": 0.4414333480305702,
+                "query_count": 648
+              },
+              "latency": {
+                "samples": 648,
+                "p50_seconds": 0.022585749997233506,
+                "p95_seconds": 0.02456157040214748,
+                "mean_seconds": 0.022770658935208046,
+                "total_seconds": 14.755386990014813
+              },
+              "fusion_only_latency": {
+                "samples": 648,
+                "p50_seconds": 7.935399480629712e-05,
+                "p95_seconds": 0.00012802489145542493,
+                "mean_seconds": 8.244674853936706e-05,
+                "total_seconds": 0.053425493053509854
+              }
+            },
+            "bge_hybrid_rrf": {
+              "metrics": {
+                "ndcg@10": 0.36270172920087207,
+                "recall@10": 0.4350161241364946,
+                "mrr@10": 0.4343351949833431,
+                "query_count": 648
+              },
+              "latency": {
+                "samples": 648,
+                "p50_seconds": 0.022568499502085615,
+                "p95_seconds": 0.02486005285245483,
+                "mean_seconds": 0.022809137819152697,
+                "total_seconds": 14.780321306810947
+              },
+              "fusion_only_latency": {
+                "samples": 648,
+                "p50_seconds": 5.9042002249043435e-05,
+                "p95_seconds": 0.00011221259483136235,
+                "mean_seconds": 7.172696907084039e-05,
+                "total_seconds": 0.04647907595790457
+              }
+            },
+            "three_way_rrf": {
+              "metrics": {
+                "ndcg@10": 0.4065411501135287,
+                "recall@10": 0.49050804733675096,
+                "mrr@10": 0.47599512541642175,
+                "query_count": 648
+              },
+              "latency": {
+                "samples": 648,
+                "p50_seconds": 0.025152584013994783,
+                "p95_seconds": 0.027299004703672834,
+                "mean_seconds": 0.025295326748276652,
+                "total_seconds": 16.39137173288327
+              },
+              "fusion_only_latency": {
+                "samples": 648,
+                "p50_seconds": 8.797900227364153e-05,
+                "p95_seconds": 0.00014390184733201745,
+                "mean_seconds": 9.413735036408373e-05,
+                "total_seconds": 0.06100100303592626
+              }
+            }
+          },
+          "vector_cache": {
+            "minilm": {
+              "documents": {
+                "dataset": "fiqa",
+                "model": "sentence-transformers/all-MiniLM-L6-v2",
+                "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+                "kind": "documents",
+                "rows": 57638,
+                "dimensions": 384,
+                "content_sha256": "acdd1b2139a0a3889f0e74ed15f644af89e555678097e07f6f059cb840326d20",
+                "query_prefix": "",
+                "context_tokens": 512,
+                "add_special_tokens": true,
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "sentence-transformers-mps-fp32",
+                "embedding_source_sha256": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                "model_cache_tree_sha256": "e8ef1b320e1c4e2a870c19f5f920c184c92b5fa2188b1fae9ce9a02e59318505",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 278.1097738339886,
+                "elapsed_seconds_this_run": 0.0,
+                "array_sha256": "8bf474da2892f1988c9c8018ee0a395218dd20444cce671ef08e422fab842359",
+                "created_at": "2026-09-12T16:53:47.083003+00:00",
+                "cache_reused": true,
+                "reuse_source_validation": {
+                  "method": "reviewed_legacy_whole_source_sha256",
+                  "accepted": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                  "rationale": "frozen commit 7c2eed4 initial v3 run; subsequent changes only add output metadata, path redaction, and verification"
+                }
+              },
+              "queries": {
+                "dataset": "fiqa",
+                "model": "sentence-transformers/all-MiniLM-L6-v2",
+                "model_revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+                "kind": "queries",
+                "rows": 648,
+                "dimensions": 384,
+                "content_sha256": "ed1c5ee122fee9bf0f9e10c8a91528228b18091dea8c007b9ee1d00e75a22567",
+                "query_prefix": "",
+                "context_tokens": 512,
+                "add_special_tokens": true,
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "sentence-transformers-mps-fp32",
+                "embedding_source_sha256": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                "model_cache_tree_sha256": "e8ef1b320e1c4e2a870c19f5f920c184c92b5fa2188b1fae9ce9a02e59318505",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 0.30399804199987557,
+                "elapsed_seconds_this_run": 0.0,
+                "array_sha256": "0dff82b662da164bcd91e884a2e87660e12248d9ff1a8a15a9079618df285fcb",
+                "created_at": "2026-09-12T16:53:47.631354+00:00",
+                "cache_reused": true,
+                "reuse_source_validation": {
+                  "method": "reviewed_legacy_whole_source_sha256",
+                  "accepted": "dd1494829d52ef44774f4f310178c47fd74a8370db96b5d4c8ae14e7a9d9d6ee",
+                  "rationale": "frozen commit 7c2eed4 initial v3 run; subsequent changes only add output metadata, path redaction, and verification"
+                }
+              }
+            },
+            "bge": {
+              "documents": {
+                "dataset": "fiqa",
+                "model": "BAAI/bge-small-en-v1.5",
+                "kind": "documents",
+                "rows": 57638,
+                "dimensions": 384,
+                "content_sha256": "acdd1b2139a0a3889f0e74ed15f644af89e555678097e07f6f059cb840326d20",
+                "query_prefix": "",
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "mps-fp32",
+                "precision": "float32",
+                "model_cache_tree_sha256": "4783e263bb4cf1b3d33501d690bc564783df8a43f49c432476642fdff2f2b723",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 838.9322382090031,
+                "array_sha256": "e11a684d034aa30c5d6cc13c2dc33634f08346e292fe8a91f17bc146bb2163b6",
+                "created_at": "2026-09-12T15:00:11.295122+00:00",
+                "context_tokens": 512,
+                "cache_reused": true,
+                "reuse_source": "docs/benchmarks-v2/source/cross-domain/cross_domain.py",
+                "reuse_source_sha256": "1c5d63d12c06e85478ce86887734030a36c644db5c92060b7653c355f34f1f31",
+                "legacy_meta_sha256": "7ffe36875d8877e68749dc1f18f92cc2b74455d61ed81a2538f65ca492930996",
+                "reuse_limitation": "v2 metadata omitted explicit context length; frozen executed source sets this exact model length"
+              },
+              "queries": {
+                "dataset": "fiqa",
+                "model": "BAAI/bge-small-en-v1.5",
+                "kind": "queries",
+                "rows": 648,
+                "dimensions": 384,
+                "content_sha256": "ed1c5ee122fee9bf0f9e10c8a91528228b18091dea8c007b9ee1d00e75a22567",
+                "query_prefix": "Represent this sentence for searching relevant passages: ",
+                "normalized": true,
+                "dtype": "float32",
+                "backend": "mps-fp32",
+                "precision": "float32",
+                "model_cache_tree_sha256": "4783e263bb4cf1b3d33501d690bc564783df8a43f49c432476642fdff2f2b723",
+                "backend_packages": {
+                  "torch": "2.14.0",
+                  "sentence-transformers": "6.0.1",
+                  "transformers": "5.17.0"
+                },
+                "index_seconds": 1.7363532500021392,
+                "array_sha256": "2079b59da8e467e344462e0b9fdf12198d5ce49da88af36e9c0eb7e1df9660fa",
+                "created_at": "2026-09-12T15:00:13.406709+00:00",
+                "context_tokens": 512,
+                "cache_reused": true,
+                "reuse_source": "docs/benchmarks-v2/source/cross-domain/cross_domain.py",
+                "reuse_source_sha256": "1c5d63d12c06e85478ce86887734030a36c644db5c92060b7653c355f34f1f31",
+                "legacy_meta_sha256": "e7909206b9555f43752365388a04919f6e782f9d9d2ff6a41973d46b1a04367c",
+                "reuse_limitation": "v2 metadata omitted explicit context length; frozen executed source sets this exact model length"
+              }
+            }
+          }
+        }
+      },
+      "weak_lexical_supplement": {
+        "label": "historical weak regex-token rank_bm25 baseline; supplementary only",
+        "source": "docs/benchmarks-v2/cross-domain-results.json",
+        "source_sha256": "5209cacbbd0c9c1083a97a13384bde9560b78e9fbe9e93e72b0f6ec5389e78b0",
+        "systems": {
+          "bm25": {
+            "metrics": {
+              "ndcg@10": 0.21668445500943231,
+              "recall@10": 0.2780129849574294,
+              "mrr@10": 0.27028586125808346,
+              "query_count": 648
+            },
+            "latency": {
+              "samples": 648,
+              "p50_seconds": 0.08190689600087353,
+              "p95_seconds": 0.6953938084490799,
+              "mean_seconds": 0.1480032750987897,
+              "total_seconds": 95.90612226401572
+            }
+          },
+          "bge_dense": {
+            "metrics": {
+              "ndcg@10": 0.40347442843300146,
+              "recall@10": 0.46387864107771515,
+              "mrr@10": 0.48786130707427,
+              "query_count": 648
+            },
+            "latency": {
+              "samples": 648,
+              "p50_seconds": 0.004123458500544075,
+              "p95_seconds": 0.006259104600394494,
+              "mean_seconds": 0.004336300552652428,
+              "total_seconds": 2.8099227581187733
+            }
+          },
+          "bge_hybrid_rrf": {
+            "metrics": {
+              "ndcg@10": 0.3291712539928419,
+              "recall@10": 0.3939588917598177,
+              "mrr@10": 0.40468658142269254,
+              "query_count": 648
+            },
+            "latency": {
+              "samples": 648,
+              "p50_seconds": 0.08657470850084792,
+              "p95_seconds": 0.6999561079010161,
+              "mean_seconds": 0.15246463620696662,
+              "total_seconds": 98.79708426211437
+            }
+          }
+        }
+      }
+    }
+  },
+  "inferential_families": {
+    "primary_matched_context_families": {
+      "256": {
+        "reference": "minilm_hybrid_rrf at same context length",
+        "hypotheses": 15,
+        "self_reference_display_only": {
+          "mean_difference": 0.0,
+          "p_value": 1.0
+        },
+        "comparisons": {
+          "scifact/strong_bm25-minus-minilm_hybrid_rrf": {
+            "mean_difference": -0.03928841172783176,
+            "raw_ci95": [
+              -0.06195579082137471,
+              -0.016367220846137568
+            ],
+            "simultaneous_ci": [
+              -0.07302965360603382,
+              -0.005153045083232878
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 0.0008999100089991,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 300,
+            "independent_units": 300,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 0.008999100089991
+          },
+          "scifact/minilm_dense-minus-minilm_hybrid_rrf": {
+            "mean_difference": -0.05891128208224714,
+            "raw_ci95": [
+              -0.08367828550563544,
+              -0.033893891710078006
+            ],
+            "simultaneous_ci": [
+              -0.0968374658803216,
+              -0.02188224976162702
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 9.999000099990002e-05,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 300,
+            "independent_units": 300,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 0.0014998500149985003
+          },
+          "scifact/bge_dense-minus-minilm_hybrid_rrf": {
+            "mean_difference": -0.003488916309355051,
+            "raw_ci95": [
+              -0.030659934059685923,
+              0.023130272700412586
+            ],
+            "simultaneous_ci": [
+              -0.0424359258895089,
+              0.03545720667073084
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 0.805019498050195,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 300,
+            "independent_units": 300,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 1.0
+          },
+          "scifact/bge_hybrid_rrf-minus-minilm_hybrid_rrf": {
+            "mean_difference": 0.006551402326733212,
+            "raw_ci95": [
+              -0.011954400345959511,
+              0.024848820274830798
+            ],
+            "simultaneous_ci": [
+              -0.02109225277490291,
+              0.033531062005213386
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 0.49825017498250174,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 300,
+            "independent_units": 300,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 1.0
+          },
+          "scifact/three_way_rrf-minus-minilm_hybrid_rrf": {
+            "mean_difference": 0.013527317109082913,
+            "raw_ci95": [
+              0.001654646578576446,
+              0.025744210046413706
+            ],
+            "simultaneous_ci": [
+              -0.004587447925975345,
+              0.03213123829532954
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 0.0316968303169683,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 300,
+            "independent_units": 300,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 0.2535746425357464
+          },
+          "nfcorpus/strong_bm25-minus-minilm_hybrid_rrf": {
+            "mean_difference": -0.023508875100988723,
+            "raw_ci95": [
+              -0.03604127381068376,
+              -0.011108812076929054
+            ],
+            "simultaneous_ci": [
+              -0.04188542000923144,
+              -0.004882165100478901
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 0.00019998000199980003,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 323,
+            "independent_units": 323,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 0.0021997800219978004
+          },
+          "nfcorpus/minilm_dense-minus-minilm_hybrid_rrf": {
+            "mean_difference": -0.03228561192249713,
+            "raw_ci95": [
+              -0.047761904002420356,
+              -0.016992880500110965
+            ],
+            "simultaneous_ci": [
+              -0.05690831394103798,
+              -0.009831304295917291
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 9.999000099990002e-05,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 323,
+            "independent_units": 323,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 0.0014998500149985003
+          },
+          "nfcorpus/bge_dense-minus-minilm_hybrid_rrf": {
+            "mean_difference": -0.004801425635296158,
+            "raw_ci95": [
+              -0.020816804977987026,
+              0.010832938129175114
+            ],
+            "simultaneous_ci": [
+              -0.029296950954177038,
+              0.018539360084428747
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 0.5526447355264473,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 323,
+            "independent_units": 323,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 1.0
+          },
+          "nfcorpus/bge_hybrid_rrf-minus-minilm_hybrid_rrf": {
+            "mean_difference": 0.009018283361771394,
+            "raw_ci95": [
+              -0.0007731887622310846,
+              0.0191401785290571
+            ],
+            "simultaneous_ci": [
+              -0.006057982586079033,
+              0.02525737924371528
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 0.0806919308069193,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 323,
+            "independent_units": 323,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 0.4841515848415158
+          },
+          "nfcorpus/three_way_rrf-minus-minilm_hybrid_rrf": {
+            "mean_difference": 0.010405084417559532,
+            "raw_ci95": [
+              0.0010706618490385472,
+              0.019567462456381884
+            ],
+            "simultaneous_ci": [
+              -0.004015252370968687,
+              0.024408159516141625
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 0.025997400259974,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 323,
+            "independent_units": 323,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 0.233976602339766
+          },
+          "fiqa/strong_bm25-minus-minilm_hybrid_rrf": {
+            "mean_difference": -0.1337371151927428,
+            "raw_ci95": [
+              -0.15032320536749622,
+              -0.11740502051197912
+            ],
+            "simultaneous_ci": [
+              -0.15855124442001603,
+              -0.10863871458019153
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 9.999000099990002e-05,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 648,
+            "independent_units": 648,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 0.0014998500149985003
+          },
+          "fiqa/minilm_dense-minus-minilm_hybrid_rrf": {
+            "mean_difference": -0.0011325529369671,
+            "raw_ci95": [
+              -0.02019460089894039,
+              0.018163916819118452
+            ],
+            "simultaneous_ci": [
+              -0.029318320202507724,
+              0.026575466385892445
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 0.905009499050095,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 648,
+            "independent_units": 648,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 1.0
+          },
+          "fiqa/bge_dense-minus-minilm_hybrid_rrf": {
+            "mean_difference": 0.021457865470949085,
+            "raw_ci95": [
+              0.0010872434834207968,
+              0.04154972559862327
+            ],
+            "simultaneous_ci": [
+              -0.008482606452563195,
+              0.051379191159238044
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 0.036396360363963605,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 648,
+            "independent_units": 648,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 0.25477452254774524
+          },
+          "fiqa/bge_hybrid_rrf-minus-minilm_hybrid_rrf": {
+            "mean_difference": -0.008399791955607416,
+            "raw_ci95": [
+              -0.01998846673027607,
+              0.0032280757614441516
+            ],
+            "simultaneous_ci": [
+              -0.024990246682200564,
+              0.009109073566215809
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 0.1633836616338366,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 648,
+            "independent_units": 648,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 0.8169183081691831
+          },
+          "fiqa/three_way_rrf-minus-minilm_hybrid_rrf": {
+            "mean_difference": 0.03437923713007806,
+            "raw_ci95": [
+              0.02436033193172029,
+              0.04426250380178661
+            ],
+            "simultaneous_ci": [
+              0.019588951628300173,
+              0.049124554358251665
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 9.999000099990002e-05,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 648,
+            "independent_units": 648,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 0.0014998500149985003
+          }
+        }
+      },
+      "512": {
+        "reference": "minilm_hybrid_rrf at same context length",
+        "hypotheses": 15,
+        "self_reference_display_only": {
+          "mean_difference": 0.0,
+          "p_value": 1.0
+        },
+        "comparisons": {
+          "scifact/strong_bm25-minus-minilm_hybrid_rrf": {
+            "mean_difference": -0.04264720524680239,
+            "raw_ci95": [
+              -0.06529436361730866,
+              -0.020173746921555092
+            ],
+            "simultaneous_ci": [
+              -0.07643435162069398,
+              -0.00901142662620567
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 0.0004999500049995,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 300,
+            "independent_units": 300,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 0.005499450054994501
+          },
+          "scifact/minilm_dense-minus-minilm_hybrid_rrf": {
+            "mean_difference": -0.05326799308618444,
+            "raw_ci95": [
+              -0.07811323656576692,
+              -0.02854518925701049
+            ],
+            "simultaneous_ci": [
+              -0.09134707448061051,
+              -0.016258677145192055
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 9.999000099990002e-05,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 300,
+            "independent_units": 300,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 0.0014998500149985003
+          },
+          "scifact/bge_dense-minus-minilm_hybrid_rrf": {
+            "mean_difference": 0.005355197013708252,
+            "raw_ci95": [
+              -0.020416511146269238,
+              0.031232893551092628
+            ],
+            "simultaneous_ci": [
+              -0.032890022297981394,
+              0.045006578423169886
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 0.6827317268273173,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 300,
+            "independent_units": 300,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 1.0
+          },
+          "scifact/bge_hybrid_rrf-minus-minilm_hybrid_rrf": {
+            "mean_difference": 0.004470319964293405,
+            "raw_ci95": [
+              -0.013919153466727265,
+              0.022730321134637386
+            ],
+            "simultaneous_ci": [
+              -0.023201008148101512,
+              0.032673886997076546
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 0.6360363963603639,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 300,
+            "independent_units": 300,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 1.0
+          },
+          "scifact/three_way_rrf-minus-minilm_hybrid_rrf": {
+            "mean_difference": 0.011069055614410368,
+            "raw_ci95": [
+              -0.0024732631555970854,
+              0.024758228983896978
+            ],
+            "simultaneous_ci": [
+              -0.01015944962766027,
+              0.03118641463748417
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 0.1207879212078792,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 300,
+            "independent_units": 300,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 0.7247275272472753
+          },
+          "nfcorpus/strong_bm25-minus-minilm_hybrid_rrf": {
+            "mean_difference": -0.020666080546827854,
+            "raw_ci95": [
+              -0.03316143952016491,
+              -0.008296613407127848
+            ],
+            "simultaneous_ci": [
+              -0.040156202603420864,
+              -0.0027635372932988253
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 0.0015998400159984002,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 323,
+            "independent_units": 323,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 0.012798720127987202
+          },
+          "nfcorpus/minilm_dense-minus-minilm_hybrid_rrf": {
+            "mean_difference": -0.03561639620630553,
+            "raw_ci95": [
+              -0.05115977327409744,
+              -0.020649774849739278
+            ],
+            "simultaneous_ci": [
+              -0.05953498370600399,
+              -0.013393381934897162
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 0.00019998000199980003,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 323,
+            "independent_units": 323,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 0.0023997600239976003
+          },
+          "nfcorpus/bge_dense-minus-minilm_hybrid_rrf": {
+            "mean_difference": -0.0023312775466779794,
+            "raw_ci95": [
+              -0.018471079527536006,
+              0.013422999302514733
+            ],
+            "simultaneous_ci": [
+              -0.026016244565526363,
+              0.021413680424896938
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 0.7674232576742326,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 323,
+            "independent_units": 323,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 1.0
+          },
+          "nfcorpus/bge_hybrid_rrf-minus-minilm_hybrid_rrf": {
+            "mean_difference": 0.013211233907249608,
+            "raw_ci95": [
+              0.003591461373051404,
+              0.02339874077256995
+            ],
+            "simultaneous_ci": [
+              -0.001556767001769596,
+              0.029029424082402663
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 0.009599040095990401,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 323,
+            "independent_units": 323,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 0.06719328067193281
+          },
+          "nfcorpus/three_way_rrf-minus-minilm_hybrid_rrf": {
+            "mean_difference": 0.013858867388758314,
+            "raw_ci95": [
+              0.006060872797932738,
+              0.021622872831857536
+            ],
+            "simultaneous_ci": [
+              0.002270424177619068,
+              0.02575490040302933
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 0.0004999500049995,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 323,
+            "independent_units": 323,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 0.005499450054994501
+          },
+          "fiqa/strong_bm25-minus-minilm_hybrid_rrf": {
+            "mean_difference": -0.13190950136317542,
+            "raw_ci95": [
+              -0.14919857427075328,
+              -0.11504006791590513
+            ],
+            "simultaneous_ci": [
+              -0.15681035108173866,
+              -0.10580611211300073
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 9.999000099990002e-05,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 648,
+            "independent_units": 648,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 0.0014998500149985003
+          },
+          "fiqa/minilm_dense-minus-minilm_hybrid_rrf": {
+            "mean_difference": -0.006946145610163309,
+            "raw_ci95": [
+              -0.025778147070071585,
+              0.011815029711751447
+            ],
+            "simultaneous_ci": [
+              -0.0350195017350907,
+              0.020683127875149344
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 0.45555444455554445,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 648,
+            "independent_units": 648,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 1.0
+          },
+          "fiqa/bge_dense-minus-minilm_hybrid_rrf": {
+            "mean_difference": 0.035498119484885925,
+            "raw_ci95": [
+              0.016355480933962472,
+              0.054713720248039804
+            ],
+            "simultaneous_ci": [
+              0.006829659109801289,
+              0.06334752313769677
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 0.0005999400059994001,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 648,
+            "independent_units": 648,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 0.005499450054994501
+          },
+          "fiqa/bge_hybrid_rrf-minus-minilm_hybrid_rrf": {
+            "mean_difference": -0.005274579747243435,
+            "raw_ci95": [
+              -0.016734695992587804,
+              0.006462396506829216
+            ],
+            "simultaneous_ci": [
+              -0.021772240511775124,
+              0.012537597312677099
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 0.38046195380461956,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 648,
+            "independent_units": 648,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 1.0
+          },
+          "fiqa/three_way_rrf-minus-minilm_hybrid_rrf": {
+            "mean_difference": 0.03856484116541322,
+            "raw_ci95": [
+              0.030030275181131647,
+              0.047383981764130126
+            ],
+            "simultaneous_ci": [
+              0.02570028938623505,
+              0.051626617307116755
+            ],
+            "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+            "family_size": 15,
+            "p_value": 9.999000099990002e-05,
+            "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+            "queries": 648,
+            "independent_units": 648,
+            "samples": 10000,
+            "seed": 20260912,
+            "holm_p_value": 0.0014998500149985003
+          }
+        }
+      }
+    },
+    "length_ablation_family": {
+      "hypotheses": 6,
+      "comparisons": {
+        "scifact/minilm_dense@512-minus-@256": {
+          "mean_difference": 0.009002082515033335,
+          "raw_ci95": [
+            -0.004058381124552665,
+            0.022025370135074527
+          ],
+          "simultaneous_ci": [
+            -0.00895969481900981,
+            0.026703209703933847
+          ],
+          "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+          "family_size": 6,
+          "p_value": 0.1797820217978202,
+          "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+          "queries": 300,
+          "independent_units": 300,
+          "samples": 10000,
+          "seed": 20260912,
+          "holm_p_value": 0.40915908409159085
+        },
+        "scifact/bge_dense@512-minus-@256": {
+          "mean_difference": 0.01220290684203393,
+          "raw_ci95": [
+            -0.0006381982889312157,
+            0.025243058687266135
+          ],
+          "simultaneous_ci": [
+            -0.004964412372728871,
+            0.02965476785336744
+          ],
+          "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+          "family_size": 6,
+          "p_value": 0.062493750624937505,
+          "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+          "queries": 300,
+          "independent_units": 300,
+          "samples": 10000,
+          "seed": 20260912,
+          "holm_p_value": 0.3124687531246875
+        },
+        "nfcorpus/minilm_dense@512-minus-@256": {
+          "mean_difference": -0.006173578837969275,
+          "raw_ci95": [
+            -0.014155884047531823,
+            0.001849063619134696
+          ],
+          "simultaneous_ci": [
+            -0.01673912069174456,
+            0.004564594335975263
+          ],
+          "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+          "family_size": 6,
+          "p_value": 0.13638636136386362,
+          "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+          "queries": 323,
+          "independent_units": 323,
+          "samples": 10000,
+          "seed": 20260912,
+          "holm_p_value": 0.40915908409159085
+        },
+        "nfcorpus/bge_dense@512-minus-@256": {
+          "mean_difference": -0.00037264646554268683,
+          "raw_ci95": [
+            -0.006266304608649489,
+            0.005612381877307724
+          ],
+          "simultaneous_ci": [
+            -0.008247042883203728,
+            0.007689888480262442
+          ],
+          "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+          "family_size": 6,
+          "p_value": 0.9002099790020998,
+          "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+          "queries": 323,
+          "independent_units": 323,
+          "samples": 10000,
+          "seed": 20260912,
+          "holm_p_value": 0.9002099790020998
+        },
+        "fiqa/minilm_dense@512-minus-@256": {
+          "mean_difference": -0.007641206502763603,
+          "raw_ci95": [
+            -0.015996097409625657,
+            0.0005411326545965496
+          ],
+          "simultaneous_ci": [
+            -0.018653071814173465,
+            0.0032944617565071055
+          ],
+          "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+          "family_size": 6,
+          "p_value": 0.07179282071792821,
+          "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+          "queries": 648,
+          "independent_units": 648,
+          "samples": 10000,
+          "seed": 20260912,
+          "holm_p_value": 0.3124687531246875
+        },
+        "fiqa/bge_dense@512-minus-@256": {
+          "mean_difference": 0.012212640184369442,
+          "raw_ci95": [
+            0.005889785423493621,
+            0.01881839209267915
+          ],
+          "simultaneous_ci": [
+            0.0036630794401637584,
+            0.021302577686877155
+          ],
+          "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+          "family_size": 6,
+          "p_value": 0.00019998000199980003,
+          "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+          "queries": 648,
+          "independent_units": 648,
+          "samples": 10000,
+          "seed": 20260912,
+          "holm_p_value": 0.0011998800119988001
+        }
+      }
+    },
+    "fiqa_hybrid_minus_bge_confirmatory_family": {
+      "hypotheses": 3,
+      "comparisons": {
+        "strong_bm25@256/bge_hybrid-minus-bge_dense": {
+          "mean_difference": -0.0298576574265565,
+          "raw_ci95": [
+            -0.048008901764240615,
+            -0.011570957766846888
+          ],
+          "simultaneous_ci": [
+            -0.05193497694417522,
+            -0.006947017363916436
+          ],
+          "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+          "family_size": 3,
+          "p_value": 0.0018998100189981002,
+          "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+          "queries": 648,
+          "independent_units": 648,
+          "samples": 10000,
+          "seed": 20260912,
+          "holm_p_value": 0.0018998100189981002
+        },
+        "strong_bm25@512/bge_hybrid-minus-bge_dense": {
+          "mean_difference": -0.04077269923212935,
+          "raw_ci95": [
+            -0.058890624827689766,
+            -0.022777764072699217
+          ],
+          "simultaneous_ci": [
+            -0.06248464185487959,
+            -0.018555089166822608
+          ],
+          "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+          "family_size": 3,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+          "queries": 648,
+          "independent_units": 648,
+          "samples": 10000,
+          "seed": 20260912,
+          "holm_p_value": 0.00029997000299970003
+        },
+        "historical_weak_bm25/bge_hybrid-minus-bge_dense": {
+          "mean_difference": -0.07430317444015953,
+          "raw_ci95": [
+            -0.09294819043999998,
+            -0.055748039358581525
+          ],
+          "simultaneous_ci": [
+            -0.09712783782036663,
+            -0.05208553507306686
+          ],
+          "simultaneous_method": "Bonferroni percentile paired cluster bootstrap",
+          "family_size": 3,
+          "p_value": 9.999000099990002e-05,
+          "p_method": "two-sided paired cluster sign permutation; plus-one Monte Carlo correction",
+          "queries": 648,
+          "independent_units": 648,
+          "samples": 10000,
+          "seed": 20260912,
+          "holm_p_value": 0.00029997000299970003
+        }
+      }
+    }
+  },
+  "full_rankings_artifact": {
+    "path": "cross-domain-results.json.gz",
+    "format": "gzip-compressed UTF-8 JSON; deterministic gzip mtime=0",
+    "uncompressed_bytes": 54477281,
+    "uncompressed_sha256": "466865635a726b56d21d3dc01d16bc1a94c6d1b24d5980df4ac676f00aacb578",
+    "gzip_sha256": "54986f0f4a83cf55cd5421661d7905a4626f4a43b1551962b91fd10ee9835179",
+    "original_result_provenance": {
+      "git_commit": "259bec5858ec36296dbeb21e02dfbd706f5762a9",
+      "git_dirty": false,
+      "git_dirty_paths": [],
+      "git_describe": "round-3-as-published-11-g259bec5",
+      "python": "3.12.13",
+      "platform": "macOS-26.6.2-arm64-arm-64bit",
+      "started_at": "2026-09-12T17:04:19.968189+00:00",
+      "load_average": [
+        4.09521484375,
+        4.07421875,
+        4.02734375
+      ],
+      "requirements_sha256": "0bd6bc92c8f1b5d0c1bb2a2b87b67dfc2b36a9dd289955c67990f3e3d0fa56b4",
+      "requirements_path": "benchmarks/requirements-cross-domain-v3.txt",
+      "package_freeze": "Jinja2==3.1.6\nMarkupSafe==3.0.3\nPyJWT==2.14.0\nPyYAML==6.0.3\nPygments==2.21.0\nannotated-doc==0.0.5\nannotated-types==0.8.0\nanyio==4.15.1\nattrs==26.1.0\ncertifi==2026.7.22\ncffi==2.1.1\ncharset-normalizer==3.5.1\nchronoverse==0.1.0\nclick==8.5.0\ncloudpickle==3.1.2\ncryptography==50.0.1\nfastapi==0.141.1\nfastembed==0.8.0\nfilelock==3.32.6\nflatbuffers==25.12.19\nfsspec==2026.7.0\nh11==0.16.0\nhf-xet==1.6.0\nhttpcore2==2.12.0\nhttpcore==1.0.9\nhttpx2==2.12.0\nhttpx==0.28.1\nhuggingface_hub==1.31.0\nidna==3.19\njoblib==1.6.0\njsonschema-specifications==2025.9.1\njsonschema==4.26.0\nloguru==0.7.3\nmarkdown-it-py==4.2.0\nmcp-types==2.2.0\nmcp==2.2.0\nmdurl==0.1.2\nmmh3==5.3.0\nmpmath==1.3.0\nnarwhals==2.26.0\nnetworkx==3.6.1\nnumpy==2.5.3\nonnxruntime==1.30.0\nopentelemetry-api==1.44.0\npackaging==26.3\npillow==12.3.0\nprotobuf==7.36.1\npy_rust_stemmers==0.1.8\npycparser==3.0\npydantic==2.13.5\npydantic_core==2.46.5\npypdf==6.18.1\npython-multipart==0.0.32\nrank-bm25==0.2.2\nreferencing==0.37.0\nregex==2026.9.10\nrequests==2.34.2\nrich==15.0.0\nrpds-py==2026.6.3\nsafetensors==0.8.0\nscikit-learn==1.9.1\nscipy==1.18.1\nsentence-transformers==6.0.1\nsetuptools==84.0.0\nshellingham==1.5.4\nsse-starlette==3.4.11\nstarlette==1.6.0\nsympy==1.14.0\nthreadpoolctl==3.6.0\ntokenizers==0.23.2\ntorch==2.14.0\ntqdm==4.70.1\ntransformers==5.17.0\ntruststore==0.10.4\ntyper==0.27.2\ntyping-inspection==0.4.4\ntyping_extensions==4.16.0\nurllib3==2.7.0\nuvicorn==0.52.4\n",
+      "package_freeze_sha256": "2afd801677de4af0a8a9f1486e0ec35d5e40010f7ef51d4aeef3f8f8575c9d92",
+      "package_freeze_format": "importlib.metadata installed Name==Version snapshot; editable project code is covered by source_sha256",
+      "source_sha256": {
+        "benchmarks/cross_domain_v3.py": "7be2338d55b413bf596b93c4f11675b6ee3ca92a65bd52183924c7fdc455149c",
+        "benchmarks/strong_lexical.py": "1723932746ed5cd675b036f0236c322764e3ec4ba074d509c5d5104ab1a96669",
+        "benchmarks/metrics.py": "80a978346ff10c7905f5625eb9276359f3d10d3e2f1782cc4428f4717059d713",
+        "benchmarks/statistics.py": "e5609e0890b29fb3d181682c9f34ad028d759230a661007c7186def6df664aa5",
+        "benchmarks/provenance.py": "de3bdcd069817dc6b5983a956d1b5e4dc945e372194c19d67fad68772f4d9b67"
+      },
+      "predictions_sha256": "c0b762d5bd3939951ef79c99e0c076ac4a2c382a3fab799709ea20e6156d4699",
+      "predictions_commit": "33a06b6792a6ec9c731d806f110e9ee4e4dbc6fa",
+      "predictions_committed_exactly": true,
+      "git_describe_at_write": "round-3-as-published-11-g259bec5",
+      "checked_at": "2026-09-12T17:04:50.864932+00:00",
+      "load_average_at_write": [
+        5.4892578125,
+        4.390625,
+        4.14111328125
+      ],
+      "allow_dirty": false,
+      "generated_outputs": [
+        "docs/benchmarks-v3/cross-domain-results.json"
+      ],
+      "generated_outputs_dirty_exemption": false
+    },
+    "packaging_provenance": {
+      "git_commit": "ecefd0fea11e32e85e66f10d2b160d0d8f067349",
+      "git_dirty": false,
+      "git_dirty_paths": [],
+      "git_describe": "round-3-as-published-14-gecefd0f",
+      "python": "3.12.13",
+      "platform": "macOS-26.6.2-arm64-arm-64bit",
+      "started_at": "2026-09-12T17:09:50.170214+00:00",
+      "load_average": [
+        2.87548828125,
+        3.43798828125,
+        3.76318359375
+      ],
+      "requirements_sha256": "050f76db76e690a9d05e63dda2ef1fb8dce1c14e26ed53ef89d1be97008ce039",
+      "requirements_path": null,
+      "package_freeze": "PyJWT==2.14.0\nPyYAML==6.0.3\nPygments==2.21.0\nannotated-types==0.8.0\nanyio==4.15.1\nattrs==26.1.0\ncertifi==2026.7.22\ncffi==2.1.1\ncharset-normalizer==3.5.1\nclick==8.5.0\ncryptography==50.0.1\nfastembed==0.8.0\nfilelock==3.32.6\nflatbuffers==25.12.19\nfsspec==2026.7.0\nh11==0.16.0\nhf-xet==1.6.0\nhttpcore2==2.12.0\nhttpcore==1.0.9\nhttpx2==2.12.0\nhttpx==0.28.1\nhuggingface_hub==1.31.0\nidna==3.19\niniconfig==2.3.0\njsonschema-specifications==2025.9.1\njsonschema==4.26.0\nloguru==0.7.3\nmcp-types==2.0.0\nmcp==2.0.0\nmmh3==5.3.0\nnumpy==2.5.3\nonnxruntime==1.30.0\nopentelemetry-api==1.44.0\npackaging==26.3\npillow==12.3.0\npluggy==1.6.0\nprotobuf==7.36.1\npy_rust_stemmers==0.1.8\npycparser==3.0\npydantic==2.13.5\npydantic_core==2.46.5\npytest==9.1.1\npython-multipart==0.0.32\nreferencing==0.37.0\nrequests==2.34.2\nrpds-py==2026.6.3\nsse-starlette==3.4.11\nstarlette==1.6.0\ntokenizers==0.23.2\ntqdm==4.70.1\ntruststore==0.10.4\ntyping-inspection==0.4.4\ntyping_extensions==4.16.0\nurllib3==2.7.0\nuvicorn==0.52.4\n",
+      "package_freeze_sha256": "050f76db76e690a9d05e63dda2ef1fb8dce1c14e26ed53ef89d1be97008ce039",
+      "package_freeze_format": "importlib.metadata installed Name==Version snapshot; editable project code is covered by source_sha256",
+      "source_sha256": {
+        "benchmarks/package_cross_domain_v3.py": "edb62c6eab8e9a61aa866433ae926c72a8c03946080b048c0425db6b3955d502",
+        "benchmarks/provenance.py": "de3bdcd069817dc6b5983a956d1b5e4dc945e372194c19d67fad68772f4d9b67"
+      },
+      "predictions_sha256": "c0b762d5bd3939951ef79c99e0c076ac4a2c382a3fab799709ea20e6156d4699",
+      "predictions_commit": "33a06b6792a6ec9c731d806f110e9ee4e4dbc6fa",
+      "predictions_committed_exactly": true,
+      "git_describe_at_write": "round-3-as-published-14-gecefd0f",
+      "checked_at": "2026-09-12T17:09:52.204330+00:00",
+      "load_average_at_write": [
+        2.87548828125,
+        3.43798828125,
+        3.76318359375
+      ],
+      "allow_dirty": false,
+      "generated_outputs": [
+        "docs/benchmarks-v3/cross-domain-results.json.gz"
+      ],
+      "generated_outputs_dirty_exemption": false
+    }
+  },
+  "provenance": {
+    "git_commit": "ecefd0fea11e32e85e66f10d2b160d0d8f067349",
+    "git_dirty": true,
+    "git_dirty_paths": [
+      "docs/benchmarks-v3/cross-domain-results.json.gz"
+    ],
+    "git_describe": "round-3-as-published-14-gecefd0f",
+    "python": "3.12.13",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "started_at": "2026-09-12T17:09:50.170214+00:00",
+    "load_average": [
+      2.87548828125,
+      3.43798828125,
+      3.76318359375
+    ],
+    "requirements_sha256": "050f76db76e690a9d05e63dda2ef1fb8dce1c14e26ed53ef89d1be97008ce039",
+    "requirements_path": null,
+    "package_freeze": "PyJWT==2.14.0\nPyYAML==6.0.3\nPygments==2.21.0\nannotated-types==0.8.0\nanyio==4.15.1\nattrs==26.1.0\ncertifi==2026.7.22\ncffi==2.1.1\ncharset-normalizer==3.5.1\nclick==8.5.0\ncryptography==50.0.1\nfastembed==0.8.0\nfilelock==3.32.6\nflatbuffers==25.12.19\nfsspec==2026.7.0\nh11==0.16.0\nhf-xet==1.6.0\nhttpcore2==2.12.0\nhttpcore==1.0.9\nhttpx2==2.12.0\nhttpx==0.28.1\nhuggingface_hub==1.31.0\nidna==3.19\niniconfig==2.3.0\njsonschema-specifications==2025.9.1\njsonschema==4.26.0\nloguru==0.7.3\nmcp-types==2.0.0\nmcp==2.0.0\nmmh3==5.3.0\nnumpy==2.5.3\nonnxruntime==1.30.0\nopentelemetry-api==1.44.0\npackaging==26.3\npillow==12.3.0\npluggy==1.6.0\nprotobuf==7.36.1\npy_rust_stemmers==0.1.8\npycparser==3.0\npydantic==2.13.5\npydantic_core==2.46.5\npytest==9.1.1\npython-multipart==0.0.32\nreferencing==0.37.0\nrequests==2.34.2\nrpds-py==2026.6.3\nsse-starlette==3.4.11\nstarlette==1.6.0\ntokenizers==0.23.2\ntqdm==4.70.1\ntruststore==0.10.4\ntyping-inspection==0.4.4\ntyping_extensions==4.16.0\nurllib3==2.7.0\nuvicorn==0.52.4\n",
+    "package_freeze_sha256": "050f76db76e690a9d05e63dda2ef1fb8dce1c14e26ed53ef89d1be97008ce039",
+    "package_freeze_format": "importlib.metadata installed Name==Version snapshot; editable project code is covered by source_sha256",
+    "source_sha256": {
+      "benchmarks/package_cross_domain_v3.py": "edb62c6eab8e9a61aa866433ae926c72a8c03946080b048c0425db6b3955d502",
+      "benchmarks/provenance.py": "de3bdcd069817dc6b5983a956d1b5e4dc945e372194c19d67fad68772f4d9b67"
+    },
+    "predictions_sha256": "c0b762d5bd3939951ef79c99e0c076ac4a2c382a3fab799709ea20e6156d4699",
+    "predictions_commit": "33a06b6792a6ec9c731d806f110e9ee4e4dbc6fa",
+    "predictions_committed_exactly": true,
+    "git_describe_at_write": "round-3-as-published-14-gecefd0f",
+    "checked_at": "2026-09-12T17:09:52.263174+00:00",
+    "load_average_at_write": [
+      2.87548828125,
+      3.43798828125,
+      3.76318359375
+    ],
+    "allow_dirty": false,
+    "generated_outputs": [
+      "docs/benchmarks-v3/cross-domain-results.json.gz",
+      "docs/benchmarks-v3/cross-domain-summary.json"
+    ],
+    "generated_outputs_dirty_exemption": true
+  }
+}

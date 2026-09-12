@@ -1,0 +1,19 @@
+Answer strictly from the supplied context using the same rules for every retrieval method.
+Question: {question}
+Recipient: {recipient_id}
+Valid time: {valid_at}
+Ledger cutoff: {known_at}
+Delivery cutoff: {received_by}
+Context (each item has a typed ID and metadata):
+{context}
+
+Rules:
+- Use only the supplied context. Do not use outside knowledge.
+- The valid time is when the claim applies in the world. A claim applies from valid_from inclusive until valid_to exclusive, if valid_to is present.
+- The ledger cutoff is what the system had recorded. Ignore any source item or receipt-log entry with recorded_at after that cutoff, even if its other dates are earlier.
+- The delivery cutoff is what this recipient had received. An item is available only if it has a receipts_for_recipient entry with received_at at or before the delivery cutoff and recorded_at at or before the ledger cutoff. Parent assertions, evidence passages, and lifecycle notices require their own receipts; receipt of one does not imply receipt of another.
+- A correction, supersession, or retraction retires its target claim only if the lifecycle notice itself is recorded and delivered within those cutoffs and effective_at is at or before the valid time. A replacement_id identifies a different item; it does not supply that item's text or prove its delivery.
+- Keep conflicting applicable received claims when the recipient has not received a notice retiring either claim. Do not prefer a later global version merely because it exists.
+- An evidence passage is a received source statement, not an endorsed claim. It can support what a source reported even if its parent assertion was not received. A received notice can support what changed, but does not establish an undelivered replacement claim.
+- If the context does not support an answer under these rules, reply exactly: INSUFFICIENT EVIDENCE
+- Otherwise answer in one short sentence, preserving multiple supported values when needed, then on a new line write CITATIONS: followed by a JSON array of the supporting typed context IDs.

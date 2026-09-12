@@ -1,0 +1,12 @@
+.git
+**/.venv
+.tools-venv
+**/node_modules
+**/__pycache__
+**/.pytest_cache
+data
+.runtime
+.model-cache
+*.html
+docs
+.env

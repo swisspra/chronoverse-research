@@ -1,0 +1,19 @@
+[project]
+name = "chronoverse"
+version = "0.1.0"
+description = "Local bitemporal evidence workbench and MCP server"
+requires-python = ">=3.12"
+dependencies = ["fastapi>=0.115,<1", "uvicorn>=0.34,<1", "mcp>=2,<3", "pypdf>=6,<8", "python-multipart>=0.0.20,<1"]
+
+[project.optional-dependencies]
+semantic = ["fastembed==0.8.0"]
+
+[dependency-groups]
+dev = ["pytest>=8,<10", "httpx>=0.28,<1"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

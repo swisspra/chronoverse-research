@@ -1,0 +1,123 @@
+{
+  "status": "completed_plan_with_uncertainty",
+  "audit_passed": true,
+  "queries": 50,
+  "planned_slots": 750,
+  "original_slots": 647,
+  "continuation_slots": 103,
+  "terminal_responses": 749,
+  "uncertain_outcomes": 1,
+  "unknown_usage_slots": 1,
+  "unknown_usage_reserved_input_tokens": 15241,
+  "unknown_usage_reserved_output_tokens": 1024,
+  "original_checkpoint_sha256": "547c173cebac53cc59e4f673b73b0fe3dedd98603e11a2c9557833cc8216c7c8",
+  "manifest_sha256": "e807eacb8b49a965f1c53257a7903d9006f122b1cc7facc935e5798988e872ce",
+  "prompt_sha256": "3bb012d59e1a712665f130637fd1c38c7d406d53d0bba5751039bf530ed7b497",
+  "model": "vertex_ai/gemini-3.8-flash",
+  "statuses": {
+    "complete": 611,
+    "truncated_or_invalid": 138,
+    "uncertain": 1
+  },
+  "observed_tokens": {
+    "prompt_tokens": 2524970,
+    "completion_tokens": 444230,
+    "total_tokens": 2969200
+  },
+  "arms": {
+    "A": {
+      "complete": 131,
+      "prompt_tokens": 386025,
+      "completion_tokens": 62572,
+      "total_tokens": 448597,
+      "empty_stop_completions": 0,
+      "nonabstained_completions": 24,
+      "nonempty_nonabstained_completions": 24,
+      "citation_parse_error": 0,
+      "truncated_or_invalid": 19,
+      "length_finish_count": 19
+    },
+    "B": {
+      "complete": 82,
+      "prompt_tokens": 933986,
+      "completion_tokens": 139130,
+      "total_tokens": 1073116,
+      "empty_stop_completions": 0,
+      "nonabstained_completions": 71,
+      "nonempty_nonabstained_completions": 71,
+      "citation_parse_error": 0,
+      "truncated_or_invalid": 67,
+      "length_finish_count": 67,
+      "uncertain": 1
+    },
+    "C": {
+      "complete": 104,
+      "prompt_tokens": 398907,
+      "completion_tokens": 103127,
+      "total_tokens": 502034,
+      "empty_stop_completions": 0,
+      "nonabstained_completions": 38,
+      "nonempty_nonabstained_completions": 38,
+      "citation_parse_error": 0,
+      "truncated_or_invalid": 46,
+      "length_finish_count": 46
+    },
+    "D": {
+      "complete": 150,
+      "prompt_tokens": 428514,
+      "completion_tokens": 56811,
+      "total_tokens": 485325,
+      "empty_stop_completions": 0,
+      "nonabstained_completions": 72,
+      "nonempty_nonabstained_completions": 72,
+      "citation_parse_error": 0
+    },
+    "E": {
+      "complete": 144,
+      "prompt_tokens": 377538,
+      "completion_tokens": 82590,
+      "total_tokens": 460128,
+      "empty_stop_completions": 0,
+      "nonabstained_completions": 129,
+      "nonempty_nonabstained_completions": 129,
+      "citation_parse_error": 0,
+      "truncated_or_invalid": 6,
+      "length_finish_count": 6
+    }
+  },
+  "continuation_arm_counts": {
+    "C": 21,
+    "D": 21,
+    "E": 21,
+    "A": 20,
+    "B": 20
+  },
+  "continuation_repeat_counts": {
+    "2": 103
+  },
+  "continuation_query_count": 21,
+  "limitations": [
+    "All planned slots accounted for; not750 successful or terminal responses.",
+    "Timeout charge and usage are unknown, not zero.",
+    "Transport interruption and separate phases prevent a controlled latency comparison; provider/backend drift remains possible despite unchanged returned model identity.",
+    "Citation diagnostics use the frozen permissive parser, not strict format compliance.",
+    "Nonempty/nonabstained does not establish a substantive answer; no semantic correctness or uncited leakage adjudication."
+  ],
+  "file_sha256": {
+    "manifest": "7e182e2d3543b6dbe2286cab85a4144925af6fb37f675f36840093a2c92f0ffa",
+    "prompt": "3bb012d59e1a712665f130637fd1c38c7d406d53d0bba5751039bf530ed7b497",
+    "original": "547c173cebac53cc59e4f673b73b0fe3dedd98603e11a2c9557833cc8216c7c8",
+    "continuation": "a1fe42f955dc55a4eefc6434831f55641eb2c4f6f0eab3fa77621aa3434e84f4",
+    "union": "29f8143feea3a029b1d416a0673f61e1a176ef01a3444920f1461544397b3291"
+  },
+  "raw_sha256": {
+    "manifest": "e807eacb8b49a965f1c53257a7903d9006f122b1cc7facc935e5798988e872ce",
+    "prompt": "3bb012d59e1a712665f130637fd1c38c7d406d53d0bba5751039bf530ed7b497",
+    "original": "547c173cebac53cc59e4f673b73b0fe3dedd98603e11a2c9557833cc8216c7c8",
+    "continuation": "a1fe42f955dc55a4eefc6434831f55641eb2c4f6f0eab3fa77621aa3434e84f4",
+    "union": "29f8143feea3a029b1d416a0673f61e1a176ef01a3444920f1461544397b3291"
+  },
+  "verifier_sha256": "7843cf8f0597cb9375baef4cbc1a110bf78c52b90ce4ca8dca55075786c616ef",
+  "original_source_commit": "9ece9b9",
+  "continuation_source_commit": "cf5222d5419c1dabb55336a6b8406f4a863936f7"
+}

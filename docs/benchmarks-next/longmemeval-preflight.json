@@ -1,0 +1,69 @@
+{
+  "status": "preflight_only",
+  "dataset": "LongMemEval-S cleaned",
+  "revision": "98d7416c24c778c2fee6e6f3006e7a073259d48f",
+  "source_sha256": "d6f21ea9d60a0d56f34a05b609c79c88a451d2ae03597821ea3d5a9678c3a442",
+  "license": "MIT per pinned Hugging Face dataset card",
+  "source_url": "https://huggingface.co/datasets/xiaowu0162/longmemeval-cleaned/tree/98d7416c24c778c2fee6e6f3006e7a073259d48f",
+  "inventory": {
+    "questions": 500,
+    "question_types": {
+      "single-session-user": 70,
+      "multi-session": 133,
+      "single-session-preference": 30,
+      "temporal-reasoning": 133,
+      "knowledge-update": 78,
+      "single-session-assistant": 56
+    },
+    "abstention_questions": 30,
+    "session_ingestions_without_cross_question_state_sharing": 23867,
+    "unique_session_texts_for_embedding_cache_only": 18464,
+    "turns": 246750,
+    "history_utf8_bytes": 247104116,
+    "distinct_history_utf8_bytes": 190065033,
+    "native_graphiti_ingestion_note": "Actual native episode ingestion can call extraction, deduplication and invalidation LLMs more than once per episode. Session count is not a complete request/token estimate.",
+    "native_graphiti_evaluation": "not run; no surrogate is reported as Graphiti",
+    "answer_track": "not run; official answer labels and has_answer flags are excluded from ingress",
+    "clock_limit": "Session dates do not supply independently annotated recipient-delivery times or source recording delays. Do not invent a third-clock advantage from these dates."
+  },
+  "paid_api_calls": 0,
+  "next_gate": "Freeze native ingestion configuration and estimate measured per-episode token use after chat routing is confirmed.",
+  "provenance": {
+    "git_commit": "b936fb1093dd8d1b8cb4b64378d119151ef9fedf",
+    "git_dirty": false,
+    "git_dirty_paths": [],
+    "git_describe": "round-3-as-published-10-gb936fb1",
+    "python": "3.12.13",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "started_at": "2026-09-12T16:54:40.515581+00:00",
+    "load_average": [
+      4.75244140625,
+      5.20654296875,
+      4.2509765625
+    ],
+    "requirements_sha256": "f90acc4c0e560436929e429ea9364f6c7202086a0d3a2bf9bdf5555e0e132963",
+    "requirements_path": null,
+    "package_freeze": "PyJWT==2.14.0\nPyYAML==6.0.3\nPygments==2.21.0\nannotated-doc==0.0.5\nannotated-types==0.8.0\nanyio==4.15.1\nattrs==26.1.0\ncertifi==2026.7.22\ncffi==2.1.1\ncharset-normalizer==3.5.1\nchronoverse==0.1.0\nclick==8.5.0\ncryptography==50.0.1\nfastapi==0.141.1\nfastembed==0.8.0\nfilelock==3.32.6\nflatbuffers==25.12.19\nfsspec==2026.7.0\nh11==0.16.0\nhf-xet==1.6.0\nhttpcore2==2.12.0\nhttpcore==1.0.9\nhttpx2==2.12.0\nhttpx==0.28.1\nhuggingface_hub==1.31.0\nidna==3.19\niniconfig==2.3.0\njsonschema-specifications==2025.9.1\njsonschema==4.26.0\nloguru==0.7.3\nmcp-types==2.2.0\nmcp==2.2.0\nmmh3==5.3.0\nnumpy==2.5.3\nonnxruntime==1.30.0\nopentelemetry-api==1.44.0\npackaging==26.3\npillow==12.3.0\npluggy==1.6.0\nprotobuf==7.36.1\npy_rust_stemmers==0.1.8\npycparser==3.0\npydantic==2.13.5\npydantic_core==2.46.5\npypdf==6.18.1\npytest==9.1.1\npython-multipart==0.0.32\nrank-bm25==0.2.2\nreferencing==0.37.0\nrequests==2.34.2\nrpds-py==2026.6.3\nsse-starlette==3.4.11\nstarlette==1.6.0\ntokenizers==0.23.2\ntqdm==4.70.1\ntruststore==0.10.4\ntyping-inspection==0.4.4\ntyping_extensions==4.16.0\nurllib3==2.7.0\nuvicorn==0.52.4\n",
+    "package_freeze_sha256": "f90acc4c0e560436929e429ea9364f6c7202086a0d3a2bf9bdf5555e0e132963",
+    "package_freeze_format": "importlib.metadata installed Name==Version snapshot; editable project code is covered by source_sha256",
+    "source_sha256": {
+      "benchmarks/longmemeval_preflight.py": "9e26684add9c86083d929088c058e3b7e9baed3a6a15eb1b7676fc06305f17cf",
+      "benchmarks/provenance.py": "fe837dbca0f4a181e1c5f464381e44ec1d778df6323592d93ca8fbc603279f24"
+    },
+    "predictions_sha256": "c0b762d5bd3939951ef79c99e0c076ac4a2c382a3fab799709ea20e6156d4699",
+    "predictions_commit": "33a06b6792a6ec9c731d806f110e9ee4e4dbc6fa",
+    "predictions_committed_exactly": true,
+    "git_describe_at_write": "round-3-as-published-10-gb936fb1",
+    "checked_at": "2026-09-12T16:54:43.204213+00:00",
+    "load_average_at_write": [
+      4.75244140625,
+      5.20654296875,
+      4.2509765625
+    ],
+    "allow_dirty": false,
+    "generated_outputs": [
+      "docs/benchmarks-next/longmemeval-preflight.json"
+    ],
+    "generated_outputs_dirty_exemption": false
+  }
+}

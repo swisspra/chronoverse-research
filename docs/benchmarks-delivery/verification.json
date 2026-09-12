@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "result_sha256": "e0a399a5a8736428b79ee542fa7af5c27497d3b3cbb47bd5ede06c695a55fc9b",
+  "fixture_sha256": "6e7777224c18312f94a70368805dc4478a72362dc04bd8e4cf563288c5f0120b",
+  "checks": [
+    "50 unique fixed query scopes; no padded duplicates",
+    "250 method/query outcomes recalculated by a second implementation in this repository",
+    "Receipt AND source recording cutoffs recalculated for every returned item",
+    "50/50 full SQL and delivery result/projection payloads identical",
+    "Standalone evidence-only gold counted as answerable and missed",
+    "Archived execution source hashes and schema-migration hashes verified; current source is not presented as historical execution"
+  ]
+}
