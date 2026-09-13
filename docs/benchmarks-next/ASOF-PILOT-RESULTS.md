@@ -38,6 +38,7 @@ Only the retrieval policy differs.
 | `asof` | restrict the candidate pool to issues published by the asked date, then retrieve |
 | `static_item` | collapse each series to its latest version in the **whole** corpus, then retrieve |
 | `asof_item` | restrict to issues published by the asked date, **then** collapse each series to its latest version inside that eligible set, then retrieve |
+| `lightrag_hybrid` | LightRAG 1.5.7 in hybrid mode — a frontline graph-RAG system, with its own chunking, entity and relation graph, and no knowledge-time projection at all |
 
 The first three were fixed before any answer was generated. The two item arms were added afterwards,
 once the failures of `asof` had been read; see the disclosure below.
@@ -51,6 +52,7 @@ once the failures of `asof` had been read; see the disclosure below.
 | `asof` | 90.0% | 92.0% | 0% | 0% | 0% |
 | `static_item` | 6.0% | 11.0% | 0% | **92.0%** | **97%** |
 | **`asof_item`** | **100.0%** | **100.0%** | 0% | 0% | 0% |
+| `lightrag_hybrid` | 28.0% | n/a | 1.0% | 47.0% | n/a |
 
 Exact McNemar, two-sided, paired on the same 100 questions:
 
@@ -61,6 +63,9 @@ Exact McNemar, two-sided, paired on the same 100 questions:
 | `asof` vs `asof_item` | 10 | 0 | 0.0020 |
 | `static` vs `asof_item` | 23 | 0 | < 0.0001 |
 | `static_item` vs `asof_item` | 94 | 0 | < 0.0001 |
+| `lightrag_hybrid` vs `static` | 53 | 4 | < 0.0001 |
+| `lightrag_hybrid` vs `asof` | 62 | 0 | < 0.0001 |
+| `lightrag_hybrid` vs `asof_item` | 72 | 0 | < 0.0001 |
 
 Per series, no arm with the knowledge-time projection is ever behind:
 
@@ -128,6 +133,40 @@ between two dates, anything needing superseded versions — are not tested here 
 item view relaxed. The honest general statement is the filter-order one: projection before ranking
 dominates filtering after ranking, and the two compose.
 
+## LightRAG on the same corpus and the same questions
+
+LightRAG 1.5.7 indexed the same 51 issues through the same internal proxy, with the same answerer
+and the same embedding model, and answered the same 100 questions in `hybrid` mode. It was given the
+issues as whole documents and did its own chunking, entity extraction and graph construction, which
+is how the system is meant to be used.
+
+| | LightRAG hybrid | `asof_item` |
+| --- | ---: | ---: |
+| Correct | 28.0% | 100.0% |
+| Abstained | 47.0% | 0% |
+| Answered with a wrong value | 25.0% | 0% |
+| Mean prompt tokens per answer | 33,026 | 1,403 |
+| Index build | 812 LLM calls, 1.58M prompt + 0.87M completion tokens, 26 min | embeddings only, no LLM calls |
+| Query cost | 200 LLM calls, 3.30M prompt + 0.33M completion tokens, 39 min | 100 calls, 0.03M prompt tokens, 1.8 min |
+
+It failed on 72 questions that `asof_item` answered and won none of them (exact McNemar, p < 0.0001),
+and it also lost to the plain static index, 53 to 4. Almost half its failures are honest abstentions
+rather than wrong prices: with the graph returning material from many weeks at once, the model often
+could not tell which week the question was asking about and said so. Only one of its answers carried
+a value from a future issue, so this is not primarily a leakage failure — it is the same recency
+starvation that cost `asof` ten questions, at a much larger scale, and 24× the context per answer did
+not compensate.
+
+**Two things this comparison does not show.** First, LightRAG brought its own chunking, and on this
+corpus chunking was worth more than the retrieval policy (see below), so an unknown part of the gap
+is chunking rather than time awareness. The clean version of this experiment feeds LightRAG the same
+970 assessment-row chunks the other arms use; that run is the obvious next step and it is affordable.
+Second, LightRAG is built for multi-hop questions over entity graphs, and this question form —
+point-in-time lookup of the current value of a series — is close to the worst case for it. The
+result to carry forward is narrow and specific: **a frontline graph-RAG system, given the asked date
+inside the question text, cannot use it**, because it has nowhere to put a knowledge-time
+projection. That is the gap the projection fills, not a general claim that LightRAG retrieves badly.
+
 ## A benchmark bug found and fixed during the run
 
 The first scored pass showed one series at 0 out of 10 for every arm. It was not a retrieval failure:
@@ -153,7 +192,9 @@ was worth more than the retrieval policy.
 ## Cost
 
 The two item arms cost 53,170 prompt tokens and 21,627 completion tokens for 200 answers, 211
-seconds wall clock. Mean context per answered question: 958 tokens for `static`, 609 for `postfilt`,
+seconds wall clock. LightRAG cost 4.88M prompt and 1.20M completion tokens over 1,012 LLM calls and
+65 minutes for one index build plus 100 answers — roughly two orders of magnitude more inference for
+a quarter of the accuracy. Mean context per answered question: 958 tokens for `static`, 609 for `postfilt`,
 959 for `asof`, 1,403 for `asof_item`. The projection buys its accuracy with a 46% larger context
 than `asof`, because a collapsed pool admits more distinct series into the top-k.
 
@@ -163,5 +204,5 @@ One product family, one year, one answerer, one repeat, 100 questions, one quest
 has no corrections, so the delivery clock is not exercised at all. The item arms are post-hoc on this
 sample. Licensed content cannot be redistributed, so an external reader cannot rerun this without
 their own subscription. The next steps are a fresh out-of-sample question draw with all five arms
-fixed in advance, and putting LightRAG, Graphiti and Microsoft GraphRAG on this same index and
-question set.
+fixed in advance, putting LightRAG on the same 970-chunk index it was denied in this round, and adding
+Graphiti and Microsoft GraphRAG to the same comparison.
