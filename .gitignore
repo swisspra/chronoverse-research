@@ -41,3 +41,14 @@ copus-pilot/
 
 # round-2 contexts are tracked gzipped; the raw expansion stays local
 docs/benchmarks-next/answer-contexts-v2-50.jsonl
+
+# consolidated 2026-09-13: licensed corpora and multi-GB test kits live one level up,
+# under Chronoverse/experiments/. These patterns are belt-and-braces in case anything
+# is ever copied into a repository by hand.
+experiments/
+copus-pilot/
+COPUS-TESTSET/
+**/COPUS-TESTSET/
+*test-set/
+*testset/
+*.jsonl.raw
