@@ -11,7 +11,8 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from benchmarks.answer_experiment import score_answer  # noqa: E402
 
-MANIFEST = ROOT / 'docs/benchmarks-next/answer-contexts-v2-50.jsonl'
+_RAW = ROOT / 'docs/benchmarks-next/answer-contexts-v2-50.jsonl'
+MANIFEST = _RAW if _RAW.exists() else _RAW.with_suffix('.jsonl.gz')
 ORDER = ('Z', 'A2', 'C2', 'B', 'D', 'D2', 'E')
 LABEL = {'Z': 'no retrieval (floor)', 'A2': 'RAG hybrid lexical+dense', 'C2': 'RAG + cross-encoder',
          'B': 'long context, all versions', 'D': 'global lifecycle + post-filter',
@@ -64,7 +65,10 @@ def rate(values):
 for path in sys.argv[1:]:
     raw = Path(path).read_bytes()
     state = json.loads(gzip.decompress(raw) if path.endswith('.gz') else raw)
-    rows = [json.loads(line) for line in MANIFEST.read_text().splitlines() if line.strip()]
+    _bytes = MANIFEST.read_bytes()
+    if MANIFEST.suffix == '.gz':
+        _bytes = gzip.decompress(_bytes)
+    rows = [json.loads(line) for line in _bytes.decode().splitlines() if line.strip()]
     repeats, acc, statuses, model = evaluate(state, rows)
     total = sum(sum(c.values()) for c in statuses.values())
     print(f"\n=== {model} — repeats {repeats}, {total} slots ===")

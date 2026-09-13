@@ -20,7 +20,7 @@ answerer models.
 - Completion budget raised from 1,024 to 4,096 tokens. Every arm now completes 100% of attempts;
   round 1 lost 12–45% of attempts per arm to truncation.
 
-Contexts: `answer-contexts-v2-50.jsonl`, manifest sha256 `ae660b207700d6db698ab3435f6e67c8fc6ed41cb90e43973a9beacec3dfd3c0`,
+Contexts: `answer-contexts-v2-50.jsonl.gz` (tracked gzipped; the 152 MB expansion stays local), manifest sha256 `ae660b207700d6db698ab3435f6e67c8fc6ed41cb90e43973a9beacec3dfd3c0`,
 50 questions × 7 arms = 350 rows. Prompt unchanged from round 1 (`answer-prompt-v2.txt`), so the two
 rounds remain comparable. Gold is attached only after every arm's context is assembled.
 
