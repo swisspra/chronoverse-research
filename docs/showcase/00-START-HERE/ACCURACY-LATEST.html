@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accuracy ฉบับล่าสุดอยู่ไฟล์ไหน — Chronoverse</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#EEF1F4;--sheet:#FBFCFD;--ink:#16222E;--ink-soft:#5A6873;--rule:#C9D2DA;--measure:#0E6E63;--loss:#A6382C}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"IBM Plex Sans Thai","Noto Sans Thai",system-ui,sans-serif;
+  font-size:17px;line-height:1.72;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+main{max-width:860px;margin:0 auto;padding:44px 26px 80px}
+.issue{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink-soft);margin:0 0 10px}
+h1{font-size:36px;line-height:1.2;font-weight:700;letter-spacing:-.015em;margin:0 0 10px}
+.stand{font-size:18px;color:var(--ink-soft);margin:0 0 30px;max-width:60ch}
+header{border-bottom:1px solid var(--ink);padding-bottom:16px;margin-bottom:34px}
+h2{font-size:23px;font-weight:600;margin:52px 0 10px;padding-top:20px;border-top:1px solid var(--rule)}
+p{margin:0 0 15px}
+code{font-family:"IBM Plex Mono",monospace;font-size:.86em;background:var(--sheet);border:1px solid var(--rule);padding:1px 5px}
+a{color:var(--measure)}
+:focus-visible{outline:2px solid var(--measure);outline-offset:2px}
+
+/* การ์ดไฟล์ */
+.files{display:grid;gap:14px;margin:0 0 8px}
+.file{display:grid;grid-template-columns:1fr auto;gap:6px 18px;align-items:start;
+  background:var(--sheet);border:1px solid var(--rule);border-left:3px solid var(--rule);padding:16px 18px}
+.file.pick{border-left-color:var(--measure)}
+.file h3{margin:0;font-size:17px;font-weight:600}
+.file h3 a{text-decoration:none}
+.file .when{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink-soft);white-space:nowrap}
+.file p{margin:0;grid-column:1/-1;font-size:15.5px;color:var(--ink-soft)}
+.file .tag{display:inline-block;font-size:12.5px;color:var(--measure);border:1px solid var(--measure);
+  padding:0 7px;margin-left:8px;vertical-align:2px}
+
+/* บันไดย่อ */
+.bars{background:var(--sheet);border:1px solid var(--rule);border-top:3px solid var(--ink);padding:20px 22px;margin:0 0 22px}
+.row{display:grid;grid-template-columns:minmax(96px,26%) 1fr 58px;gap:12px;align-items:center;
+  padding:6px 0;border-bottom:1px solid var(--rule);font-size:15px}
+.row:last-child{border-bottom:0}
+.track{height:12px;background:#DFE5EA}
+.fill{height:12px;display:block;background:var(--measure)}
+.fill.rival{background:var(--ink-soft)}
+.fill.bad{background:var(--loss)}
+.num{text-align:right;font-family:"IBM Plex Mono",monospace;font-size:14.5px;font-weight:500}
+
+.chain{font-family:"IBM Plex Mono",monospace;font-size:13.5px;line-height:1.7;background:var(--sheet);
+  border:1px solid var(--rule);padding:16px 18px;overflow-x:auto;white-space:pre;margin:0 0 15px}
+.warn{border-left:3px solid var(--loss);padding:2px 0 2px 16px;margin:0 0 18px}
+.warn strong{color:var(--loss)}
+.note{border-left:3px solid var(--measure);padding:2px 0 2px 16px;margin:0 0 18px}
+footer{margin-top:60px;padding-top:16px;border-top:1px solid var(--ink);font-size:14px;color:var(--ink-soft)}
+@media (max-width:640px){
+  h1{font-size:28px} main{padding:28px 18px 60px}
+  .file{grid-template-columns:1fr} .row{grid-template-columns:1fr 54px} .row .track{grid-column:1/-1}
+}
+@media print{body{background:#fff;font-size:11pt} .file,.bars,.chain{break-inside:avoid}}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <p class="issue">00-START-HERE — สรุปสำหรับส่งต่อให้ทีม — 2026-09-14</p>
+  <h1>ผล accuracy ฉบับล่าสุด อยู่ที่ไฟล์ไหน</h1>
+  <p class="stand">ในโฟลเดอร์ showcase มีเอกสารที่มีตารางผลอยู่หลายรุ่น หน้านี้ตอบคำถามเดียว
+  คือรุ่นไหนคือรุ่นที่ใช้ได้ และเลขนั้นเดินทางมาจากไหน</p>
+</header>
+
+<h2 style="border-top:0;padding-top:0;margin-top:0">สามไฟล์นี้คือฉบับล่าสุด เนื้อเดียวกัน</h2>
+<div class="files">
+
+  <div class="file pick">
+    <h3><a href="COMPETITOR-ACCURACY-TH.html">COMPETITOR-ACCURACY-TH.html</a><span class="tag">เอาอันนี้ให้ทีมดู</span></h3>
+    <span class="when">09-14 13:58</span>
+    <p>ภาษาไทย เปิดด้วยเบราว์เซอร์ได้ทันที ไม่ต้องติดตั้งอะไร มีแนวคิด ขั้นตอน และตารางครบ
+    สั่งพิมพ์หรือเซฟเป็น PDF ได้เลย และเป็นฉบับที่มีชื่อเกรดสินค้าน้อยที่สุด</p>
+  </div>
+
+  <div class="file">
+    <h3><a href="COMPETITOR-ACCURACY-TH.md">COMPETITOR-ACCURACY-TH.md</a></h3>
+    <span class="when">09-14 13:42</span>
+    <p>ฉบับข้อความภาษาไทย เนื้อหาเท่ากับ HTML ใช้เวลาจะอ่านเองหรือแก้ต่อ แก้ที่นี่ก่อนแล้วค่อยตามไปแก้ HTML</p>
+  </div>
+
+  <div class="file">
+    <h3><a href="COMPETITOR-ACCURACY.md">COMPETITOR-ACCURACY.md</a></h3>
+    <span class="when">09-14 03:25</span>
+    <p>ฉบับภาษาอังกฤษ ไว้ยกไปใส่เอกสารทางการหรือ paper มีตารางผลรายซีรีส์สินค้า 12 บรรทัด
+    ซึ่งอีกสองฉบับไม่มี</p>
+  </div>
+
+</div>
+<div class="note"><p>ทั้งสามไฟล์ติดป้าย <code>STATUS · CURRENT</code> และไม่มีฉบับใดใหม่กว่านี้ในโฟลเดอร์
+ตรวจแล้วเอกสารที่มีตารางหกวิธีมีเพียงสามไฟล์นี้ กับต้นทางอีกสองไฟล์ในบล็อกถัดไป</p></div>
+
+<h2>เลขหลักที่ทีมจะเห็น</h2>
+<div class="bars">
+  <div class="row"><span>LightRAG 1.5.7</span><span class="track"><span class="fill rival" style="width:28%"></span></span><span class="num">28.0%</span></div>
+  <div class="row"><span>static</span><span class="track"><span class="fill rival" style="width:77%"></span></span><span class="num">77.0%</span></div>
+  <div class="row"><span>postfilt</span><span class="track"><span class="fill rival" style="width:77%"></span></span><span class="num">77.0%</span></div>
+  <div class="row"><span>asof</span><span class="track"><span class="fill" style="width:90%"></span></span><span class="num">90.0%</span></div>
+  <div class="row"><span>static_item</span><span class="track"><span class="fill bad" style="width:6%"></span></span><span class="num">6.0%</span></div>
+  <div class="row"><span>asof_item</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="num">100.0%</span></div>
+</div>
+<p>คำถามชุดเดียวกัน 100 ข้อ บนคลังรายงานราคาจริง โมเดลตอบตัวเดียวกัน ค้นได้ 8 ชิ้นเท่ากัน
+<strong>LightRAG แพ้ <code>asof_item</code> 72 ข้อ ชนะ 0 ข้อ</strong> และ <code>static</code> กับ
+<code>postfilt</code> ต่างกันศูนย์ข้อ ซึ่งคือข้อค้นพบหลักของงาน คือ <strong>กรองเวลาก่อนค้น
+ไม่เท่ากับค้นก่อนแล้วค่อยกรอง</strong></p>
+
+<h2>เลขเดินทางมาจากไหน</h2>
+<div class="chain">คำตอบดิบ 600 รายการ            arm-results-v3.jsonl + arm-results-v4.jsonl
+        │                     (เก็บไว้นอก repo เพราะเป็นข้อมูลลิขสิทธิ์)
+        ▼
+ให้คะแนน + McNemar          score_v4.py --mcnemar
+        │
+        ▼
+ตารางดิบ + เอกสารต้นทาง     SIX-ARM-SCOREBOARD.txt        (09-14 02:02)
+        │                   01-results-open/ASOF-PILOT-RESULTS.md  (09-14 00:43)
+        ▼
+สามไฟล์สรุปข้างบน           ไม่มีการวัดใหม่ในชั้นนี้เลย คัดตัวเลขมาอย่างเดียว</div>
+<p>เฉลยของคำถามทุกข้อแกะจากตารางราคาด้วยโปรแกรม ไม่มีโมเดลไหนเป็นคนตัดสินว่าคำตอบถูกหรือผิด</p>
+
+<h2>สองข้อที่ต้องพูดตอนนำเสนอ</h2>
+<div class="warn"><p><strong>หนึ่ง — 100% ยังเป็น in-sample</strong>
+สองวิธีท้ายถูกเขียนขึ้น <em>หลัง</em> จากอ่านข้อที่วิธีก่อนหน้าตอบผิดแล้ว และวัดบนคำถามชุดเดิม
+การสุ่มคำถามชุดใหม่โดยล็อกทุกวิธีไว้ก่อนคือสิ่งที่ยังต้องทำ ใช้เวลาไม่กี่นาทีและเงินไม่กี่บาท</p></div>
+<div class="warn"><p><strong>สอง — ห้ามเทียบ 174/175 ของเรากับ 96/175 ของ Graphiti ตรง ๆ</strong>
+คนละวิธีวัด ของเราคำนวณด้วยกฎ ไม่มี LLM มาแกะข้อมูลใหม่ ส่วนของ Graphiti เสียข้อมูลเฉลยไป
+ราวหนึ่งในสามตั้งแต่ขั้นแกะ entity ด้วย LLM</p></div>
+<div class="note"><p>ข้อจำกัดที่เหลือ คำถามทั้ง 100 ข้อเป็นรูปแบบเดียวคือ “ณ วัน D ค่าล่าสุดของ S”
+ซึ่งตรงกับที่วิธีเราออกแบบมาพอดี, LightRAG ยังไม่ได้รันบนการตัด chunk ชุดเดียวกัน,
+Microsoft GraphRAG ยังไม่เคยรันเลย และคลังข้อมูลชุดนี้ไม่มีการแก้ไขราคาย้อนหลังเลยสักครั้ง</p></div>
+
+<h2>เรื่องการส่งออกนอกทีม</h2>
+<p>ทั้งสามไฟล์ไม่มีชื่อเจ้าของข้อมูล ไม่มีราคาจริง ไม่มีข้อความจากรายงาน และไม่มีคำตอบดิบของโมเดล
+มีเพียงตัวเลขผลวัด วิธีการ และชื่อเกรดสินค้าไม่กี่จุด ตรงตามเงื่อนไขลิขสิทธิ์ที่ห้ามเพียงการส่งต่อตัวคลังข้อมูล
+ถ้าจะส่งออกนอกองค์กร ฉบับ HTML ภาษาไทยมีชื่อเกรดน้อยที่สุด</p>
+
+<footer>
+<p>ไฟล์นี้เป็นหน้าปกสำหรับส่งต่อ ไม่ใช่แหล่งอ้างอิง ตัวเลขทุกตัวมาจาก
+<code>01-results-open/ASOF-PILOT-RESULTS.md</code> — ลำดับรุ่นของทุกไฟล์ในโฟลเดอร์ดูที่
+<a href="VERSION-MAP.md">VERSION-MAP.md</a> และไทม์ไลน์ทั้งรอบอยู่ที่
+<a href="../06-timeline/">06-timeline/</a></p>
+</footer>
+</main>
+</body>
+</html>

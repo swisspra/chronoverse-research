@@ -1,0 +1,37 @@
+600 answers over 100 questions
+
+arm         retrieval policy                                      correct  gold in ctx  wrong era  abstained  ctx tokens
+------------------------------------------------------------------------------------------------------------------------
+lightrag_hybridLightRAG 1.5.7 hybrid, its own graph and chunking       28.0%         0.0%       0.0%      47.0%       33026
+static      one static index, no time awareness                     77.0%        79.0%       0.0%       2.0%         958
+postfilt    retrieve first, then drop future issues                 77.0%        79.0%       0.0%       2.0%         609
+asof        restrict to issues known at the asked date, then retrieve    90.0%        92.0%       0.0%       0.0%         959
+static_item latest version per series over the whole corpus          6.0%        11.0%       0.0%      92.0%        1540
+asof_item   restrict to known issues, then latest version per series   100.0%       100.0%       0.0%       0.0%        1403
+
+context containing at least one future issue: {'lightrag_hybrid': '0%', 'static': '90%', 'postfilt': '0%', 'asof': '0%', 'static_item': '97%', 'asof_item': '0%'}
+
+per series (correct / n):
+series                                        lightrag_hybrid       static     postfilt         asof  static_item    asof_item
+HDPE FILM CFR CHINA                                    3/13        12/13        12/13        12/13         2/13        13/13
+LDPE FILM CFR VIETNAM ALL ORIGINS                      4/11         8/11         8/11        11/11         1/11        11/11
+HDPE INJECTION (MELT FLOW INDEX >10) CFR CHINA         1/10         6/10         6/10         8/10         0/10        10/10
+HDPE BLOW MOULDING CFR VIETNAM ALL-ORIGINS PRICE CFR NE ASIA          0/9          5/9          5/9          6/9          1/9          9/9
+HDPE INJECTION CFR CHINA                                1/9          7/9          7/9          9/9          0/9          9/9
+LDPE FILM CFR SE ASIA DUTIABLE*                         2/9          9/9          9/9          9/9          0/9          9/9
+LLDPE FILM CFR CHINA                                    3/9          8/9          8/9          9/9          1/9          9/9
+LLDPE FILM CFR SE ASIA DUTIABLE*                        3/9          4/9          4/9          5/9          1/9          9/9
+HDPE INJECTION (MELT FLOW INDEX =<10) CFR CHINA          3/7          7/7          7/7          7/7          0/7          7/7
+HDPE BLOW MOULDING CFR CHINA                            3/5          4/5          4/5          5/5          0/5          5/5
+LDPE FILM CFR SE ASIA ALL ORIGINS                       2/5          3/5          3/5          5/5          0/5          5/5
+LDPE FILM CFR CHINA                                     3/4          4/4          4/4          4/4          0/4          4/4
+
+exact McNemar, two-sided:
+  asof         vs asof_item    asof_item better on 10, worse on 0, p = 0.0020
+  static       vs asof_item    asof_item better on 23, worse on 0, p = 0.0000
+  static_item  vs asof_item    asof_item better on 94, worse on 0, p = 0.0000
+  static       vs asof         asof better on 13, worse on 0, p = 0.0002
+  static       vs postfilt     postfilt better on 0, worse on 0, p = 1.0000
+  lightrag_hybrid vs static       static better on 53, worse on 4, p = 0.0000
+  lightrag_hybrid vs asof         asof better on 62, worse on 0, p = 0.0000
+  lightrag_hybrid vs asof_item    asof_item better on 72, worse on 0, p = 0.0000

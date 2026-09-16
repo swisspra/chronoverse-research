@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chronoverse เทียบกับระบบอื่น — สรุปผลวัด</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#EEF1F4;        /* พื้นกระดาษรายงานราคา */
+  --sheet:#FBFCFD;
+  --ink:#16222E;
+  --ink-soft:#5A6873;
+  --rule:#C9D2DA;
+  --measure:#0E6E63;      /* สีของ "ค่าที่วัดได้" */
+  --loss:#A6382C;         /* สีของข้อเสีย / ค่าที่แย่ */
+  --mark:#E8B00A;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"IBM Plex Sans Thai","Noto Sans Thai",system-ui,sans-serif;
+  font-weight:400; font-size:17px; line-height:1.75;
+  font-variant-numeric:tabular-nums;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{display:grid; grid-template-columns:232px minmax(0,1fr); gap:48px;
+  max-width:1180px; margin:0 auto; padding:0 28px 96px}
+nav{position:sticky; top:0; align-self:start; height:100vh; overflow-y:auto;
+  padding:40px 0; font-size:14.5px; line-height:1.5}
+nav p{margin:0 0 14px; color:var(--ink-soft); font-size:13px}
+nav a{display:block; padding:5px 0 5px 12px; color:var(--ink-soft);
+  text-decoration:none; border-left:2px solid var(--rule)}
+nav a:hover,nav a:focus-visible{color:var(--ink); border-left-color:var(--measure); background:var(--sheet)}
+main{max-width:73ch; padding-top:40px}
+:focus-visible{outline:2px solid var(--measure); outline-offset:2px}
+
+/* ---- หัวเรื่อง ---- */
+.masthead{border-bottom:1px solid var(--ink); padding-bottom:18px; margin-bottom:34px}
+.issue{font-family:"IBM Plex Mono",monospace; font-size:12.5px; color:var(--ink-soft); margin:0 0 10px}
+h1{font-size:39px; line-height:1.2; font-weight:700; letter-spacing:-.015em; margin:0 0 10px}
+.stand{font-size:18.5px; color:var(--ink-soft); margin:0; max-width:62ch}
+h2{font-size:25px; font-weight:600; letter-spacing:-.01em; margin:64px 0 6px; padding-top:22px; border-top:1px solid var(--rule)}
+h3{font-size:19px; font-weight:600; margin:36px 0 4px}
+h2+p,h3+p{margin-top:8px}
+p{margin:0 0 16px}
+strong{font-weight:600}
+code{font-family:"IBM Plex Mono",monospace; font-size:.87em; background:var(--sheet);
+  border:1px solid var(--rule); padding:1px 5px}
+
+/* ---- แผงสรุปหัวหน้า: บันไดความแม่น ---- */
+.ladder{background:var(--sheet); border:1px solid var(--rule); border-top:3px solid var(--ink);
+  padding:26px 26px 20px; margin:0 0 34px}
+.ladder h2{margin:0 0 4px; border:0; padding:0; font-size:20px}
+.ladder p.sub{font-size:14.5px; color:var(--ink-soft); margin:0 0 20px}
+.row{display:grid; grid-template-columns:minmax(120px,30%) 1fr 62px; align-items:center;
+  gap:14px; padding:7px 0; border-bottom:1px solid var(--rule)}
+.row:last-of-type{border-bottom:0}
+.row .who{font-size:15px}
+.row .who em{font-style:normal; color:var(--ink-soft); font-size:13.5px; display:block; line-height:1.35}
+.track{height:13px; background:#DFE5EA}
+.fill{height:13px; background:var(--measure); display:block}
+.fill.rival{background:var(--ink-soft)}
+.fill.bad{background:var(--loss)}
+.num{text-align:right; font-family:"IBM Plex Mono",monospace; font-size:15px; font-weight:500}
+
+/* ---- ตาราง ---- */
+.scroll{overflow-x:auto; margin:0 0 20px}
+table{border-collapse:collapse; width:100%; font-size:15px; background:var(--sheet)}
+caption{text-align:left; font-size:14px; color:var(--ink-soft); padding:0 0 8px}
+th,td{padding:8px 11px; border-bottom:1px solid var(--rule); text-align:left; vertical-align:top}
+thead th{border-bottom:1.5px solid var(--ink); font-weight:600; font-size:14px; white-space:nowrap}
+td.n,th.n{text-align:right; font-family:"IBM Plex Mono",monospace; white-space:nowrap}
+tbody tr.best{background:#E4EFED}
+tbody tr.best td{font-weight:600}
+tbody tr.rival td:first-child{border-left:3px solid var(--ink-soft)}
+tr.sum td{border-top:1.5px solid var(--ink); font-weight:600}
+
+/* ---- บล็อกหมายเหตุ ---- */
+.note,.warn{border-left:3px solid var(--measure); padding:2px 0 2px 16px; margin:0 0 20px}
+.warn{border-left-color:var(--loss)}
+.warn strong{color:var(--loss)}
+.flow{font-family:"IBM Plex Mono",monospace; font-size:13.5px; line-height:1.65;
+  background:var(--sheet); border:1px solid var(--rule); padding:18px; overflow-x:auto; white-space:pre}
+ol.steps{padding-left:0; list-style:none; counter-reset:s; margin:0 0 20px}
+ol.steps li{counter-increment:s; position:relative; padding:0 0 14px 40px; border-bottom:1px solid var(--rule); margin-bottom:14px}
+ol.steps li:last-child{border-bottom:0}
+ol.steps li::before{content:counter(s); position:absolute; left:0; top:2px;
+  font-family:"IBM Plex Mono",monospace; font-size:14px; color:var(--measure);
+  border:1px solid var(--rule); width:26px; height:26px; display:grid; place-items:center; background:var(--sheet)}
+blockquote{margin:0 0 20px; padding:20px 24px; background:var(--ink); color:#E8EDF1; font-size:17px}
+blockquote p:last-child{margin:0}
+blockquote strong{color:#fff}
+footer{margin-top:72px; padding-top:18px; border-top:1px solid var(--ink);
+  font-size:14px; color:var(--ink-soft)}
+footer a{color:var(--measure)}
+@media (max-width:900px){
+  .wrap{grid-template-columns:1fr; gap:0; padding:0 18px 64px}
+  nav{position:static; height:auto; padding:24px 0 0; display:flex; flex-wrap:wrap; gap:6px}
+  nav p{width:100%; margin:0}
+  nav a{border-left:0; border-top:2px solid var(--rule); padding:4px 10px}
+  h1{font-size:30px} main{padding-top:24px}
+  .row{grid-template-columns:1fr 56px} .row .track{grid-column:1/-1}
+}
+@media print{
+  body{background:#fff; font-size:11pt} nav{display:none}
+  .wrap{display:block; max-width:none} h2{page-break-after:avoid} table{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="สารบัญ">
+  <p>สารบัญ</p>
+  <a href="#สรุป">สรุป 30 วินาที</a>
+  <a href="#แนวคิด">แนวคิดพื้นฐาน</a>
+  <a href="#ขั้นตอน">ขั้นตอนการตอบ</a>
+  <a href="#ทดลอง">ขั้นตอนการทดลอง</a>
+  <a href="#corpus">ผล: corpus จริง</a>
+  <a href="#longctx">ผล: long context</a>
+  <a href="#graphiti">ผล: Graphiti</a>
+  <a href="#ชิ้นส่วน">ผล: ระดับชิ้นส่วน</a>
+  <a href="#ผลลบ">ผลลบที่เก็บไว้</a>
+  <a href="#ต้นทุน">ต้นทุน</a>
+  <a href="#ยังไม่วัด">ที่ยังไม่ได้วัด</a>
+</nav>
+<main>
+<header class="masthead">
+  <p class="issue">00-START-HERE / COMPETITOR-ACCURACY-TH — สถานะ CURRENT — เรียบเรียง 2026-09-14</p>
+  <h1>Chronoverse เทียบกับระบบอื่น</h1>
+  <p class="stand">สรุปผลวัดทุกมุมที่โปรเจกต์นี้รันจริง พร้อมแนวคิดและขั้นตอนสำหรับคนเพิ่งเข้าโปรเจกต์
+  ตัวเลขทุกตัวคัดมาจากเอกสารผลในโฟลเดอร์เดียวกัน ไม่มีการวัดใหม่</p>
+</header>
+
+<section class="ladder" aria-labelledby="สรุป">
+  <h2 id="สรุป">คำถามเดียวกัน 100 ข้อ บนคลังรายงานราคาจริง</h2>
+  <p class="sub">“ณ วันที่ D ราคาล่าสุดของสินค้า S คือเท่าไหร่” — โมเดลตอบตัวเดียวกัน ค้นได้ 8 ชิ้นเท่ากัน</p>
+
+  <div class="row"><span class="who">LightRAG 1.5.7<em>ระบบ graph-RAG ที่เผยแพร่แล้ว</em></span>
+    <span class="track"><span class="fill rival" style="width:28%"></span></span><span class="num">28.0%</span></div>
+  <div class="row"><span class="who">static<em>ไม่รู้เรื่องเวลาเลย</em></span>
+    <span class="track"><span class="fill rival" style="width:77%"></span></span><span class="num">77.0%</span></div>
+  <div class="row"><span class="who">postfilt<em>ค้นก่อน แล้วค่อยทิ้งอนาคต</em></span>
+    <span class="track"><span class="fill rival" style="width:77%"></span></span><span class="num">77.0%</span></div>
+  <div class="row"><span class="who">asof<em>ตัดอนาคตก่อนค้น</em></span>
+    <span class="track"><span class="fill" style="width:90%"></span></span><span class="num">90.0%</span></div>
+  <div class="row"><span class="who">static_item<em>ยุบเหลือล่าสุด แต่ไม่ดูวันที่</em></span>
+    <span class="track"><span class="fill bad" style="width:6%"></span></span><span class="num">6.0%</span></div>
+  <div class="row"><span class="who">asof_item<em>ตัดอนาคต แล้วยุบเหลือล่าสุด</em></span>
+    <span class="track"><span class="fill" style="width:100%"></span></span><span class="num">100.0%</span></div>
+</section>
+
+<p>อ่านบันไดนี้ได้สามบรรทัด หนึ่ง — <strong>LightRAG แพ้ <code>asof_item</code> 72 ข้อ ชนะ 0 ข้อ</strong>
+และแพ้แม้กระทั่ง index ธรรมดาที่ไม่รู้เรื่องเวลา 53 ต่อ 4 สอง — <strong>การกรองทีหลังไม่ได้อะไรเลย</strong>
+<code>static</code> กับ <code>postfilt</code> ต่างกันศูนย์ข้อ สาม — <strong>100% นี้ยังเป็น in-sample</strong>
+เพราะ arm สองตัวท้ายถูกเขียนขึ้นหลังจากอ่านข้อที่ <code>asof</code> ตอบผิดแล้ว</p>
+
+<div class="warn"><p><strong>ก่อนหยิบตัวเลขไปใช้</strong> มีระบบของคนอื่นแค่ตัวเดียวที่รันบนคลังเดียวกัน
+คำถามชุดเดียวกัน โมเดลตอบตัวเดียวกัน และ proxy ตัวเดียวกันกับเรา คือ LightRAG
+ส่วน Graphiti รันคนละ fixture และวัดคนละแบบ, Microsoft GraphRAG <strong>ยังไม่เคยรันเลย</strong>,
+long context เป็นเส้นฐาน ไม่ใช่ผลิตภัณฑ์ และตารางท้ายไฟล์เทียบ <em>ชิ้นส่วน</em> ไม่ใช่ระบบ</p></div>
+
+<h2 id="แนวคิด">แนวคิดพื้นฐาน 4 ข้อ</h2>
+
+<h3>1. นาฬิกาสองเรือน</h3>
+<p>ข้อมูลชิ้นหนึ่งมีเวลาสองแบบที่ไม่เท่ากัน และระบบส่วนใหญ่รู้จักแค่เรือนแรก</p>
+<div class="scroll"><table>
+<thead><tr><th>นาฬิกา</th><th>หมายความว่า</th><th>ตัวอย่าง</th></tr></thead>
+<tbody>
+<tr><td>knowledge time<br>เวลาที่โลกรู้</td><td>ข้อมูลนี้ถูกประกาศเมื่อไหร่</td><td>รายงานราคาออกวันศุกร์ที่ 31 ต.ค.</td></tr>
+<tr><td>delivery clock<br>เวลาที่คนนี้ได้รับ</td><td>ผู้รับแต่ละคนได้เห็นเมื่อไหร่</td><td>ลูกค้า A ได้อีเมลวันจันทร์ ลูกค้า B ได้วันพุธ</td></tr>
+</tbody></table></div>
+<p>พอมีการแก้ไขย้อนหลัง ระบบที่มีนาฬิกาเรือนเดียวจะตอบผิด เพราะเอาข้อมูลที่แก้แล้ว
+ไปตอบคำถามของคนที่ยังไม่ได้รับการแก้</p>
+
+<h3>2. ลำดับการกรอง สำคัญกว่าตัวกรอง</h3>
+<p>นี่คือหัวใจของทั้งโปรเจกต์ คิดภาพห้องสมุดที่หยิบเอกสารได้ <strong>8 ใบเท่านั้น</strong></p>
+<div class="scroll"><table>
+<thead><tr><th>วิธี</th><th>ทำอะไร</th><th class="n">ตอบถูก</th></tr></thead>
+<tbody>
+<tr><td><code>static</code></td><td>หยิบ 8 ใบที่คล้ายคำถามที่สุด จบ</td><td class="n">77.0%</td></tr>
+<tr><td><code>postfilt</code></td><td>หยิบ 8 ใบ แล้วค่อยทิ้งใบที่ออกหลังวันที่ถาม</td><td class="n">77.0%</td></tr>
+<tr class="best"><td><code>asof</code></td><td>ปิดตู้ที่ออกหลังวันนั้นก่อน แล้วค่อยหยิบ 8 ใบ</td><td class="n">90.0%</td></tr>
+</tbody></table></div>
+<p><strong>ทำไม <code>postfilt</code> ไม่ช่วยเลย</strong> เพราะโควตา 8 ใบถูกใช้ไปแล้วตั้งแต่ตอนหยิบ
+ทิ้งทีหลังไม่ได้ทำให้ใบที่ถูกกลับเข้ามา บทเรียนคือ “กรองก่อนค้น” ไม่เท่ากับ “ค้นก่อนกรอง”
+และเรื่องนี้พิสูจน์ซ้ำได้ทั้งบนข้อมูลสังเคราะห์และข้อมูลจริง</p>
+
+<h3>3. item view — ยุบให้เหลือเวอร์ชันล่าสุดต่อหนึ่งสินค้า</h3>
+<p>ราคาสินค้าตัวหนึ่งถูกประกาศใหม่ทุกสัปดาห์ จึงมีหลายเวอร์ชัน
+item view คือการเก็บเฉพาะเวอร์ชันล่าสุดของแต่ละสินค้า แล้วตัดสัปดาห์อื่นทิ้ง</p>
+
+<h3>4. ของสองอย่างนี้ ต้องใช้คู่กันเท่านั้น</h3>
+<div class="scroll"><table>
+<thead><tr><th>arm</th><th>ทำอะไร</th><th class="n">ตอบถูก</th><th class="n">ปฏิเสธตอบ</th></tr></thead>
+<tbody>
+<tr><td><code>static_item</code></td><td>ยุบเหลือล่าสุด แต่ไม่ดูวันที่ถาม</td><td class="n">6.0%</td><td class="n">92.0%</td></tr>
+<tr class="best"><td><code>asof_item</code></td><td>ตัดอนาคตก่อน แล้วค่อยยุบเหลือล่าสุด</td><td class="n">100.0%</td><td class="n">0%</td></tr>
+</tbody></table></div>
+<p><code>static_item</code> พังเพราะมันยุบทุกอย่างไปอยู่ที่เดือนธันวาคม พอถามเรื่องเดือนพฤษภาคม
+โมเดลจึงตอบไม่ได้และปฏิเสธที่จะเดาถึง 92% ของคำถาม ซึ่งเป็นพฤติกรรมที่ถูกต้องแล้ว
+แปลว่าเครื่องมือนี้อันตรายถ้าใช้เดี่ยว ๆ</p>
+
+<h2 id="ขั้นตอน">ขั้นตอนการตอบคำถาม 1 ข้อ</h2>
+<p>วิธี <code>asof_item</code> ทำงานตามลำดับนี้ จุดสำคัญคือขั้น 2 และ 3 เกิดขึ้น
+<strong>ก่อน</strong> การค้นเสมอ</p>
+<div class="flow">คำถาม: "ณ 2025-11-02 ราคา LLDPE film CFR SE Asia เท่าไหร่"
+   │
+   1. อ่านวันที่ในคำถาม             D = 2025-11-02
+   │
+   2. ตัดคลังเหลือเฉพาะฉบับที่ออกก่อนหรือตรงวัน D      ← จุดชี้เป็นชี้ตาย
+   │
+   3. ยุบแต่ละสินค้าให้เหลือฉบับล่าสุดฉบับเดียว
+   │
+   4. ค้นด้วย embedding เอา 8 ชิ้นจากที่เหลือ
+   │
+   5. ส่งให้โมเดลตอบ พร้อมวันที่กำกับทุกชิ้น
+      ถ้าไม่มีข้อมูลให้ปฏิเสธ ห้ามเดา
+   │
+   ▼
+ตอบ: ค่าของฉบับ 2025-10-31
+     (ไม่ใช่ 2025-10-03 ที่ระบบธรรมดาชอบหยิบมา)</div>
+<p>ถ้าสลับเป็นค้นก่อนแล้วค่อยกรอง ผลที่ได้คือ 77% ซึ่งเท่ากับไม่ทำอะไรเลย</p>
+
+<h2 id="ทดลอง">ขั้นตอนการทดลอง</h2>
+<p>ทำไมถึงเชื่อตัวเลขชุดนี้ได้</p>
+<ol class="steps">
+<li><strong>เตรียมคลัง</strong> รายงานราคารายสัปดาห์ 55 ฉบับ ปี 2025 — 51 issue, 14 ซีรีส์สินค้า ราว 134,000 token</li>
+<li><strong>สร้างเฉลยด้วยเครื่อง ไม่ใช้ AI ตัดสิน</strong> แกะตารางราคาออกมา 660 แถว เฉลยมาจากตัวเลขตรง ๆ</li>
+<li><strong>สุ่มคำถาม 100 ข้อ</strong> จากผู้สมัคร 598 ข้อ ด้วย seed <code>20260913</code> ทำซ้ำได้</li>
+<li><strong>รันทุก arm ด้วยเงื่อนไขเดียวกันเป๊ะ</strong> โมเดลตอบตัวเดียวกัน temperature 0 ค้นได้ 8 ชิ้นเท่ากัน</li>
+<li><strong>ตรวจว่าโมเดลที่ตอบคือตัวที่ขอจริง</strong> proxy เคยสลับโมเดลให้เงียบ ๆ ทุก runner จึงเทียบชื่อโมเดลที่ตอบกลับมาแล้วหยุดทันทีถ้าไม่ตรง</li>
+<li><strong>วัดความต่างแบบจับคู่ (exact McNemar)</strong> ไม่ได้ดูแค่ว่าได้กี่เปอร์เซ็นต์ แต่ดูทีละข้อว่าข้อไหนที่ A ถูกแล้ว B ผิด</li>
+</ol>
+<div class="note"><p><strong>ระหว่างทางเจอบั๊กสองอย่าง และบันทึกไว้ทั้งคู่</strong>
+ชื่อเกรดสินค้าถูกตัดเหลือสามคำ ทำให้ <code>HDPE Injection</code> สามแบบกลายเป็นอันเดียวกัน — รันรอบนั้นทิ้งทั้งรอบ ไม่รายงาน
+และการตัด chunk สำคัญกว่านโยบายเวลา — index แรกตัดกลางตารางราคา ทุก arm ตกเหลือ 25–33%
+พอให้แต่ละแถวราคาเป็น chunk ของตัวเอง (970 chunk) ตัวเลขถึงขึ้นมาเป็นอย่างที่เห็น</p></div>
+
+<h2 id="corpus">ผลบน corpus จริง — คู่เทียบที่แข็งที่สุด</h2>
+<div class="scroll"><table>
+<caption>รายงานราคา 55 ฉบับ, คำถาม 100 ข้อ, ตอบด้วย gemini-3.8-flash ที่ temperature 0</caption>
+<thead><tr><th>ระบบ / arm</th><th class="n">ตอบถูก</th><th class="n">เจอฉบับเฉลย</th><th class="n">ตอบด้วยฉบับอนาคต</th><th class="n">ปฏิเสธตอบ</th><th class="n">token</th></tr></thead>
+<tbody>
+<tr class="rival"><td>LightRAG 1.5.7</td><td class="n">28.0%</td><td class="n">n/a</td><td class="n">1.0%</td><td class="n">47.0%</td><td class="n">33,026</td></tr>
+<tr><td><code>static</code></td><td class="n">77.0%</td><td class="n">79.0%</td><td class="n">0%</td><td class="n">2.0%</td><td class="n">958</td></tr>
+<tr><td><code>postfilt</code></td><td class="n">77.0%</td><td class="n">79.0%</td><td class="n">0%</td><td class="n">2.0%</td><td class="n">609</td></tr>
+<tr><td><code>asof</code></td><td class="n">90.0%</td><td class="n">92.0%</td><td class="n">0%</td><td class="n">0%</td><td class="n">959</td></tr>
+<tr><td><code>static_item</code></td><td class="n">6.0%</td><td class="n">11.0%</td><td class="n">0%</td><td class="n">92.0%</td><td class="n">1,540</td></tr>
+<tr class="best"><td><code>asof_item</code></td><td class="n">100.0%</td><td class="n">100.0%</td><td class="n">0%</td><td class="n">0%</td><td class="n">1,403</td></tr>
+</tbody></table></div>
+<p><strong>มันแพ้แบบไหนสำคัญกว่าแพ้เท่าไหร่</strong> LightRAG ไม่ได้ตอบราคาของอนาคต มีแค่ 1%
+แต่มันปฏิเสธตอบ 47% คือได้วันที่ไปแล้วก็ยังหาไม่เจอว่าฉบับไหนคือฉบับที่ใช้ ณ วันนั้น
+และการให้ context มากกว่า 24 เท่าก็ไม่ได้ช่วย</p>
+<div class="warn"><p><strong>ข้อแม้สองข้อที่ต้องติดไปกับตารางนี้เสมอ</strong>
+LightRAG ใช้การตัด chunk ของมันเอง ส่วนหนึ่งของช่องว่างจึงอาจเป็นเรื่อง chunk ไม่ใช่เรื่องเวลา
+การรันซ้ำแบบยุติธรรมบน chunk ชุดเดียวกันคือคิวถัดไป และ LightRAG ออกแบบมาเพื่อคำถาม multi-hop
+บนกราฟ entity ส่วนคำถามชุดนี้เป็นการค้นชั้นเดียวที่มีวันที่กำกับ ซึ่งตรงกับที่วิธีเราออกแบบมาพอดี</p></div>
+
+<h2 id="longctx">เทียบกับ long context</h2>
+<p>long context คือยัดทุกเวอร์ชันของทุกรายการเข้า prompt แล้วให้โมเดลเลือกเอง
+เป็นเส้นฐานที่สู้ได้จริงและแพงจริง</p>
+<div class="scroll"><table>
+<caption>ความแม่นแบบปิด (closed-form) บนชุดข้อมูลสังเคราะห์ สามโมเดลตอบ</caption>
+<thead><tr><th>arm</th><th>ระบบ</th><th class="n">Gemini 3.8 Flash</th><th class="n">Claude Haiku 4.5</th><th class="n">GPT-5-mini</th></tr></thead>
+<tbody>
+<tr><td>Z</td><td>ไม่ retrieve เลย</td><td class="n">10.0%</td><td class="n">4.7%</td><td class="n">10.0%</td></tr>
+<tr><td>A2</td><td>RAG ปกติ</td><td class="n">59.0%</td><td class="n">54.0%</td><td class="n">54.0%</td></tr>
+<tr><td>C2</td><td>RAG + cross-encoder</td><td class="n">67.0%</td><td class="n">62.7%</td><td class="n">62.0%</td></tr>
+<tr><td>D2</td><td>delivery projection</td><td class="n">78.0%</td><td class="n">68.7%</td><td class="n">78.0%</td></tr>
+<tr class="rival"><td>B</td><td>long context ทุกเวอร์ชัน</td><td class="n">88.0%</td><td class="n">78.7%</td><td class="n">78.0%</td></tr>
+<tr class="best"><td>E</td><td>delivery + item view</td><td class="n">88.0%</td><td class="n">78.7%</td><td class="n">88.7%</td></tr>
+</tbody></table></div>
+<div class="scroll"><table>
+<caption>E ลบ B — ความแม่นเสมอกันสองในสามโมเดล ที่ต่างกันจริงอยู่ตรงนี้</caption>
+<thead><tr><th>ตัววัด</th><th class="n">Gemini</th><th class="n">Haiku</th><th class="n">GPT-5-mini</th></tr></thead>
+<tbody>
+<tr><td>ความถูกต้องแบบ end-to-end</td><td class="n">+1.1</td><td class="n">+8.1</td><td class="n">+75.5</td></tr>
+<tr><td>อ้างอิงเอกสารเก่าผิด (ยิ่งต่ำยิ่งดี)</td><td class="n">−1.0</td><td class="n">−6.7</td><td class="n">−82.0</td></tr>
+<tr><td>token ต่อคำถาม</td><td class="n">−59%</td><td class="n">−55%</td><td class="n">−59%</td></tr>
+</tbody></table></div>
+<p>E ได้การอ้างอิงเก่าผิดที่ <strong>0% ทุกโมเดล</strong> ส่วน B อยู่ที่ 1–82%
+ประโยคที่พูดได้จึงเป็น “แม่นเท่ากันแต่อ้างอิงสะอาดกว่าและถูกกว่า” ไม่ใช่ “เราชนะ long context”</p>
+
+<h2 id="graphiti">เทียบกับ Graphiti 0.30.2</h2>
+<p>Graphiti คือ temporal knowledge graph ตัวจริงที่มีคนใช้งาน รันบน Neo4j
+ด้วยคำถาม 175 ข้อตระกูล “แก้ข่าวย้อนหลัง” ค่าใช้จ่าย $1.91 ใช้เวลา 716 วินาที</p>
+<div class="scroll"><table>
+<thead><tr><th>ตระกูลคำถาม</th><th class="n">n</th><th class="n">กราฟรวม</th><th class="n">แยก group_id ต่อผู้รับ</th></tr></thead>
+<tbody>
+<tr><td>แก้ไขล่าช้า</td><td class="n">75</td><td class="n">22 (29.3%)</td><td class="n">50 (66.7%)</td></tr>
+<tr><td>ถอนข่าวล่าช้า</td><td class="n">50</td><td class="n">41 (82.0%)</td><td class="n">33 (66.0%)</td></tr>
+<tr><td>รับรู้เหตุการณ์ย้อนหลัง</td><td class="n">50</td><td class="n">33 (66.0%)</td><td class="n">34 (68.0%)</td></tr>
+<tr class="sum"><td>รวม</td><td class="n">175</td><td class="n">96 (54.9%)</td><td class="n">117 (66.9%)</td></tr>
+</tbody></table></div>
+<p>จับคู่รายข้อ แบบแยกผู้รับชนะ 55 แพ้ 34 — McNemar p = 0.033</p>
+<div class="warn"><p><strong>ข้อควรระวังที่สำคัญที่สุดในหน้านี้</strong>
+บนชุดเดียวกัน Chronoverse ได้ 174/175 แต่เป็นคนละวิธีวัด คือคำนวณด้วยกฎ bitemporal ตรง ๆ
+ไม่มี LLM มาแกะข้อมูลใหม่ <strong>ห้ามเอา 174/175 กับ 96/175 มาพูดในประโยคเดียวกันเหมือนเป็นการวัดแบบเดียวกัน</strong>
+ช่องว่างส่วนใหญ่คือความสูญเสียตอน Graphiti ใช้ LLM แกะ entity ซึ่งทำให้ข้อมูลเฉลยราวหนึ่งในสามหายไปตรงนั้น</p></div>
+<p>สิ่งที่ผลนี้ยืนยันได้จริงคือ นาฬิกาผู้รับเปลี่ยนคำตอบได้จริงแม้อยู่ในระบบของคนอื่น
+และ Graphiti 0.30.2 ไม่มีมิติผู้รับเลย ถ้าจะเลียนแบบต้องแยกกราฟต่อผู้รับ
+ซึ่งบน fixture นี้คือการนำเข้าซ้ำ 20.8 เท่า
+สิ่งที่ผลนี้<strong>ไม่</strong>ยืนยันคือ Chronoverse ค้นเก่งกว่า Graphiti</p>
+
+<h2 id="ชิ้นส่วน">ระดับชิ้นส่วน — ของที่ซื้อเอาชนะของ local</h2>
+<div class="scroll"><table>
+<caption>คุณภาพการค้นบนคลังสาธารณะ nDCG@10 ×100</caption>
+<thead><tr><th>ระบบค้น</th><th class="n">SciFact</th><th class="n">NFCorpus</th><th class="n">FiQA</th></tr></thead>
+<tbody>
+<tr><td>BM25 แบบจูนดี</td><td class="n">66.47</td><td class="n">32.54</td><td class="n">23.61</td></tr>
+<tr><td>BGE local</td><td class="n">71.27</td><td class="n">34.38</td><td class="n">40.35</td></tr>
+<tr><td>RRF สามทาง local</td><td class="n">71.84</td><td class="n">36.00</td><td class="n">40.65</td></tr>
+<tr class="best"><td>hosted text-embedding-3-large</td><td class="n">78.10</td><td class="n">41.93</td><td class="n">54.85</td></tr>
+</tbody></table></div>
+<div class="scroll"><table>
+<caption>การจัดอันดับซ้ำ บน SciFact 300 คำถาม</caption>
+<thead><tr><th>ตัวจัดอันดับซ้ำ</th><th class="n">nDCG@10</th><th class="n">Recall@10</th><th class="n">Hit@1</th></tr></thead>
+<tbody>
+<tr><td>ลำดับ RRF เดิม</td><td class="n">67.34</td><td class="n">81.51</td><td class="n">53.33</td></tr>
+<tr><td>cross-encoder MiniLM local</td><td class="n">68.86</td><td class="n">82.56</td><td class="n">56.33</td></tr>
+<tr class="best"><td>Cohere rerank v3.5</td><td class="n">77.37</td><td class="n">87.69</td><td class="n">66.67</td></tr>
+</tbody></table></div>
+<p>Cohere ชนะ cross-encoder local +8.51 จุด ช่วงมั่นใจ +5.39 ถึง +11.76 และ Holm p = 0.0001
+อ่านว่าพื้นของคุณภาพการค้นคือของที่ซื้อ ซึ่งสอดคล้องกับบทเรียนเรื่อง chunk ข้างบน</p>
+
+<h2 id="ผลลบ">ผลลบที่เก็บไว้ ไม่ได้ซ่อน</h2>
+<p>บน LongMemEval-S ซึ่งเป็นชุดคำถามสาธารณะ 500 ข้อ การตัดตามวันที่กลับทำให้ผลแย่ลง</p>
+<div class="scroll"><table>
+<thead><tr><th>วิธี</th><th class="n">session recall@5</th><th class="n">@10</th></tr></thead>
+<tbody>
+<tr><td>dense ธรรมดา</td><td class="n">79.82%</td><td class="n">90.01%</td></tr>
+<tr><td>dense + ตัดตามวันที่ session</td><td class="n">75.22%</td><td class="n">84.48%</td></tr>
+</tbody></table></div>
+<p>หนักสุดที่คำถามประเภท temporal-reasoning คือ 72.19% ลงมาเหลือ 55.58%
+เหตุผลอยู่ในเอกสารเดียวกัน — ใน benchmark นี้ session ที่เป็นเฉลยมี timestamp หลังคำถาม
+สรุปคือ benchmark ตัวนี้<strong>ไม่</strong>สนับสนุนข้ออ้างเรื่อง temporal retrieval ของเรา</p>
+
+<h2 id="ต้นทุน">ต้นทุน</h2>
+<p>ดูความแม่นอย่างเดียวจะเข้าข้างระบบที่กินแรงเครื่อง</p>
+<div class="scroll"><table>
+<thead><tr><th>การรัน</th><th>ใช้ inference</th><th class="n">เวลา</th><th class="n">ได้ผล</th></tr></thead>
+<tbody>
+<tr class="rival"><td>LightRAG: สร้าง index + ตอบ 100 ข้อ</td><td>1,012 ครั้ง — 4.88M + 1.20M token</td><td class="n">65 นาที</td><td class="n">28.0%</td></tr>
+<tr class="best"><td>asof_item + static_item: ตอบ 200 ข้อ</td><td>53,170 + 21,627 token — ตอน index ไม่เรียก LLM เลย</td><td class="n">211 วินาที</td><td class="n">100.0% / 6.0%</td></tr>
+<tr><td>Graphiti native: 175 ข้อ</td><td>แกะด้วย LLM ทุก episode — $1.91</td><td class="n">716 วินาที</td><td class="n">66.9%</td></tr>
+</tbody></table></div>
+<p>พูดสั้น ๆ คือใช้ inference มากกว่าราวร้อยเท่า เพื่อความแม่นราวหนึ่งในสี่</p>
+
+<h2 id="ยังไม่วัด">ที่ยังไม่ได้วัด และห้ามพูดเป็นนัยว่าวัดแล้ว</h2>
+<div class="scroll"><table>
+<thead><tr><th>หัวข้อ</th><th>สถานะ</th></tr></thead>
+<tbody>
+<tr><td>Microsoft GraphRAG</td><td>ยังไม่เคยรัน ต้นทุน index สูงสุดในสามตัว อยู่ท้ายคิว</td></tr>
+<tr><td>Zep แบบ hosted, LlamaIndex, Vectara และผลิตภัณฑ์ memory เชิงพาณิชย์อื่น</td><td>ยังไม่เคยรัน</td></tr>
+<tr><td>LightRAG บน chunk ชุดเดียวกัน 970 chunk</td><td>ยังไม่ได้ทำ ส่วนหนึ่งของช่องว่าง 72 ข้ออาจเป็นเรื่อง chunk</td></tr>
+<tr><td>การยืนยันแบบ out-of-sample</td><td>ยังไม่ได้ทำ ดังนั้น 100% ยังเป็น in-sample</td></tr>
+<tr><td>คำถามรูปแบบอื่น เช่น ช่วงเวลา เปรียบเทียบ ขอเวอร์ชันเก่า</td><td>ยังไม่ทดสอบ ทั้ง 100 ข้อเป็นรูปเดียวคือ “ณ วัน D ค่าล่าสุดของ S”</td></tr>
+<tr><td>การกู้คืนจากการแก้ไขบนข้อมูลจริง</td><td>corpus นี้ไม่มีการแก้ย้อนหลังเลย 460 ตรง 0 ขัดแย้ง จึงพิสูจน์ได้แค่บนข้อมูลสังเคราะห์</td></tr>
+</tbody></table></div>
+
+<blockquote>
+<p>บนคลังลิขสิทธิ์ของบุคคลที่สาม เมื่อให้วันที่ไปในคำถามแล้ว LightRAG 1.5.7 ตอบถูก 28.0% จาก 100 ข้อ
+และ<strong>แพ้ 72 ข้อให้กับวิธีที่กรองเวลาก่อนค้น โดยไม่ชนะกลับเลยสักข้อ</strong> ด้วยต้นทุน inference ราว 2%
+ส่วนเมื่อเทียบกับ long context บนข้อมูลสังเคราะห์ ความแม่นเสมอกัน สิ่งที่ต่างคือการอ้างอิงเก่าเป็น 0%
+และใช้ token น้อยลง 55–59%</p>
+</blockquote>
+<p>ประโยคอื่นนอกจากนี้ ต้องพ่วงข้อแม้ของมันไปด้วยเสมอ</p>
+
+<footer>
+<p><strong>การเผยแพร่</strong> หน้านี้มีแต่ตัวเลขผลวัด วิธีการ และชื่อซีรีส์สินค้า
+ไม่มีราคาจริง ไม่มีข้อความจากรายงาน ไม่มีคำตอบดิบของโมเดล
+ตรงตามข้อกำหนด “แค่ห้ามเผยแพร่ต่อ” คือใช้และเผยแพร่ผลวัดได้ แต่ห้ามส่งต่อตัวคลังข้อมูล</p>
+<p>ที่มาของตัวเลข: <code>01-results-open/ASOF-PILOT-RESULTS.md</code>,
+<code>ROUND2-ANSWER-RESULTS.md</code>, <code>HOSTED-RESULTS.md</code>,
+<code>OPENROUTER-RERANK-RESULTS.md</code>, <code>03-benchmarks-longmemeval-README.md</code>,
+<code>03-reviews-and-proposals/GRAPHITI-HEAD-TO-HEAD.md</code> —
+สายพันธุ์ไฟล์ทั้งหมดอยู่ใน <a href="VERSION-MAP.md">VERSION-MAP.md</a>
+และฉบับข้อความอยู่ที่ <a href="COMPETITOR-ACCURACY-TH.md">COMPETITOR-ACCURACY-TH.md</a></p>
+</footer>
+</main>
+</div>
+</body>
+</html>
