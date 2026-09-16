@@ -1,0 +1,49 @@
+#!/bin/sh
+# บังคับกติกาของ Chronoverse ก่อนทุก commit
+# ติดตั้งครั้งเดียวต่อ clone:  git config core.hooksPath .githooks
+set -e
+
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+STAGED=$(git diff --cached --name-only --diff-filter=ACM)
+
+fail () { echo ""; echo "⛔ $1"; echo ""; exit 1; }
+
+# ── 1. ห้าม commit บน main ──
+if [ "$BRANCH" = "main" ] || [ "$BRANCH" = "master" ]; then
+  fail "ห้าม commit บน $BRANCH โดยตรง
+   แตก work branch ก่อน:  git switch -c work/<agent_name>/<หัวข้อ>
+   แล้ว commit ใหม่อีกครั้ง"
+fi
+
+# ── 2. ชื่อ branch ต้องเป็น work/<ใคร>/<อะไร> ──
+case "$BRANCH" in
+  work/*/*) : ;;
+  *) fail "ชื่อ branch ไม่ตรงแบบ: $BRANCH
+   ใช้รูปแบบ  work/<agent_name>/<หัวข้อสั้น>  เพื่อให้ไล่ได้ว่าใครทำอะไร" ;;
+esac
+
+# ── 3. ของเฉพาะเครื่องห้ามหลุดเข้า commit ──
+BADPATH=$(echo "$STAGED" | grep -E '^\.onboard/|^\.agent-mem-hooks/|\.local\.json$|\.lock$' || true)
+if [ -n "$BADPATH" ]; then
+  fail "ไฟล์เฉพาะเครื่องติดมาใน commit:
+$BADPATH
+   ถอนออกก่อน:  git restore --staged <ไฟล์>"
+fi
+
+# ── 4. กันของลิขสิทธิ์ ไฟล์ใหญ่ และ token ──
+if [ -n "$STAGED" ] && [ -f scripts/check_licensed.py ]; then
+  # shellcheck disable=SC2086
+  python3 scripts/check_licensed.py $STAGED || fail "check_licensed ไม่ผ่าน (ดูรายการข้างบน)"
+fi
+
+# ── 5. เตือนเรื่อง commit -a ──
+# hook มองไม่เห็นว่าใช้ -a หรือเปล่า จึงกันเมื่อ commit กว้างผิดปกติ
+COUNT=$(echo "$STAGED" | grep -c . || true)
+if [ "$COUNT" -gt 25 ]; then
+  fail "commit นี้มี $COUNT ไฟล์ กว้างผิดปกติ
+   ถ้ากำลังใช้ git commit -a ให้หยุด — กติกาโปรเจกต์ห้ามใช้ -a เด็ดขาด
+   เติมทีละไฟล์ที่ตั้งใจ:  git add <path>
+   ถ้าตั้งใจจริงและตรวจครบแล้ว ให้แบ่ง commit ให้เล็กลง"
+fi
+
+echo "✅ pre-commit ผ่าน · branch $BRANCH · $COUNT ไฟล์"

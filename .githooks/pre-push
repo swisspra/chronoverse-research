@@ -1,0 +1,25 @@
+#!/bin/sh
+# บังคับ pull ก่อน push และห้าม push main ตรง ๆ
+set -e
+
+BRANCH=$(git rev-parse --abbrev-ref HEAD)
+fail () { echo ""; echo "⛔ $1"; echo ""; exit 1; }
+
+[ "$BRANCH" = "main" ] || [ "$BRANCH" = "master" ] && \
+  fail "ห้าม push $BRANCH ตรง ๆ — ส่ง work branch แล้วเปิด PR แทน"
+
+# กระดาน .agent-mem/ ถูกแชร์ ถ้า remote ขยับแล้วเรายังไม่ดึง จะทับงานคนอื่น
+git fetch --quiet origin 2>/dev/null || {
+  echo "⚠️  fetch ไม่สำเร็จ (ออฟไลน์?) ข้ามการตรวจ — ระวังงานทับกันเอง"; exit 0; }
+
+BASE=$(git rev-parse --verify --quiet origin/main || true)
+if [ -n "$BASE" ]; then
+  BEHIND=$(git rev-list --count "HEAD..$BASE")
+  if [ "$BEHIND" -gt 0 ]; then
+    fail "branch นี้ตาม origin/main อยู่ $BEHIND commit
+   กระดาน .agent-mem/ ถูกแชร์ ถ้า push ทับตอนนี้ งานคนอื่นจะหาย
+   ดึงก่อน:  git pull --rebase origin main"
+  fi
+fi
+
+echo "✅ pre-push ผ่าน · $BRANCH ตรงกับ origin/main แล้ว"
