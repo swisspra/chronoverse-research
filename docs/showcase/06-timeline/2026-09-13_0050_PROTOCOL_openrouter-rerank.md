@@ -1,0 +1,1 @@
+../02-protocols/OPENROUTER-RERANK-PROTOCOL.md
